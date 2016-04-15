@@ -1,0 +1,29 @@
+<ons-page class="center">
+  <ons-toolbar fixed-style="true">
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggle()">
+          <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">Color Blind</div>
+    <div class="right">
+      <ons-toolbar-button>
+        <ons-icon icon="ion-refresh" fixed-width="false"
+                  style="font-size: 26px; vertical-align: -4px;" ></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+    <ons-row style="margin-top: 50px; text-align: center;">
+      <ons-col>
+        <ons-button modifier="light" ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
+          Ishihara test
+        </ons-button>
+        <ons-button modifier="light" ng-click="menu.setMainPage('navigators/navigatorFarnsworth.html', {closeMenu: true})">
+          Farnsworth test
+        </ons-button>
+        <ons-button modifier="light" ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
+          Vision Simulator
+        </ons-button>
+      </ons-col>
+    </ons-row>
+</ons-page>
