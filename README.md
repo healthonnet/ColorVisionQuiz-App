@@ -1,7 +1,7 @@
 ColorBlind App
 ===============
 
-Simple Cordova app about colorblindness
+Simple Cordova app about color blindness
 
 Build
 -----
