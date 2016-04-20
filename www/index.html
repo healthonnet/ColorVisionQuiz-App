@@ -9,8 +9,19 @@
   <!-- JS dependencies (order matters!) -->
   <script src="scripts/platformOverrides.js"></script>
   <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-translate/angular-translate.min.js"></script>
   <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
   <script src="lib/onsen/js/onsenui.js"></script>
+
+  <!-- App Scripts -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/appController.js"></script>
+  <script src="scripts/controllers/homeController.js"></script>
+  <script src="scripts/controllers/simulatorController.js"></script>
+  <script src="scripts/controllers/farnsworthController.js"></script>
+  <script src="scripts/controllers/farnsworthTestController.js"></script>
+  <script src="scripts/controllers/ishiharaController.js"></script>
+  <script src="scripts/controllers/ishiharaTestController.js"></script>
 
   <!-- CSS dependencies -->
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css"/>
@@ -25,15 +36,7 @@
   <title>Onsen UI Sliding Menu</title>
 
   <script>
-    angular.module('app', ['onsen', 'ngCordova']);
 
-    angular.module('app').controller('AppController', function ($scope) {
-
-      document.addEventListener("deviceready", function () {
-        //$cordovaPlugin available
-        console.log("deviceready");
-      }, false);
-    });
   </script>
 
   <style>
