@@ -1,4 +1,4 @@
 angular.module('app').controller('IshiharaResultsController', function ($scope) {
-  console.log(navigatorIshihara.getCurrentPage().options.answers);
-  console.log(navigatorIshihara.getCurrentPage().options.quiz);
+  $scope.answers = navigatorIshihara.getCurrentPage().options.answers;
+  $scope.questions = navigatorIshihara.getCurrentPage().options.quiz;
 });
