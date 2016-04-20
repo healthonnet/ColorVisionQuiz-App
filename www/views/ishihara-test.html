@@ -3,7 +3,29 @@
     <div class="left"><ons-back-button>Back</ons-back-button></div>
     <div class="center">Ishihara Test</div>
   </ons-toolbar>
-  <ons-row>
-    <h1>Test</h1>
-  </ons-row>
+    <ons-row id="plateContainer">
+      <ons-col width="10%"></ons-col>
+      <ons-col width="80%">
+        <img src="{{quiz[currentQuestion].file}}" width="100%" alt="plate" class="plate">
+      </ons-col>
+      <ons-col width="10%"></ons-col>
+    </ons-row>
+    <ons-row id="anwserContainer">
+      <ons-col width="30%" align="center">
+        <label>Answer : </label>
+      </ons-col>
+      <ons-col width="50%" align="center">
+        <input type="number" ng-model="currentAnswer">
+      </ons-col>
+      <ons-col width="20%" align="center">
+        <button class="button button--cta" ng-click="nextQuestion()">Button</button>
+      </ons-col>
+    </ons-row>
+  <footer>
+    <ons-row>
+      <ons-col align="right">
+        {{currentQuestion + 1}}/{{totalQuestions}}
+      </ons-col>
+    </ons-row>
+  </footer>
 </ons-page>

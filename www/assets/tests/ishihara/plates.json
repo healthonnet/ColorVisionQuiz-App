@@ -1,0 +1,36 @@
+{
+  "plates" : [
+    {
+      "file" : "assets/plates/plate1.png",
+      "correctAnswer" : 12,
+      "greenDeficiency" : 12,
+      "redDeficiency" : 12,
+      "colorBlind" : 12,
+      "type" : 0
+    },
+    {
+      "file" : "assets/plates/plate2.png",
+      "correctAnswer" : 8,
+      "greenDeficiency" : 3,
+      "redDeficiency" : 3,
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate3.png",
+      "correctAnswer" : 6,
+      "greenDeficiency" : 5,
+      "redDeficiency" : 5,
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate4.png",
+      "correctAnswer" : 29,
+      "greenDeficiency" : 70,
+      "redDeficiency" : 70,
+      "colorBlind" : "",
+      "type" : 1
+    }
+  ]
+}
