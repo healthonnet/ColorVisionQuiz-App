@@ -1,13 +1,13 @@
 <ons-page class="center" ng-controller="IshiharaResultsController">
   <ons-toolbar fixed-style="true">
-    <div class="left"><ons-back-button>Back</ons-back-button></div>
-    <div class="center">Ishihara Test</div>
+    <div class="left"><ons-back-button>{{"BACK" | translate}}</ons-back-button></div>
+    <div class="center">Ishihara - Test</div>
   </ons-toolbar>
   <ons-row>
-    <h1>Results</h1>
+    <h1>{{"RESULTS" | translate}}</h1>
   </ons-row>
   <ons-row>
-    <p>It seem you have : <span>{{diagnostic.title | translate}}</span></p>
+    <p>{{"YOUR_DIAGNOSTIC" | translate}} : <span>{{diagnostic.title | translate}}</span></p>
   </ons-row>
   <ons-scroller style="max-height: 150px">
     <ons-list>
@@ -18,8 +18,8 @@
             <img src="{{question.file}}" class="thumbnail">
           </ons-col>
           <ons-col class="col ons-col-inner">
-            <ons-row>expected : {{question.correctAnswer}}</ons-row>
-            <ons-row>got :  {{answers[$index]}}</ons-row>
+            <ons-row>{{"EXPECTED" | translate}} : {{question.correctAnswer}}</ons-row>
+            <ons-row>{{"YOUR_ANSWER" | translate}} : {{answers[$index]}}</ons-row>
           </ons-col>
           <ons-col width="40px" class="col ons-col-inner" style="-webkit-box-flex: 0; flex: 0 0 40px; max-width: 40px;"></ons-col>
         </ons-row>
@@ -27,4 +27,12 @@
 
     </ons-list>
   </ons-scroller>
+  <ons-row style="text-align: center;">
+    <ons-col>
+      <ons-button ng-click="navigatorIshihara.pushPage('views/ishihara-test.html', {closeMenu: true})"><span class="label ons-button-inner"><span class="ng-scope">
+        {{"RESTART" | translate}}
+      </span></span>
+      </ons-button>
+    </ons-col>
+  </ons-row>
 </ons-page>
