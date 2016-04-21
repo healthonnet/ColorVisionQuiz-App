@@ -24,7 +24,40 @@ angular.module('app').controller('IshiharaResultsController', function ($scope) 
     });
 
     diagnostic.title = "DIAG_ISHIHARA_NORMAL";
+
     //TODO check how to diag.
+    //If Short test (6 plates)
+    if($scope.questions.length === 6){
+      // If not perfect => should do long diagnostic
+      if(diagnostic.score < 6 ){
+        diagnostic.title = "DIAG_ISHIHARA_SHOULD_PRECISE"
+      }
+    }
+    // Complete Test
+    else {
+      switch (true) {
+        case (diagnostic >= 17):
+          diagnostic.title = "DIAG_ISHIHARA_NORMAL";
+          break;
+        case (diagnostic >= 14 && diagnostic <= 16):
+          diagnostic.title = "DIAG_ISHIHARA_SHOULD_FARNSWORTH";
+          break;
+        case (diagnostic <= 13):
+          if(diagnostic.gdef < diagnostic.cb && diagnostic.gdef < diagnostic.cb){
+            diagnostic.title = "DIAG_ISHIHARA_COLOR_BLIND";
+          }
+          else if(diagnostic.rdef > diagnostic.gdef){
+            diagnostic.title = "DIAG_ISHIHARA_COLOR_DEUTERANOMALY";
+          }
+          else if(diagnostic.rdef < diagnostic.gdef){
+            diagnostic.title = "DIAG_ISHIHARA_COLOR_PROTANOMALY";
+          }
+          else {
+            diagnostic.title = "DIAG_ISHIHARA_COLOR_DEFICIENCY";
+          }
+          break;
+      }
+    }
 
     return diagnostic;
   };

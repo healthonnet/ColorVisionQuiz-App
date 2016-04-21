@@ -2,6 +2,7 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
   console.log('IshiharaTestController');
   $scope.loading = true;
   $scope.currentAnswer = "";
+  $scope.short = true;
   $scope.quiz = [];
   $scope.answers = [];
 
@@ -23,8 +24,29 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
     });
 
   $scope.generateQuiz = function(data) {
-    return data.plates;
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    var quiz = [];
+
+    // Build short version
+    if($scope.short){
+      quiz.push(data.plates[0]);
+      quiz.push(data.plates[getRandomInt(1,4)]);
+      quiz.push(data.plates[getRandomInt(5,8)]);
+      quiz.push(data.plates[getRandomInt(9,12)]);
+      quiz.push(data.plates[getRandomInt(13,16)]);
+      quiz.push(data.plates[getRandomInt(17,20)]);
+    }
+    // Complete test
+    else {
+      quiz = data.plates;
+    }
+    return quiz;
   };
+
+
 
   $scope.nextQuestion = function (){
     $scope.answers.push($scope.currentAnswer);
