@@ -8,9 +8,11 @@ app.init = function () {
 app.config(['$translateProvider', function($translateProvider) {
   $translateProvider.translations('en', {
     "KEY": "Value",
+    "DIAG_ISHIHARA_NORMAL": "normal vision",
   });
   $translateProvider.translations('fr', {
     "KEY": "Valeur",
+    "DIAG_ISHIHARA_NORMAL": "vision normale",
   });
 
   $translateProvider.preferredLanguage('fr');
