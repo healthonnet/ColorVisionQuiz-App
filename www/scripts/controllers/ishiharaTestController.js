@@ -2,9 +2,9 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
   console.log('IshiharaTestController');
   $scope.loading = true;
   $scope.currentAnswer = "";
-  $scope.short = true;
   $scope.quiz = [];
   $scope.answers = [];
+  $scope.short = navigatorIshihara.getCurrentPage().options.short;
 
   $http.get('./assets/tests/ishihara/plates.json',{
     headers:{"Content-type": "application/json; charset=utf-8"}

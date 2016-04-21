@@ -20,7 +20,16 @@
   </ons-row>
   <ons-row style="text-align: center;">
     <ons-col>
-      <ons-button modifier="light" ng-click="navigatorIshihara.pushPage('views/ishihara-test.html', {closeMenu: true})">
+      <label class="checkbox">
+        <input type="checkbox" ng-model="short">
+        <div class="checkbox__checkmark"></div>
+        {{"SHORT_TEST" | translate}}
+      </label><br>
+    </ons-col>
+  </ons-row>
+  <ons-row style="text-align: center;">
+    <ons-col>
+      <ons-button modifier="light" ng-click="navigatorIshihara.pushPage('views/ishihara-test.html', {closeMenu: true, short: short})">
         {{"START" | translate}}
       </ons-button>
     </ons-col>

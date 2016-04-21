@@ -12,14 +12,16 @@ angular.module('app').controller('IshiharaResultsController', function ($scope) 
       if(question.correctAnswer === $scope.answers[index]){
         diagnostic.score++;
       }
-      if (question.colorBlind === $scope.answers[index]){
+      else if(question.redDeficiency === $scope.answers[index] || question.greenDeficiency === $scope.answers[index]){
+        if(question.redDeficiency === $scope.answers[index]){
+          diagnostic.rdef++;
+        }
+        if(question.greenDeficiency === $scope.answers[index]){
+          diagnostic.gdef++;
+        }
+      }
+      else if (question.colorBlind === $scope.answers[index]){
         diagnostic.cb++;
-      }
-      if(question.redDeficiency === $scope.answers[index]){
-        diagnostic.rdef++;
-      }
-      if(question.greenDeficiency === $scope.answers[index]){
-        diagnostic.gdef++;
       }
     });
 
@@ -36,21 +38,21 @@ angular.module('app').controller('IshiharaResultsController', function ($scope) 
     // Complete Test
     else {
       switch (true) {
-        case (diagnostic >= 17):
+        case (diagnostic.score >= 17):
           diagnostic.title = "DIAG_ISHIHARA_NORMAL";
           break;
-        case (diagnostic >= 14 && diagnostic <= 16):
+        case (diagnostic.score >= 14 && diagnostic.score <= 16):
           diagnostic.title = "DIAG_ISHIHARA_SHOULD_FARNSWORTH";
           break;
-        case (diagnostic <= 13):
+        case (diagnostic.score <= 13):
           if(diagnostic.gdef < diagnostic.cb && diagnostic.gdef < diagnostic.cb){
             diagnostic.title = "DIAG_ISHIHARA_COLOR_BLIND";
           }
           else if(diagnostic.rdef > diagnostic.gdef){
-            diagnostic.title = "DIAG_ISHIHARA_COLOR_DEUTERANOMALY";
+            diagnostic.title = "DIAG_ISHIHARA_DEUTERANOMALY";
           }
           else if(diagnostic.rdef < diagnostic.gdef){
-            diagnostic.title = "DIAG_ISHIHARA_COLOR_PROTANOMALY";
+            diagnostic.title = "DIAG_ISHIHARA_PROTANOMALY";
           }
           else {
             diagnostic.title = "DIAG_ISHIHARA_COLOR_DEFICIENCY";
