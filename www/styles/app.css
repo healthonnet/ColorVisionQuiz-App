@@ -7,3 +7,6 @@ footer {
   border-radius: 4px;
   -webkit-border-radius: 4px;
 }
+.ons-scroller {
+  padding-bottom: 10px;
+}

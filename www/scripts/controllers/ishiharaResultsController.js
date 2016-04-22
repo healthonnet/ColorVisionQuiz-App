@@ -25,14 +25,15 @@ angular.module('app').controller('IshiharaResultsController', function ($scope) 
       }
     });
 
-    diagnostic.title = "DIAG_ISHIHARA_NORMAL";
+    diagnostic.title = "DIAG_ISHIHARA_PROBLEM";
 
-    //TODO check how to diag.
     //If Short test (6 plates)
     if($scope.questions.length === 6){
       // If not perfect => should do long diagnostic
       if(diagnostic.score < 6 ){
         diagnostic.title = "DIAG_ISHIHARA_SHOULD_PRECISE"
+      } else {
+        diagnostic.title = "DIAG_ISHIHARA_NORMAL";
       }
     }
     // Complete Test
@@ -67,7 +68,5 @@ angular.module('app').controller('IshiharaResultsController', function ($scope) 
   $scope.answers = navigatorIshihara.getCurrentPage().options.answers;
   $scope.questions = navigatorIshihara.getCurrentPage().options.quiz;
   $scope.diagnostic = $scope.analyseDatas();
-  console.log($scope.diagnostic);
-
 
 });
