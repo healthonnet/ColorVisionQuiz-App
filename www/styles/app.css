@@ -13,3 +13,6 @@ footer {
 video {
   width: 100%;
 }
+.ishihara-example {
+  max-height: 250px;
+}

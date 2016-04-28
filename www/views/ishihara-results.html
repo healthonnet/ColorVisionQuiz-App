@@ -29,9 +29,13 @@
   </ons-scroller>
   <ons-row style="text-align: center;">
     <ons-col>
-      <ons-button ng-click="navigatorIshihara.pushPage('views/ishihara-test.html', {closeMenu: true})"><span class="label ons-button-inner"><span class="ng-scope">
+      <ons-button ng-click="navigatorIshihara.pushPage('views/ishihara-test.html', {closeMenu: true, short: short})"><span class="label ons-button-inner"><span class="ng-scope">
         {{"RESTART" | translate}}
-      </span></span>
+        </span></span>
+      </ons-button>
+      <ons-button ng-show="short && diagnostic.score != 6" ng-click="navigatorIshihara.pushPage('views/ishihara-test.html', {closeMenu: true, short: false})"><span class="label ons-button-inner"><span class="ng-scope">
+        {{"COMPLETE_TEST" | translate}}
+        </span></span>
       </ons-button>
     </ons-col>
   </ons-row>

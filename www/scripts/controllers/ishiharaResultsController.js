@@ -1,4 +1,6 @@
 angular.module('app').controller('IshiharaResultsController', function ($scope) {
+  $scope.short = false;
+
   $scope.analyseDatas = function() {
     var diagnostic = {
       title : "",
@@ -29,6 +31,8 @@ angular.module('app').controller('IshiharaResultsController', function ($scope) 
 
     //If Short test (6 plates)
     if($scope.questions.length === 6){
+      $scope.short = true;
+
       // If not perfect => should do long diagnostic
       if(diagnostic.score < 6 ){
         diagnostic.title = "DIAG_ISHIHARA_SHOULD_PRECISE"
