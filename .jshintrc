@@ -1,6 +1,9 @@
 {
   "node": true,
+  "browser": true,
+  "mocha": true,
   "esnext": true,
+  "module": true,
   "bitwise": true,
   "camelcase": true,
   "curly": true,
@@ -11,16 +14,15 @@
   "newcap": true,
   "noarg": true,
   "quotmark": "single",
-  "regexp": true,
   "undef": true,
   "unused": true,
   "strict": true,
-  "trailing": true,
-  "smarttabs": true,
-  "white": true,
   "globals": {
     "angular": true,
+    "app": true,
     "ons": true,
-    "document": true
+    "alert": true,
+    "document": true,
+    "MediaStreamTrack": true
   }
 }

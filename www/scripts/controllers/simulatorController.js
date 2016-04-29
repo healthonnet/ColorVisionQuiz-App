@@ -17,7 +17,7 @@ app.controller('simulatorController', function ($scope) {
   }
 
   function resizeVideo() {
-    console.log("resize");
+    //TODO dynamic toolbar height
     $scope.video.height = window.innerHeight - 44;
     $scope.video.width = window.innerWidth;
   }
@@ -34,11 +34,19 @@ app.controller('simulatorController', function ($scope) {
     } else {
 
 
-      $scope.source = MediaStreamTrack.getSources(function(sources){
+      MediaStreamTrack.getSources(function(sources){
+        var targetSourceId;
+        if(sources[0])
+          targetSourceId = sources[0].id;
+        if(sources[1])
+          targetSourceId = sources[1].id;
+        if(sources[2])
+          targetSourceId = sources[2].id;
+
         navigator.webkitGetUserMedia({
           audio:false,
           video: {
-            optional: [{ sourceId: sources[2].id || sources[1].id || sources[0].id }]
+            optional: [{ sourceId: targetSourceId }]
           }
         }, successCallback, errorCallback);
       });
