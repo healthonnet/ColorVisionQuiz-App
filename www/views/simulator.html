@@ -4,14 +4,15 @@
     <div class="center">Simulator</div>
   </ons-toolbar>
   <ons-row style="position: relative">
-  <video autoplay></video>
-  <div class="overlay">
-    <ons-row id="filter-bar">
-      <button class="button filter">test</button>
-      <button class="button filter">test</button>
-      <button class="button filter">test</button>
-      <button class="button filter">test</button>
-    </ons-row>
-  </div>
+    <p ng-hide="video.src">Loading...</p>
+    <video ng-show="video.src" autoplay></video>
+    <div class="overlay">
+      <ons-row id="filter-bar" ng-show="video.src">
+        <button class="button filter">test</button>
+        <button class="button filter">test</button>
+        <button class="button filter">test</button>
+        <button class="button filter">test</button>
+      </ons-row>
+    </div>
   </ons-row>
 </ons-page>
