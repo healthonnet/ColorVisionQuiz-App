@@ -2,7 +2,6 @@ app.controller('simulatorController', function ($scope) {
   console.log('SimulatorController');
 
   $scope.video = document.querySelector('video');
-  console.log(document.getElementsByClassName('.navigation-bar__title'));
   window.addEventListener('resize', resizeVideo);
 
   function successCallback(stream) {
@@ -53,6 +52,22 @@ app.controller('simulatorController', function ($scope) {
       });
     }
   }
+
+  $scope.deuteranopiaEffect = function(){
+
+  };
+
+  $scope.protanopiaEffect = function(){
+
+  };
+
+  $scope.tritanopiaEffect = function(){
+
+  };
+
+  $scope.colorBlindEffect = function(){
+    $scope.video.className = "colorBlindEffect";
+  };
 
   document.addEventListener('deviceready', onDeviceReady, false);
   onDeviceReady();

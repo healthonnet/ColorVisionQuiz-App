@@ -103,3 +103,13 @@ video {
   width: 20%;
   margin: 0 2%;
 }
+
+
+/**
+* Camera filters
+*/
+
+.colorBlindEffect {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
