@@ -4,14 +4,14 @@
     <div class="center">Simulator</div>
   </ons-toolbar>
   <ons-row style="position: relative">
-    <p ng-hide="video.src">Loading...</p>
-    <video ng-show="video.src" autoplay></video>
+    <video autoplay></video>
     <div class="overlay">
-      <ons-row id="filter-bar" ng-show="video.src">
-        <button class="button filter">test</button>
-        <button class="button filter">test</button>
-        <button class="button filter">test</button>
-        <button ng-click="colorBlindEffect()" class="button filter">Color Blind</button>
+      <ons-row id="filter-bar">
+        <button ng-click="resetEffect()" class="button filter">Normal</button>
+        <button ng-click="deuteranopiaEffect()" class="button filter">deuteranopia</button>
+        <button ng-click="protanopiaEffect()" class="button filter">protanopia</button>
+        <button ng-click="tritanopiaEffect()" class="button filter">tritanopia</button>
+        <button ng-click="achromatopsiaEffect()" class="button filter">Color Blind</button>
       </ons-row>
     </div>
   </ons-row>

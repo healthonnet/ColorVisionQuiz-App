@@ -54,19 +54,23 @@ app.controller('simulatorController', function ($scope) {
   }
 
   $scope.deuteranopiaEffect = function(){
-
+    $scope.video.className = "deuteranopiaEffect";
   };
 
   $scope.protanopiaEffect = function(){
-
+    $scope.video.className = "protanopiaEffect";
   };
 
   $scope.tritanopiaEffect = function(){
-
+    $scope.video.className = "tritanopiaEffect";
   };
 
-  $scope.colorBlindEffect = function(){
-    $scope.video.className = "colorBlindEffect";
+  $scope.achromatopsiaEffect = function(){
+    $scope.video.className = "achromatopsiaEffect";
+  };
+
+  $scope.resetEffect = function(){
+    $scope.video.className = "";
   };
 
   document.addEventListener('deviceready', onDeviceReady, false);

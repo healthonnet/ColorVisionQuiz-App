@@ -25,7 +25,7 @@ app.config(['$translateProvider', function($translateProvider) {
     "DIAG_ISHIHARA_COLOR_DEUTERANOMALY": "Deuteranomaly suspected",
     "DIAG_ISHIHARA_COLOR_DEFICIENCY": "Color deficiency",
     "DIAG_ISHIHARA_SHOULD_FARNSWORTH": "Average results you should do another test like the farnstorth test",
-    "SHORT_TEST": "Short Test",
+    "SHORT_TEST": "Short Test"
   });
   $translateProvider.translations('fr', {
     "KEY": "Valeur",
@@ -46,7 +46,7 @@ app.config(['$translateProvider', function($translateProvider) {
     "DIAG_ISHIHARA_DEUTERANOMALY": "Deuteranomalie suspectée",
     "DIAG_ISHIHARA_COLOR_DEFICIENCY": "Déficience colorimétrique",
     "DIAG_ISHIHARA_SHOULD_FARNSWORTH": "DIAG_ISHIHARA_SHOULD_FARNSWORTH",
-    "SHORT_TEST": "Test court",
+    "SHORT_TEST": "Test court"
   });
 
   $translateProvider.preferredLanguage('fr');
