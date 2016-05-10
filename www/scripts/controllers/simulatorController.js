@@ -2,7 +2,6 @@ app.controller('simulatorController', function ($scope) {
   console.log('SimulatorController');
 
   $scope.video = document.querySelector('video');
-  console.log(document.getElementsByClassName('.navigation-bar__title'));
   window.addEventListener('resize', resizeVideo);
 
   function successCallback(stream) {
@@ -33,7 +32,6 @@ app.controller('simulatorController', function ($scope) {
       alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
       navigatorMain.popPage();
     } else {
-
 
       MediaStreamTrack.getSources(function(sources){
         var targetSourceId;
