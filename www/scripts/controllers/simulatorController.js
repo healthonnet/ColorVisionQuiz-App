@@ -1,5 +1,8 @@
 app.controller('simulatorController', function ($scope) {
   console.log('SimulatorController');
+  $scope.activeFilter = "NORMAL";
+  $scope.video = document.querySelector('video');
+  window.addEventListener('resize', resizeVideo);
 
   function successCallback(stream) {
     $scope.video.src = window.URL.createObjectURL(stream);
@@ -50,22 +53,27 @@ app.controller('simulatorController', function ($scope) {
 
   $scope.deuteranopiaEffect = function(){
     $scope.video.className = "deuteranopiaEffect";
+    $scope.activeFilter = "DEUTERANOPIA";
   };
 
   $scope.protanopiaEffect = function(){
     $scope.video.className = "protanopiaEffect";
+    $scope.activeFilter = "PROTANOPIA";
   };
 
   $scope.tritanopiaEffect = function(){
     $scope.video.className = "tritanopiaEffect";
+    $scope.activeFilter = "TRITANOPIA";
   };
 
   $scope.achromatopsiaEffect = function(){
     $scope.video.className = "achromatopsiaEffect";
+    $scope.activeFilter = "ACHROMATOPSIA";
   };
 
   $scope.resetEffect = function(){
     $scope.video.className = "";
+    $scope.activeFilter = "NORMAL";
   };
 
   document.addEventListener('deviceready', onDeviceReady, false);

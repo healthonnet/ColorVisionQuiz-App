@@ -140,3 +140,10 @@ video {
   -webkit-filter: url("styles/filters.svg#achromatopsia") grayscale(0) !important;
   filter: url("styles/filters.svg#achromatopsia") grayscale(0) !important;
 }
+
+#active-filter {
+  text-align: center;
+  font-size: 4em;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+}

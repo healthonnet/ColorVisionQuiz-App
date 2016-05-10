@@ -8,6 +8,11 @@ app.init = function () {
 app.config(['$translateProvider', function($translateProvider) {
   $translateProvider.translations('en', {
     "KEY": "Value",
+    "NORMAL": "normal",
+    "DEUTERANOPIA": "deuteranopia",
+    "PROTANOPIA": "protanopia",
+    "TRITANOPIA": "tritanopia",
+    "ACHROMATOPSIA": "achromatopsia",
     "BACK": "Back",
     "NEXT": "Next",
     "START": "Start",
@@ -29,6 +34,11 @@ app.config(['$translateProvider', function($translateProvider) {
   });
   $translateProvider.translations('fr', {
     "KEY": "Valeur",
+    "NORMAL": "normal",
+    "DEUTERANOPIA": "deuteranopie",
+    "PROTANOPIA": "protanopie",
+    "TRITANOPIA": "tritanopie",
+    "ACHROMATOPSIA": "achromatopsie",
     "BACK": "Retour",
     "NEXT": "Suivant",
     "RESTART": "Recommencer",

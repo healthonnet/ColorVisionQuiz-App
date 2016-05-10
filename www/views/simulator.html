@@ -6,12 +6,13 @@
   <ons-row style="position: relative">
     <video autoplay></video>
     <div class="overlay">
+      <ons-row id="active-filter">{{ activeFilter | translate }}</ons-row>
       <ons-row id="filter-bar">
-        <button ng-click="resetEffect()" class="button filter">Normal</button>
-        <button ng-click="deuteranopiaEffect()" class="button filter">deuteranopia</button>
-        <button ng-click="protanopiaEffect()" class="button filter">protanopia</button>
-        <button ng-click="tritanopiaEffect()" class="button filter">tritanopia</button>
-        <button ng-click="achromatopsiaEffect()" class="button filter">Color Blind</button>
+        <button ng-click="resetEffect()" class="button filter">{{ "NORMAL" | translate }}</button>
+        <button ng-click="deuteranopiaEffect()" class="button filter">{{ "DEUTERANOPIA" | translate }}</button>
+        <button ng-click="protanopiaEffect()" class="button filter">{{ "PROTANOPIA" | translate }}</button>
+        <button ng-click="tritanopiaEffect()" class="button filter">{{ "TRITANOPIA" | translate }}</button>
+        <button ng-click="achromatopsiaEffect()" class="button filter">{{ "ACHROMATOPSIA" | translate }}</button>
       </ons-row>
     </div>
   </ons-row>
