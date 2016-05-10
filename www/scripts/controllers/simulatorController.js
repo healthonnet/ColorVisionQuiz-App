@@ -33,7 +33,6 @@ app.controller('simulatorController', function ($scope) {
       navigatorMain.popPage();
     } else {
 
-
       MediaStreamTrack.getSources(function(sources){
         var targetSourceId;
         if(sources[0])
