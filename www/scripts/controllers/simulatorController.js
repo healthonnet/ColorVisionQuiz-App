@@ -1,9 +1,6 @@
 app.controller('simulatorController', function ($scope) {
   console.log('SimulatorController');
 
-  $scope.video = document.querySelector('video');
-  window.addEventListener('resize', resizeVideo);
-
   function successCallback(stream) {
     $scope.video.src = window.URL.createObjectURL(stream);
     resizeVideo();
@@ -25,33 +22,29 @@ app.controller('simulatorController', function ($scope) {
     console.log('navigator.getUserMedia error: ', error);
   }
 
-  function onDeviceReady() {
+  $scope.video = document.querySelector('video');
+  window.addEventListener('resize', resizeVideo);
 
-    if (typeof MediaStreamTrack === 'undefined' ||
-      typeof MediaStreamTrack.getSources === 'undefined') {
-      alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
-      navigatorMain.popPage();
-    } else {
+  if (typeof MediaStreamTrack === 'undefined' ||
+    typeof MediaStreamTrack.getSources === 'undefined') {
+    alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
+    navigatorMain.popPage();
+  } else {
+    MediaStreamTrack.getSources(function(sources){
+      var targetSourceId;
+      if(sources[0])
+        targetSourceId = sources[0].id;
+      if(sources[1])
+        targetSourceId = sources[1].id;
+      if(sources[2])
+        targetSourceId = sources[2].id;
 
-      MediaStreamTrack.getSources(function(sources){
-        var targetSourceId;
-        if(sources[0])
-          targetSourceId = sources[0].id;
-        if(sources[1])
-          targetSourceId = sources[1].id;
-        if(sources[2])
-          targetSourceId = sources[2].id;
-
-        navigator.webkitGetUserMedia({
-          audio:false,
-          video: {
-            optional: [{ sourceId: targetSourceId }]
-          }
-        }, successCallback, errorCallback);
-      });
-    }
+      navigator.webkitGetUserMedia({
+        audio:false,
+        video: {
+          optional: [{ sourceId: targetSourceId }]
+        }
+      }, successCallback, errorCallback);
+    });
   }
-
-  document.addEventListener('deviceready', onDeviceReady, false);
-  onDeviceReady();
 });
