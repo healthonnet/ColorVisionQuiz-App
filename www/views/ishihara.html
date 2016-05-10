@@ -7,17 +7,17 @@
     </div>
     <div class="center">Ishihara - Test</div>
   </ons-toolbar>
-  <ons-row style="text-align: center;">
+  <ons-row class="align-center">
     <ons-col>
       <h1>Some Information about the Test PLACEHOLDER</h1>
     </ons-col>
   </ons-row>
-  <ons-row style="text-align: center;">
+  <ons-row class="align-center">
     <ons-col>
       <img src="assets/plates/plate1.png" class="ishihara-example" alt="example">
     </ons-col>
   </ons-row>
-  <ons-row style="text-align: center;">
+  <ons-row class="align-center">
     <ons-col>
       <label class="checkbox">
         <input type="checkbox" ng-model="short">
@@ -26,14 +26,14 @@
       </label><br>
     </ons-col>
   </ons-row>
-  <ons-row style="text-align: center;">
+  <ons-row class="align-center"">
     <ons-col>
       <ons-button modifier="light" ng-click="navigatorIshihara.pushPage('views/ishihara-test.html', {closeMenu: true, short: short})">
         {{"START" | translate}}
       </ons-button>
     </ons-col>
   </ons-row>
-  <ons-row style="margin-top: 10px; text-align: center;">
+  <ons-row class="align-center" style="margin-top: 10px;">
     <ons-col>
       <ons-button modifier="light" ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
         {{"BACK_TO_MENU" | translate}}
