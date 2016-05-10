@@ -10,7 +10,6 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
     headers:{"Content-type": "application/json; charset=utf-8"}
   }).
     success(function (data) {
-      console.log(data);
       $scope.quiz = $scope.generateQuiz(data);
 
       $scope.currentQuestion = 0;
