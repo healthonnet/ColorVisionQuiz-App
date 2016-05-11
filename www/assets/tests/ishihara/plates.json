@@ -9,8 +9,72 @@
       "type" : 0
     },
     {
-      "file" : "assets/plates/plate1.png",
-      "correctAnswer" : 12,
+      "file" : "assets/plates/plate2.png",
+      "correctAnswer" : 8,
+      "greenDeficiency" : 3,
+      "redDeficiency" : 3,
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate3.png",
+      "correctAnswer" : 6,
+      "greenDeficiency" : 5,
+      "redDeficiency" : 5,
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate4.png",
+      "correctAnswer" : 29,
+      "greenDeficiency" : 70,
+      "redDeficiency" : 70,
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate5.png",
+      "correctAnswer" : 57,
+      "greenDeficiency" : 12,
+      "redDeficiency" : 12,
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate6.png",
+      "correctAnswer" : 5,
+      "greenDeficiency" : 12,
+      "redDeficiency" : 12,
+      "colorBlind" : 12,
+      "type" : 0
+    },
+    {
+      "file" : "assets/plates/plate7.png",
+      "correctAnswer" : 3,
+      "greenDeficiency" : "",
+      "redDeficiency" : "",
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate8.png",
+      "correctAnswer" : 15,
+      "greenDeficiency" : 5,
+      "redDeficiency" : 5,
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate9.png",
+      "correctAnswer" : 74,
+      "greenDeficiency" : 70,
+      "redDeficiency" : 70,
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate10.png",
+      "correctAnswer" : 2,
       "greenDeficiency" : 12,
       "redDeficiency" : 12,
       "colorBlind" : 12,
@@ -41,108 +105,52 @@
       "type" : 1
     },
     {
-      "file" : "assets/plates/plate1.png",
-      "correctAnswer" : 12,
+      "file" : "assets/plates/plate5.png",
+      "correctAnswer" : 57,
+      "greenDeficiency" : 12,
+      "redDeficiency" : 12,
+      "colorBlind" : "",
+      "type" : 1
+    },
+    {
+      "file" : "assets/plates/plate6.png",
+      "correctAnswer" : 5,
       "greenDeficiency" : 12,
       "redDeficiency" : 12,
       "colorBlind" : 12,
       "type" : 0
     },
     {
-      "file" : "assets/plates/plate2.png",
-      "correctAnswer" : 8,
-      "greenDeficiency" : 3,
-      "redDeficiency" : 3,
+      "file" : "assets/plates/plate7.png",
+      "correctAnswer" : 3,
+      "greenDeficiency" : "",
+      "redDeficiency" : "",
       "colorBlind" : "",
       "type" : 1
     },
     {
-      "file" : "assets/plates/plate3.png",
-      "correctAnswer" : 6,
+      "file" : "assets/plates/plate8.png",
+      "correctAnswer" : 15,
       "greenDeficiency" : 5,
       "redDeficiency" : 5,
       "colorBlind" : "",
       "type" : 1
     },
     {
-      "file" : "assets/plates/plate4.png",
-      "correctAnswer" : 29,
+      "file" : "assets/plates/plate9.png",
+      "correctAnswer" : 74,
       "greenDeficiency" : 70,
       "redDeficiency" : 70,
       "colorBlind" : "",
       "type" : 1
     },
     {
-      "file" : "assets/plates/plate1.png",
-      "correctAnswer" : 12,
+      "file" : "assets/plates/plate10.png",
+      "correctAnswer" : 2,
       "greenDeficiency" : 12,
       "redDeficiency" : 12,
       "colorBlind" : 12,
       "type" : 0
-    },
-    {
-      "file" : "assets/plates/plate2.png",
-      "correctAnswer" : 8,
-      "greenDeficiency" : 3,
-      "redDeficiency" : 3,
-      "colorBlind" : "",
-      "type" : 1
-    },
-    {
-      "file" : "assets/plates/plate3.png",
-      "correctAnswer" : 6,
-      "greenDeficiency" : 5,
-      "redDeficiency" : 5,
-      "colorBlind" : "",
-      "type" : 1
-    },
-    {
-      "file" : "assets/plates/plate4.png",
-      "correctAnswer" : 29,
-      "greenDeficiency" : 70,
-      "redDeficiency" : 70,
-      "colorBlind" : "",
-      "type" : 1
-    },
-    {
-      "file" : "assets/plates/plate1.png",
-      "correctAnswer" : 12,
-      "greenDeficiency" : 12,
-      "redDeficiency" : 12,
-      "colorBlind" : 12,
-      "type" : 0
-    },
-    {
-      "file" : "assets/plates/plate2.png",
-      "correctAnswer" : 8,
-      "greenDeficiency" : 3,
-      "redDeficiency" : 3,
-      "colorBlind" : "",
-      "type" : 1
-    },
-    {
-      "file" : "assets/plates/plate3.png",
-      "correctAnswer" : 6,
-      "greenDeficiency" : 5,
-      "redDeficiency" : 5,
-      "colorBlind" : "",
-      "type" : 1
-    },
-    {
-      "file" : "assets/plates/plate4.png",
-      "correctAnswer" : 29,
-      "greenDeficiency" : 70,
-      "redDeficiency" : 70,
-      "colorBlind" : "",
-      "type" : 1
-    },
-    {
-      "file" : "assets/plates/plate4.png",
-      "correctAnswer" : 29,
-      "greenDeficiency" : 70,
-      "redDeficiency" : 70,
-      "colorBlind" : "",
-      "type" : 1
     },
     {
       "file" : "assets/plates/plate1.png",
