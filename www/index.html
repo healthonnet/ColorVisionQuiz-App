@@ -18,6 +18,7 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/appController.js"></script>
   <script src="scripts/controllers/homeController.js"></script>
+  <script src="scripts/controllers/aboutController.js"></script>
   <script src="scripts/controllers/simulatorController.js"></script>
   <script src="scripts/controllers/encyclopedia/encyclopediaController.js"></script>
   <script src="scripts/controllers/farnsworth/farnsworthController.js"></script>
@@ -85,6 +86,11 @@
                      ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
         <ons-icon icon="fa-twitter"></ons-icon>
         Vision Simulator
+      </ons-list-item>
+      <ons-list-item class="menu-item"
+                     ng-click="navigatorMain.pushPage('views/about.html', {closeMenu: true})">
+          <ons-icon icon="fa-info"></ons-icon>
+          About
       </ons-list-item>
     </ons-list>
 
