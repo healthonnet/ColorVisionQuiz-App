@@ -1,0 +1,23 @@
+<ons-page class="center" ng-controller="EncyclopediaController">
+  <ons-toolbar fixed-style="true">
+    <div class="left">
+      <ons-toolbar-button ng-click="menu.toggle()">
+        <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+    <div class="center">Encyclopedia</div>
+  </ons-toolbar>
+  <ons-row class="align-center">
+    <ons-col>
+      <h1>Some Information about colorblindness</h1>
+    </ons-col>
+  </ons-row>
+  <ons-row class="align-center" style="margin-top: 10px;">
+    <ons-col>
+      <ons-button modifier="light" ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
+        Back to Menu
+      </ons-button>
+    </ons-col>
+  </ons-row>
+
+</ons-page>
