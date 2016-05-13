@@ -76,6 +76,4 @@ app.controller('simulatorController', function ($scope) {
     $scope.activeFilter = "NORMAL";
   };
 
-  document.addEventListener('deviceready', onDeviceReady, false);
-  onDeviceReady();
 });

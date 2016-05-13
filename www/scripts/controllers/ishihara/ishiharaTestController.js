@@ -51,7 +51,7 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
     $scope.answers.push($scope.currentAnswer);
     if($scope.currentQuestion + 1 == $scope.totalQuestions){
       //Push to result page with datas.
-      navigatorIshihara.pushPage('views/ishihara-results.html', { quiz: $scope.quiz, answers: $scope.answers })
+      navigatorIshihara.pushPage('views/ishihara/ishihara-results.html', { quiz: $scope.quiz, answers: $scope.answers })
     } else {
       $scope.currentQuestion++;
       $scope.currentAnswer = "";
