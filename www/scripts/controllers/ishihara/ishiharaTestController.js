@@ -56,6 +56,8 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
     } else {
       $scope.currentQuestion++;
       $scope.currentAnswer = "";
+
+      window.document.getElementById('answerInput').focus();
     }
   };
 });
