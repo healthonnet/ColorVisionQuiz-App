@@ -25,7 +25,7 @@
         </div>
       </ons-col>
     </ons-row>
-    <ons-row class="align-center">
+    <ons-row class="align-center" ons-if-platform="android">
         <ons-col>
             <div id='simulator' class="home-btn"  modifier="light"
                  ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
