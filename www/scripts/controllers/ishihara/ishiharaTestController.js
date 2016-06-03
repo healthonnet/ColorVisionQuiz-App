@@ -1,5 +1,6 @@
 angular.module('app').controller('IshiharaTestController', function ($scope, $http) {
   console.log('IshiharaTestController');
+  console.log(ons.orientation.isPortrait());
   $scope.loading = true;
   $scope.currentAnswer = "";
   $scope.quiz = [];
@@ -45,7 +46,14 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
     return quiz;
   };
 
-
+  $scope.numpad = {
+    clear: function(){
+      $scope.currentAnswer = "";
+    },
+    addNumber: function(num){
+      $scope.currentAnswer += num.toString();
+    }
+  };
 
   $scope.nextQuestion = function (){
     $scope.answers.push($scope.currentAnswer);

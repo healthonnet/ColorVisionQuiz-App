@@ -180,3 +180,76 @@ video {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: white;
 }
+
+/**
+* Ishihara
+*/
+
+#plateContainer {
+  height: 100%;
+  width: 45%;
+  float: left;
+}
+
+#plateContainer.portrait {
+  height: 50%;
+  width: 100%;
+  float: none;
+}
+
+#anwserContainer{
+  width: 55%;
+  height: 100%;
+  float: right;
+}
+#anwserContainer.portrait {
+  height: 50%;
+  width: 100%;
+  float: none;
+}
+
+#answerInput {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#ishiharaTest .container {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+#ishiharaTest .container .block {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: calc(25% - 10px);
+  height: 30%;
+  margin: 5px;
+  padding: 3%;
+  background: red;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  float: right;
+}
+#ishiharaTest .container .block.v2 {
+  padding: 3%;
+  padding-top: calc(10% - 10px);
+  padding-bottom: calc(10% - 10px);
+  margin-bottom: 0;
+}
+#ishiharaTest .container .block.hidden {
+  visibility: hidden;
+}
+
+#ishiharaTest footer {
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+}
