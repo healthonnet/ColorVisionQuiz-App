@@ -7,17 +7,30 @@
       </div>
       <div class="center">Color Blind</div>
   </ons-toolbar>
-    <ons-row class="align-center" style="margin-top: 50px;">
+    <ons-row class="align-center">
+            <div id='encyclopedia' class="home-btn" modifier="light"
+                 ng-click="menu.setMainPage('navigators/navigatorEncyclopedia.html', {closeMenu: true})">
+                Learn About Colorblindness
+            </div>
+    </ons-row>
+    <ons-row class="align-center">
       <ons-col>
-        <ons-button modifier="light" ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
+        <div id='ishihara' class="home-btn" modifier="light"
+             ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
           Ishihara test
-        </ons-button>
-        <ons-button modifier="light" ng-click="menu.setMainPage('navigators/navigatorFarnsworth.html', {closeMenu: true})">
+        </div>
+        <div id='farnsworth' class="home-btn" modifier="light"
+             ng-click="menu.setMainPage('navigators/navigatorFarnsworth.html', {closeMenu: true})">
           Farnsworth test
-        </ons-button>
-        <ons-button modifier="light" ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
-          Vision Simulator
-        </ons-button>
+        </div>
       </ons-col>
+    </ons-row>
+    <ons-row class="align-center" ons-if-platform="android">
+        <ons-col>
+            <div id='simulator' class="home-btn"  modifier="light"
+                 ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
+                Vision Simulator
+            </div>
+        </ons-col>
     </ons-row>
 </ons-page>

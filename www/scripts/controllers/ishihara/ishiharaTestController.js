@@ -1,5 +1,6 @@
 angular.module('app').controller('IshiharaTestController', function ($scope, $http) {
   console.log('IshiharaTestController');
+  console.log(ons.orientation.isPortrait());
   $scope.loading = true;
   $scope.currentAnswer = "";
   $scope.quiz = [];
@@ -45,16 +46,26 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
     return quiz;
   };
 
-
+  $scope.numpad = {
+    clear: function(){
+      $scope.currentAnswer = "";
+    },
+    addNumber: function(num){
+      $scope.currentAnswer += num.toString();
+    }
+  };
 
   $scope.nextQuestion = function (){
     $scope.answers.push($scope.currentAnswer);
     if($scope.currentQuestion + 1 == $scope.totalQuestions){
       //Push to result page with datas.
-      navigatorIshihara.pushPage('views/ishihara-results.html', { quiz: $scope.quiz, answers: $scope.answers })
+      navigatorIshihara.pushPage('views/ishihara/ishihara-results.html',
+        { quiz: $scope.quiz, answers: $scope.answers })
     } else {
       $scope.currentQuestion++;
       $scope.currentAnswer = "";
+
+      window.document.getElementById('answerInput').focus();
     }
   };
 });

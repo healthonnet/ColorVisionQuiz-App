@@ -107,6 +107,149 @@ video {
 }
 
 #filter-bar .button.filter {
-  width: 20%;
+  width: 15%;
   margin: 0 2%;
+}
+
+/**
+ * Home
+ */
+.home-btn {
+  border: 1px solid black;
+  background-size: cover;
+  width: 100%;
+  padding: 6%;
+  font-size: 2.5em;
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+.home-half {
+  width: 50%;
+}
+
+#encyclopedia {
+  background-image: url('../assets/images/cb2.jpg');
+}
+#simulator {
+  background-image: url('../assets/images/sim.png');
+}
+#ishihara {
+  background-image: url('../assets/images/ishi.jpg');
+}
+#farnsworth {
+  background-image: url('../assets/images/ishi.jpg');
+}
+
+/**
+* Camera filters
+*/
+
+.colorBlindEffect {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.protanopiaEffect {
+  -webkit-filter: url("styles/filters.svg#protanopia") grayscale(0) !important;
+  filter: url("styles/filters.svg#protanopia") grayscale(0) !important;
+}
+
+.deuteranopiaEffect {
+  -webkit-filter: url("styles/filters.svg#deuteranopia") grayscale(0) !important;
+  filter: url("styles/filters.svg#deuteranopia") grayscale(0) !important;
+}
+
+.tritanopiaEffect {
+  -webkit-filter: url("styles/filters.svg#tritanopia") grayscale(0) !important;
+  filter: url("styles/filters.svg#tritanopia") grayscale(0) !important;
+}
+
+.achromatopsiaEffect {
+  -webkit-filter: url("styles/filters.svg#achromatopsia") grayscale(0) !important;
+  filter: url("styles/filters.svg#achromatopsia") grayscale(0) !important;
+}
+
+#active-filter {
+  text-align: center;
+  font-size: 4em;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+}
+
+/**
+* Ishihara
+*/
+
+#plateContainer {
+  height: 100%;
+  width: 45%;
+  float: left;
+}
+
+#plateContainer.portrait {
+  height: 50%;
+  width: 100%;
+  float: none;
+}
+
+#anwserContainer{
+  width: 55%;
+  height: 100%;
+  float: right;
+}
+#anwserContainer.portrait {
+  height: 50%;
+  width: 100%;
+  float: none;
+}
+
+#answerInput {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#ishiharaTest .container {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+#ishiharaTest .container .block {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: calc(25% - 10px);
+  height: 30%;
+  margin: 5px;
+  padding: 3%;
+  background: red;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  float: right;
+}
+#ishiharaTest .container .block.v2 {
+  padding: 3%;
+  padding-top: calc(10% - 10px);
+  padding-bottom: calc(10% - 10px);
+  margin-bottom: 0;
+}
+#ishiharaTest .container .block.hidden {
+  visibility: hidden;
+}
+
+#ishiharaTest footer {
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
 }

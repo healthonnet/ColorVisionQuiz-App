@@ -1,0 +1,45 @@
+<ons-page class="center" ng-controller="IshiharaTestController" id="ishiharaTest">
+  <ons-toolbar fixed-style="true">
+    <div class="left"><ons-back-button>{{"BACK" | translate}}</ons-back-button></div>
+    <div class="center">Ishihara - Test</div>
+  </ons-toolbar>
+    <ons-row id="plateContainer" ng-class="{ 'portrait': ons.orientation.isPortrait() }">
+      <ons-col width="10%"></ons-col>
+      <ons-col width="80%">
+        <img src="{{quiz[currentQuestion].file}}" width="100%" alt="plate" class="plate">
+      </ons-col>
+      <ons-col width="10%"></ons-col>
+    </ons-row>
+    <ons-row id="anwserContainer" ng-class="{ 'portrait': ons.orientation.isPortrait() }">
+      <ons-col width="30%" align="center">
+        <label>{{"YOUR_ANSWER" | translate}}</label>
+      </ons-col>
+      <ons-col width="70%" align="center">
+        <input type="text" disabled ng-model="currentAnswer" id="answerInput">
+      </ons-col>
+      <div class="container">
+          <div class="block" ng-click="numpad.clear();">C</div>
+          <div class="block" ng-click="numpad.addNumber(9);">9</div>
+          <div class="block" ng-click="numpad.addNumber(8);">8</div>
+          <div class="block" ng-click="numpad.addNumber(7);">7</div>
+          <div class="block v2"  ng-click="nextQuestion();">OK</div>
+          <div class="block" ng-click="numpad.addNumber(6);">6</div>
+          <div class="block" ng-click="numpad.addNumber(5);">5</div>
+          <div class="block" ng-click="numpad.addNumber(4);">4</div>
+          <div class="block" ng-click="numpad.addNumber(3);">3</div>
+          <div class="block" ng-click="numpad.addNumber(2);">2</div>
+          <div class="block" ng-click="numpad.addNumber(1);">1</div>
+          <div class="block hidden"></div>
+          <div class="block hidden"></div>
+          <div class="block" ng-click="numpad.addNumber(0);">0</div>
+          <div class="block hidden"></div>
+      </div>
+    </ons-row>
+  <footer>
+    <ons-row>
+      <ons-col align="right">
+        {{currentQuestion + 1}}/{{totalQuestions}}
+      </ons-col>
+    </ons-row>
+  </footer>
+</ons-page>

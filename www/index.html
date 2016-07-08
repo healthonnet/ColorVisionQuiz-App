@@ -18,12 +18,14 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/appController.js"></script>
   <script src="scripts/controllers/homeController.js"></script>
+  <script src="scripts/controllers/aboutController.js"></script>
   <script src="scripts/controllers/simulatorController.js"></script>
-  <script src="scripts/controllers/farnsworthController.js"></script>
-  <script src="scripts/controllers/farnsworthTestController.js"></script>
-  <script src="scripts/controllers/ishiharaController.js"></script>
-  <script src="scripts/controllers/ishiharaTestController.js"></script>
-  <script src="scripts/controllers/ishiharaResultsController.js"></script>
+  <script src="scripts/controllers/encyclopedia/encyclopediaController.js"></script>
+  <script src="scripts/controllers/farnsworth/farnsworthController.js"></script>
+  <script src="scripts/controllers/farnsworth/farnsworthTestController.js"></script>
+  <script src="scripts/controllers/ishihara/ishiharaController.js"></script>
+  <script src="scripts/controllers/ishihara/ishiharaTestController.js"></script>
+  <script src="scripts/controllers/ishihara/ishiharaResultsController.js"></script>
 
   <!-- CSS dependencies -->
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css"/>
@@ -62,24 +64,33 @@
     <ons-toolbar modifier="transparent"></ons-toolbar>
 
     <ons-list class="menu-list">
-      <ons-list-item class="menu-item" ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
+      <ons-list-item class="menu-item"
+                     ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
         <ons-icon icon="fa-home"></ons-icon>
         Home
       </ons-list-item>
 
-      <ons-list-item class="menu-item" ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
+      <ons-list-item class="menu-item"
+                     ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
         <ons-icon icon="fa-bookmark"></ons-icon>
         Ishihara Test
       </ons-list-item>
 
-      <ons-list-item class="menu-item" ng-click="menu.setMainPage('navigators/navigatorFarnsworth.html', {closeMenu: true})">
+      <ons-list-item class="menu-item"
+                     ng-click="menu.setMainPage('navigators/navigatorFarnsworth.html', {closeMenu: true})">
         <ons-icon icon="fa-bookmark"></ons-icon>
         100 Hue Test
       </ons-list-item>
 
-      <ons-list-item class="menu-item" ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
+      <ons-list-item class="menu-item" ons-if-platform="android"
+                     ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
         <ons-icon icon="fa-twitter"></ons-icon>
         Vision Simulator
+      </ons-list-item>
+      <ons-list-item class="menu-item"
+                     ng-click="navigatorMain.pushPage('views/about.html', {closeMenu: true})">
+          <ons-icon icon="fa-info"></ons-icon>
+          About
       </ons-list-item>
     </ons-list>
 
