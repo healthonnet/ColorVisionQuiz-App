@@ -1,16 +1,16 @@
 <ons-page class="center" ng-controller="IshiharaTestController" id="ishiharaTest">
   <ons-toolbar fixed-style="true">
     <div class="left"><ons-back-button>{{"BACK" | translate}}</ons-back-button></div>
-    <div class="center">Ishihara - Test</div>
+    <div class="center">Ishihara - {{orientation}}</div>
   </ons-toolbar>
-    <ons-row id="plateContainer" ng-class="{ 'portrait': ons.orientation.isPortrait() }">
+    <ons-row id="plateContainer" ng-class="{true: 'portrait', false: ''}[orientation]">
       <ons-col width="10%"></ons-col>
       <ons-col width="80%">
         <img src="{{quiz[currentQuestion].file}}" width="100%" alt="plate" class="plate">
       </ons-col>
       <ons-col width="10%"></ons-col>
     </ons-row>
-    <ons-row id="anwserContainer" ng-class="{ 'portrait': ons.orientation.isPortrait() }">
+    <ons-row id="anwserContainer" ng-class="{true: 'portrait', false: ''}[orientation]">
       <ons-col width="30%" align="center">
         <label>{{"YOUR_ANSWER" | translate}}</label>
       </ons-col>

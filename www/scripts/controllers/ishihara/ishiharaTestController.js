@@ -7,18 +7,29 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
   $scope.answers = [];
   $scope.short = navigatorIshihara.getCurrentPage().options.short;
 
+  $scope.getOrientation = function(){
+    console.log(ons.orientation.isPortrait());
+    $scope.orientation = ons.orientation.isPortrait();
+    return $scope.orientation;
+  };
+  $scope.getOrientation();
+
+  window.onresize = function(){
+    console.log(ons.orientation.isPortrait());
+    $scope.orientation = ons.orientation.isPortrait();
+    $scope.$apply();
+  };
+
   $http.get('./assets/tests/ishihara/plates.json',{
     headers:{"Content-type": "application/json; charset=utf-8"}
-  }).
-    success(function (data) {
+  })
+    .success(function (data) {
       $scope.quiz = $scope.generateQuiz(data);
-
       $scope.currentQuestion = 0;
       $scope.totalQuestions = $scope.quiz.length;
-
       $scope.loading = false;
     })
-    .error(function (data, status, headers, config) {
+    .error(function (data) {
       console.error(data);
       $scope.loading = false;
     });

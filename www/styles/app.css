@@ -1,7 +1,6 @@
 /*
  * Generated basic css
  */
-
 .page--menu-page__background {
   background-color: #333;
 }
@@ -63,7 +62,6 @@
 /**
  * Helpers
  */
-
 .align-center {
   text-align: center;
 }
@@ -71,8 +69,6 @@
 /*
  * Custom styles
  */
-
-
 footer {
   padding: 2% 5%;
 }
@@ -148,7 +144,6 @@ video {
 /**
 * Camera filters
 */
-
 .colorBlindEffect {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -229,7 +224,6 @@ video {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   width: calc(25% - 10px);
-  height: 30%;
   margin: 5px;
   padding: 3%;
   background: red;
@@ -238,12 +232,14 @@ video {
   font-weight: bold;
   float: right;
 }
+
 #ishiharaTest .container .block.v2 {
   padding: 3%;
   padding-top: calc(10% - 10px);
   padding-bottom: calc(10% - 10px);
   margin-bottom: 0;
 }
+
 #ishiharaTest .container .block.hidden {
   visibility: hidden;
 }
