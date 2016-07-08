@@ -11,18 +11,18 @@ angular.module('app').controller('IshiharaResultsController', function ($scope) 
     };
 
     $scope.questions.forEach(function(question, index){
-      if(question.correctAnswer === $scope.answers[index]){
+      if(question.correctAnswer == $scope.answers[index]){
         diagnostic.score++;
       }
-      else if(question.redDeficiency === $scope.answers[index] || question.greenDeficiency === $scope.answers[index]){
-        if(question.redDeficiency === $scope.answers[index]){
+      else if(question.redDeficiency == $scope.answers[index] || question.greenDeficiency == $scope.answers[index]){
+        if(question.redDeficiency == $scope.answers[index]){
           diagnostic.rdef++;
         }
-        if(question.greenDeficiency === $scope.answers[index]){
+        if(question.greenDeficiency == $scope.answers[index]){
           diagnostic.gdef++;
         }
       }
-      else if (question.colorBlind === $scope.answers[index]){
+      else if (question.colorBlind == $scope.answers[index]){
         diagnostic.cb++;
       }
     });
