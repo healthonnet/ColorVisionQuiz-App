@@ -1,6 +1,7 @@
 app.controller('simulatorController', function ($scope) {
   console.log('SimulatorController');
-  $scope.activeFilter = "NORMAL";
+  $scope.selectedFilter = "NORMAL";
+
   $scope.video = document.querySelector('video');
   window.addEventListener('resize', resizeVideo);
 
@@ -51,29 +52,7 @@ app.controller('simulatorController', function ($scope) {
     });
   }
 
-  $scope.deuteranopiaEffect = function(){
-    $scope.video.className = "deuteranopiaEffect";
-    $scope.activeFilter = "DEUTERANOPIA";
+  $scope.updateFilter = function() {
+    $scope.video.className = $scope.selectedFilter.toLowerCase() + 'Effect';
   };
-
-  $scope.protanopiaEffect = function(){
-    $scope.video.className = "protanopiaEffect";
-    $scope.activeFilter = "PROTANOPIA";
-  };
-
-  $scope.tritanopiaEffect = function(){
-    $scope.video.className = "tritanopiaEffect";
-    $scope.activeFilter = "TRITANOPIA";
-  };
-
-  $scope.achromatopsiaEffect = function(){
-    $scope.video.className = "achromatopsiaEffect";
-    $scope.activeFilter = "ACHROMATOPSIA";
-  };
-
-  $scope.resetEffect = function(){
-    $scope.video.className = "";
-    $scope.activeFilter = "NORMAL";
-  };
-
 });

@@ -6,13 +6,15 @@
   <ons-row style="position: relative">
     <video autoplay></video>
     <div class="overlay">
-      <ons-row id="active-filter">{{ activeFilter | translate }}</ons-row>
+      <ons-row id="active-filter">{{ selectedFilter | translate }}</ons-row>
       <ons-row id="filter-bar">
-        <button ng-click="resetEffect()" class="button filter">{{ "NORMAL" | translate }}</button>
-        <button ng-click="deuteranopiaEffect()" class="button filter">{{ "DEUTERANOPIA" | translate }}</button>
-        <button ng-click="protanopiaEffect()" class="button filter">{{ "PROTANOPIA" | translate }}</button>
-        <button ng-click="tritanopiaEffect()" class="button filter">{{ "TRITANOPIA" | translate }}</button>
-        <button ng-click="achromatopsiaEffect()" class="button filter">{{ "ACHROMATOPSIA" | translate }}</button>
+        <select class="button--large--cta filter" ng-model="selectedFilter" ng-change="updateFilter()">
+          <option value="NORMAL">{{ "NORMAL" | translate }}</option>
+          <option value="DEUTERANOPIA">{{ "DEUTERANOPIA" | translate }}</option>
+          <option value="PROTANOPIA">{{ "PROTANOPIA" | translate }}</option>
+          <option value="TRITANOPIA">{{ "TRITANOPIA" | translate }}</option>
+          <option value="ACHROMATOPSIA">{{ "ACHROMATOPSIA" | translate }}</option>
+        </select>
       </ons-row>
     </div>
   </ons-row>
