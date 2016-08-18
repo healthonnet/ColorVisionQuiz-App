@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "ngCordova": "^0.1.24-alpha",
-    "angular-translate": "^2.11.0"
+    "angular-translate": "^2.11.0",
+    "angular-themer": "^0.3.1"
   }
 }

@@ -1,11 +1,11 @@
-var app = angular.module('app', ['onsen', 'pascalprecht.translate', 'ngCordova']);
+var app = angular.module('app', ['onsen', 'pascalprecht.translate', 'ngCordova', 'angular-themer']);
 app.init = function () {
   angular.bootstrap(document, ['app']);
 };
 
 // Configuration
 
-app.config(['$translateProvider', function($translateProvider) {
+app.config(['$translateProvider', 'themerProvider', function($translateProvider, themerProvider) {
   $translateProvider.translations('en', {
     "KEY": "Value",
     "NORMAL": "normal",
@@ -59,5 +59,13 @@ app.config(['$translateProvider', function($translateProvider) {
     "SHORT_TEST": "Test court"
   });
 
+  var styles = [
+    { key: 'CHAMBRAY', label: 'Chambray Theme', href: 'styles/themes/chambray/onsen-css-components.min.css'},
+    { key: 'DARK', label: 'Dark Theme', href: 'styles/themes/dark/onsen-css-components.min.css'}
+  ];
+  themerProvider.setStyles(styles);
+  themerProvider.setSelected(styles[0].key);
+
   $translateProvider.preferredLanguage('fr');
 }]);
+

@@ -1,29 +1,30 @@
 <ons-page class="center" ng-controller="HomeController">
-  <ons-toolbar fixed-style="true">
-      <div class="left">
-        <ons-toolbar-button ng-click="menu.toggle()">
-          <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">Color Blind</div>
-  </ons-toolbar>
+    <ons-toolbar fixed-style="true">
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="center">Color Blind</div>
+    </ons-toolbar>
     <ons-row class="align-center">
-            <div id='encyclopedia' class="home-btn" modifier="light"
-                 ng-click="menu.setMainPage('navigators/navigatorEncyclopedia.html', {closeMenu: true})">
-                Learn About Colorblindness
-            </div>
+        <div themer-switcher></div>
+        <button class="button button--large home-btn" id='encyclopedia' modifier="light"
+             ng-click="menu.setMainPage('navigators/navigatorEncyclopedia.html', {closeMenu: true})">
+            Encyclopedia
+        </button>
     </ons-row>
     <ons-row class="align-center">
-      <ons-col>
-        <div id='ishihara' class="home-btn" modifier="light"
-             ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
-          Ishihara test
-        </div>
-        <div id='farnsworth' class="home-btn" modifier="light"
+        <button class="button button--large home-btn" id='ishihara' modifier="light"
+               ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
+            Ishihara test
+        </button>
+    </ons-row>
+    <ons-row class="align-center">
+        <button class="button button--large home-btn" id='farnsworth' modifier="light"
              ng-click="menu.setMainPage('navigators/navigatorFarnsworth.html', {closeMenu: true})">
-          Farnsworth test
-        </div>
-      </ons-col>
+            Farnsworth test
+        </button>
     </ons-row>
     <ons-row class="align-center" ons-if-platform="android">
         <ons-col>
