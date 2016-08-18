@@ -3,6 +3,13 @@ ColorBlind App
 
 Simple Cordova app about color blindness
 
+Install
+-------
+
+```
+$ npm install
+```
+
 Build
 -----
 
