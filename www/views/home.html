@@ -27,7 +27,7 @@
         </ons-button>
     </ons-row>
     -->
-    <ons-row class="align-center" >
+    <ons-row class="align-center" ons-if-platform="android">
         <ons-button modifier="material" class="button button--large home-btn" id="simulator"
                     ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
             Vision Simulator
