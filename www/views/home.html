@@ -8,7 +8,6 @@
         <div class="center">Color Blind</div>
     </ons-toolbar>
     <ons-row class="align-center">
-        <div themer-switcher></div>
         <button class="button button--large home-btn" id='encyclopedia' modifier="light"
              ng-click="menu.setMainPage('navigators/navigatorEncyclopedia.html', {closeMenu: true})">
             Encyclopedia
@@ -33,5 +32,9 @@
                 Vision Simulator
             </div>
         </ons-col>
+    </ons-row>
+    <ons-row class="align-center">
+        <div class="home-btn">Change color theme</div>
+        <button class="button--large--cta home-btn"  id="theme-switcher" themer-switcher></button>
     </ons-row>
 </ons-page>
