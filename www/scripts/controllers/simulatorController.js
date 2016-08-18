@@ -9,9 +9,13 @@ app.controller('simulatorController', function ($scope) {
     $scope.video.src = window.URL.createObjectURL(stream);
     resizeVideo();
 
-    navigatorMain.on('postpop', function(event){
+    navigatorMain.on('prepush', function(event){
       $scope.video.pause();
       $scope.video.src = '';
+      stream.getVideoTracks()[0].stop();
+    });
+    navigatorMain.on('postpop', function(event){
+      $scope.video.remove();
       stream.getVideoTracks()[0].stop();
     });
   }
@@ -25,9 +29,6 @@ app.controller('simulatorController', function ($scope) {
   function errorCallback(error) {
     console.log('navigator.getUserMedia error: ', error);
   }
-
-  $scope.video = document.querySelector('video');
-  window.addEventListener('resize', resizeVideo);
 
   if (typeof MediaStreamTrack === 'undefined' ||
     typeof MediaStreamTrack.getSources === 'undefined') {

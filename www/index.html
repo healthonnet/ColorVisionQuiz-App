@@ -82,12 +82,13 @@
       </ons-list-item>
 
       <ons-list-item class="menu-item" ons-if-platform="android"
-                     ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
+                     ng-click="redirectSimulator()">
         <ons-icon icon="fa-twitter"></ons-icon>
         Vision Simulator
       </ons-list-item>
+
       <ons-list-item class="menu-item"
-                     ng-click="navigatorMain.pushPage('views/about.html', {closeMenu: true})">
+                     ng-click="redirectAbout()">
           <ons-icon icon="fa-info"></ons-icon>
           About
       </ons-list-item>
