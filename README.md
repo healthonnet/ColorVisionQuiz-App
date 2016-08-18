@@ -35,6 +35,11 @@ $ cordova platform add <platform> --save
 $ cordova plugin add <plugin> --save
 ```
 
+TODO's
+------
+
+ - [ ] Save theme choice in localstorage (use ngCordova)
+ - [ ] Better numpad
 
 Developers
 -----------
