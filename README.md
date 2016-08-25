@@ -38,7 +38,7 @@ $ cordova plugin add <plugin> --save
 TODO's
 ------
 
- - [ ] Save theme choice in localstorage (use ngCordova)
+ - [X] Save theme choice in localstorage [DONE] waiting for PR validation (clean bower file)
  - [ ] Better numpad
 
 Developers
