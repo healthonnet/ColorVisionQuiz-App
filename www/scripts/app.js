@@ -66,7 +66,10 @@ app.config(['$translateProvider', 'themerProvider', function($translateProvider,
     { key: 'DARK', label: 'Dark Theme', href: 'styles/themes/dark/onsen-css-components.min.css'}
   ];
   themerProvider.setStyles(styles);
-  themerProvider.setSelected(styles[0].key);
+  themerProvider.storeTheme(true);
+
+  var selected = themerProvider.getStoredTheme() || styles[0].key;
+  themerProvider.setSelected(selected);
 
   $translateProvider.preferredLanguage('fr');
 }]);
