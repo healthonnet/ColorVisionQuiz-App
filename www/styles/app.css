@@ -169,6 +169,10 @@ select.filter{
   margin-right: auto;
 }
 
+video.stereo {
+  width: 50%;
+}
+
 /**
 * Ishihara
 */

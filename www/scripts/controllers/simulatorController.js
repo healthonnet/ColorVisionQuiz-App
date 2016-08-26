@@ -3,12 +3,24 @@ app.controller('simulatorController', function($scope) {
 
   function resizeVideo() {
     // TODO dynamic toolbar height
+    $scope.videoRight.height = window.innerHeight - 44;
     $scope.video.height = window.innerHeight - 44;
+    $scope.videoRight.width = window.innerWidth;
     $scope.video.width = window.innerWidth;
   }
 
+  function switchOnAR() {
+    $scope.videoRight.src = $scope.video.src;
+    $scope.videoRight.play();
+  }
+
+  function switchOffAR() {
+    $scope.videoRight.pause();
+  }
+
   $scope.selectedFilter = 'NORMAL';
-  $scope.video = document.querySelector('video');
+  $scope.video = document.querySelector('video#left');
+  $scope.videoRight = document.querySelector('video#right');
   window.addEventListener('resize', resizeVideo);
 
 
@@ -18,11 +30,14 @@ app.controller('simulatorController', function($scope) {
 
     navigatorMain.on('prepush', function() {
       $scope.video.pause();
+      $scope.videoRight.pause();
       $scope.video.src = '';
+      $scope.videoRight.src = '';
       stream.getVideoTracks()[0].stop();
     });
     navigatorMain.on('postpop', function() {
       $scope.video.remove();
+      $scope.videoRight.remove();
       stream.getVideoTracks()[0].stop();
     });
   }
@@ -69,6 +84,20 @@ app.controller('simulatorController', function($scope) {
   }
 
   $scope.updateFilter = function() {
-    $scope.video.className = $scope.selectedFilter.toLowerCase() + 'Effect';
+    var prefix = '';
+    if ($scope.armode) {
+      prefix += 'stereo ';
+    }
+    $scope.video.className = prefix + $scope.selectedFilter.toLowerCase() + 'Effect';
+    $scope.videoRight.className = prefix + $scope.selectedFilter.toLowerCase() + 'Effect';
+  };
+
+  $scope.toggleAR = function() {
+    $scope.armode = !$scope.armode;
+    if ($scope.armode) {
+      switchOnAR();
+    } else {
+      switchOffAR();
+    }
   };
 });
