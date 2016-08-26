@@ -7,7 +7,7 @@
     </ons-toolbar>
     <ons-row id="plateContainer" ng-class="{true: 'portrait', false: ''}[orientation]">
         <ons-col width="10%"></ons-col>
-        <ons-col width="80%">
+        <ons-col width="80%" style="overflow: hidden">
             <img src="{{quiz[currentQuestion].file}}" width="100%" alt="plate" class="plate">
         </ons-col>
         <ons-col width="10%"></ons-col>
@@ -15,7 +15,7 @@
     <ons-row id="anwserContainer" ng-class="{true: 'portrait', false: ''}[orientation]">
         <ons-row>
             <ons-col width="30%" align="center">
-                <label>{{"YOUR_ANSWER" | translate}} : </label>
+                <label>{{"YOUR_ANSWER" | translate}}&nbsp;: </label>
             </ons-col>
             <ons-col width="70%" align="center">
                 <input type="text" disabled ng-model="currentAnswer" id="answerInput">

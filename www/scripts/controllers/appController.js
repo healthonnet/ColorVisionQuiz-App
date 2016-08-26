@@ -18,7 +18,6 @@ angular.module('app').controller('AppController', function($scope) {
     });
   };
 
-
   $scope.redirectAbout = function() {
     $scope.menu.setMainPage('navigators/navigatorMain.html', {
       callback: pushAbout,
