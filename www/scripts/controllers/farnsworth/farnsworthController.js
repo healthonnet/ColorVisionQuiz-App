@@ -1,3 +1,3 @@
-angular.module('app').controller('FarnsworthController', function () {
+angular.module('app').controller('FarnsworthController', function() {
   console.log('FarnsworthController');
 });

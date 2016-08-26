@@ -1,8 +1,8 @@
-app.controller('simulatorController', function ($scope) {
+app.controller('simulatorController', function($scope) {
   console.log('SimulatorController');
 
   function resizeVideo() {
-    //TODO dynamic toolbar height
+    // TODO dynamic toolbar height
     $scope.video.height = window.innerHeight - 44;
     $scope.video.width = window.innerWidth;
   }
@@ -16,12 +16,12 @@ app.controller('simulatorController', function ($scope) {
     $scope.video.src = window.URL.createObjectURL(stream);
     resizeVideo();
 
-    navigatorMain.on('prepush', function(){
+    navigatorMain.on('prepush', function() {
       $scope.video.pause();
       $scope.video.src = '';
       stream.getVideoTracks()[0].stop();
     });
-    navigatorMain.on('postpop', function(){
+    navigatorMain.on('postpop', function() {
       $scope.video.remove();
       stream.getVideoTracks()[0].stop();
     });
@@ -36,10 +36,10 @@ app.controller('simulatorController', function ($scope) {
     alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
     navigatorMain.popPage();
   } else {
-    MediaStreamTrack.getSources(function(sources){
+    MediaStreamTrack.getSources(function(sources) {
       var targetSourceId;
-      sources.forEach(function(source){
-        if(source.facing === 'environment') {
+      sources.forEach(function(source) {
+        if (source.facing === 'environment') {
           targetSourceId = source.id;
         }
       });
@@ -58,10 +58,12 @@ app.controller('simulatorController', function ($scope) {
       console.log(targetSourceId);
 
       navigator.webkitGetUserMedia({
-        audio:false,
+        audio: false,
         video: {
-          optional: [{ sourceId: targetSourceId }]
-        }
+          optional: [{
+            sourceId: targetSourceId,
+          },],
+        },
       }, successCallback, errorCallback);
     });
   }

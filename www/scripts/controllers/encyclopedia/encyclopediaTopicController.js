@@ -1,4 +1,5 @@
-angular.module('app').controller('EncyclopediaTopicController', function ($scope) {
+angular.module('app')
+  .controller('EncyclopediaTopicController', function($scope) {
   console.log('EncyclopediaTopicController');
 
   if (!navigatorEncyclopedia.getCurrentPage().options.topic) {

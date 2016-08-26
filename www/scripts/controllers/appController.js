@@ -1,6 +1,6 @@
-angular.module('app').controller('AppController', function ($scope) {
-  document.addEventListener('deviceready', function () {
-    //$cordovaPlugin available
+angular.module('app').controller('AppController', function($scope) {
+  document.addEventListener('deviceready', function() {
+    // CordovaPlugin available
     console.log('deviceready');
   }, false);
 
@@ -14,14 +14,14 @@ angular.module('app').controller('AppController', function ($scope) {
 
   $scope.redirectSimulator = function() {
     $scope.menu.setMainPage('navigators/navigatorMain.html', {
-      callback: pushSimulator
+      callback: pushSimulator,
     });
   };
 
 
   $scope.redirectAbout = function() {
     $scope.menu.setMainPage('navigators/navigatorMain.html', {
-      callback: pushAbout
+      callback: pushAbout,
     });
   };
 
