@@ -2,7 +2,7 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
   console.log('IshiharaTestController');
   console.log(ons.orientation.isPortrait());
   $scope.loading = true;
-  $scope.currentAnswer = "";
+  $scope.currentAnswer = '';
   $scope.quiz = [];
   $scope.answers = [];
   $scope.short = navigatorIshihara.getCurrentPage().options.short;
@@ -21,7 +21,7 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
   };
 
   $http.get('./assets/tests/ishihara/plates.json',{
-    headers:{"Content-type": "application/json; charset=utf-8"}
+    headers:{'Content-type': 'application/json; charset=utf-8'}
   })
     .success(function (data) {
       $scope.quiz = $scope.generateQuiz(data);
@@ -59,7 +59,7 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
 
   $scope.numpad = {
     clear: function(){
-      $scope.currentAnswer = "";
+      $scope.currentAnswer = '';
     },
     addNumber: function(num){
       $scope.currentAnswer += num.toString();
@@ -68,13 +68,13 @@ angular.module('app').controller('IshiharaTestController', function ($scope, $ht
 
   $scope.nextQuestion = function (){
     $scope.answers.push($scope.currentAnswer);
-    if($scope.currentQuestion + 1 == $scope.totalQuestions){
+    if($scope.currentQuestion + 1 === $scope.totalQuestions){
       //Push to result page with datas.
       navigatorIshihara.pushPage('views/ishihara/ishihara-results.html',
-        { quiz: $scope.quiz, answers: $scope.answers })
+        { quiz: $scope.quiz, answers: $scope.answers });
     } else {
       $scope.currentQuestion++;
-      $scope.currentAnswer = "";
+      $scope.currentAnswer = '';
 
       window.document.getElementById('answerInput').focus();
     }

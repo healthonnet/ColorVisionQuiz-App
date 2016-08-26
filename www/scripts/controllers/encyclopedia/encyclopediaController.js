@@ -1,4 +1,4 @@
-angular.module('app').controller('EncyclopediaController', function ($rootScope, $scope) {
+angular.module('app').controller('EncyclopediaController', function ($rootScope) {
   console.log('EncyclopediaController');
 
   //TODO get article list on init. Dist json ?
@@ -17,5 +17,5 @@ angular.module('app').controller('EncyclopediaController', function ($rootScope,
       date: '2016-08-26',
       author: 'me'
     }
-  ]
+  ];
 });

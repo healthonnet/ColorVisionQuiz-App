@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       tasks: ['jshint']
     },
     jshint: {
-      all: ['www/js/**/*.js'],
+      all: ['www/scripts/**/*.js'],
       options: {
         jshintrc: true,
         reporter: require('jshint-stylish')

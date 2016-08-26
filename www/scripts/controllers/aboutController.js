@@ -1,3 +1,3 @@
-angular.module('app').controller('AboutController', function ($scope) {
+angular.module('app').controller('AboutController', function () {
   console.log('AboutController');
 });

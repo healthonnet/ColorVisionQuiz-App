@@ -23,6 +23,9 @@
     "ons": true,
     "alert": true,
     "document": true,
-    "MediaStreamTrack": true
+    "MediaStreamTrack": true,
+    "navigatorMain": true,
+    "navigatorIshihara": true,
+    "navigatorEncyclopedia": true
   }
 }
