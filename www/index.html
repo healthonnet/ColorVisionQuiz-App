@@ -6,7 +6,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="mobile-web-app-capable" content="yes"/>
 
-  <!-- JS dependencies (order matters!) -->
+  <!-- JS dependencies -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-themer/dist/themer.min.js"></script>
   <script src="lib/angular-translate/angular-translate.min.js"></script>
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="styles/app.css"/>
 
   <!-- --------------- App init --------------- -->
-  <title>Onsen UI Sliding Menu</title>
+  <title>ColorBlind</title>
 
 </head>
 
@@ -64,7 +64,13 @@
       <ons-list-item class="menu-item"
                      ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
         <ons-icon icon="fa-home"></ons-icon>
-        Home
+        {{"HOME" | translate}}
+      </ons-list-item>
+
+      <ons-list-item class="menu-item"
+                     ng-click="menu.setMainPage('navigators/navigatorEncyclopedia.html', {closeMenu: true})">
+          <ons-icon icon="fa-bookmark"></ons-icon>
+          {{"ENCYCLOPEDIA" | translate}}
       </ons-list-item>
 
       <ons-list-item class="menu-item"
@@ -84,13 +90,13 @@
       <ons-list-item class="menu-item" ons-if-platform="android"
                      ng-click="redirectSimulator()">
         <ons-icon icon="fa-twitter"></ons-icon>
-        Vision Simulator
+        {{"VISION_SIMULATOR" | translate}}
       </ons-list-item>
 
       <ons-list-item class="menu-item"
                      ng-click="redirectAbout()">
           <ons-icon icon="fa-info"></ons-icon>
-          About
+        {{"ABOUT" | translate}}
       </ons-list-item>
     </ons-list>
 

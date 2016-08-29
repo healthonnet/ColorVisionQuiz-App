@@ -10,7 +10,7 @@
     <ons-row class="align-center">
         <ons-button modifier="material" class="button button--large home-btn" id='encyclopedia'
              ng-click="menu.setMainPage('navigators/navigatorEncyclopedia.html', {closeMenu: true})">
-            Encyclopedia
+          {{"ENCYCLOPEDIA" | translate}}
         </ons-button>
     </ons-row>
     <ons-row class="align-center">
@@ -30,7 +30,7 @@
     <ons-row class="align-center" ons-if-platform="android">
         <ons-button modifier="material" class="button button--large home-btn" id="simulator"
                     ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
-            Vision Simulator
+          {{"VISION_SIMULATOR" | translate}}
         </ons-button>
     </ons-row>
     <ons-row class="align-center">

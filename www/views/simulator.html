@@ -1,7 +1,7 @@
 <ons-page class="center" ng-controller="simulatorController">
   <ons-toolbar fixed-style="true">
     <div class="left"><ons-back-button>{{"BACK" | translate}}</ons-back-button></div>
-    <div class="center">Simulator</div>
+    <div class="center">{{"VISION_SIMULATOR" | translate}}</div>
   </ons-toolbar>
   <ons-row style="position: relative">
     <video autoplay id="left" ng-class="{stereo: armode}"></video>
@@ -20,10 +20,10 @@
         </ons-col>
         <ons-col>
             <ons-button ng-hide="armode" modifier="material" ng-click="toggleAR();" class="button">
-                AR mode
+              {{"AR_MODE" | translate}}
             </ons-button>
             <ons-button ng-show="armode" modifier="material" ng-click="toggleAR();" class="button">
-                Classic mode
+              {{"CLASSIC_MODE" | translate}}
             </ons-button>
         </ons-col>
       </ons-row>
