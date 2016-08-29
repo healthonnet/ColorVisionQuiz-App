@@ -107,6 +107,14 @@ video {
   margin: 0 2%;
 }
 
+.menu-list {
+  text-transform: capitalize;
+}
+
+.navigation-bar{
+  text-transform: capitalize;
+}
+
 /**
  * Home
  */
