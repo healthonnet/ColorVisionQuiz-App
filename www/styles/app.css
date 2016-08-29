@@ -120,6 +120,14 @@ video {
 }
 
 /**
+ * Encyclopedia
+ */
+
+.detail-picture {
+  width: 50%;
+}
+
+/**
  * Home
  */
 .align-center:first-of-type {

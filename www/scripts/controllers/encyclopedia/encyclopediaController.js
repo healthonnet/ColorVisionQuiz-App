@@ -8,6 +8,7 @@ angular.module('app')
       id: 1,
       label: 'a topic',
       description: 'description topic',
+      image: 'assets/articles/color.jpg',
       date: '2016-08-25',
       author: 'me',
     },
