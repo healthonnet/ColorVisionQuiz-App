@@ -88,8 +88,10 @@ app.controller('simulatorController', function($scope) {
     if ($scope.armode) {
       prefix += 'stereo ';
     }
-    $scope.video.className = prefix + $scope.selectedFilter.toLowerCase() + 'Effect';
-    $scope.videoRight.className = prefix + $scope.selectedFilter.toLowerCase() + 'Effect';
+    $scope.video.className = prefix +
+    $scope.selectedFilter.toLowerCase() + 'Effect';
+    $scope.videoRight.className = prefix +
+    $scope.selectedFilter.toLowerCase() + 'Effect';
   };
 
   $scope.toggleAR = function() {
