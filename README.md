@@ -1,6 +1,8 @@
 ColorBlind App
 ===============
 
+[![Build Status](https://travis-ci.org/healthonnet/ColorBlind-App.svg?branch=master](https://travis-ci.org/healthonnet/ColorBlind-App)
+
 Simple Cordova app about color blindness
 
 Install
