@@ -12,10 +12,12 @@ app.controller('simulatorController', function($scope) {
   function switchOnAR() {
     $scope.videoRight.src = $scope.video.src;
     $scope.videoRight.play();
+    $scope.videoRight.className = $scope.video.className;
   }
 
   function switchOffAR() {
     $scope.videoRight.pause();
+    $scope.videoRight.className = '';
   }
 
   $scope.selectedFilter = 'NORMAL';
@@ -87,13 +89,12 @@ app.controller('simulatorController', function($scope) {
 
   $scope.updateFilter = function() {
     var prefix = '';
+    var filter = $scope.selectedFilter.toLowerCase() + 'Effect';
     if ($scope.armode) {
       prefix += 'stereo ';
+      $scope.videoRight.className = prefix + filter;
     }
-    $scope.video.className = prefix +
-    $scope.selectedFilter.toLowerCase() + 'Effect';
-    $scope.videoRight.className = prefix +
-    $scope.selectedFilter.toLowerCase() + 'Effect';
+    $scope.video.className = prefix + filter;
   };
 
   $scope.toggleAR = function() {
