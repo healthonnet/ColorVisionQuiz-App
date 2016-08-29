@@ -251,3 +251,7 @@ video.stereo {
   bottom: 1%;
   right: 1%;
 }
+
+#ishiharaResults h1, #ishiharaResults p {
+  margin-left: 10px;
+}
