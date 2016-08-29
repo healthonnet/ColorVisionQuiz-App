@@ -25,7 +25,6 @@ app.controller('simulatorController', function($scope) {
   $scope.videoRight = document.querySelector('video#right');
   window.addEventListener('resize', resizeVideo);
 
-
   function successCallback(stream) {
     $scope.video.src = window.URL.createObjectURL(stream);
     resizeVideo();

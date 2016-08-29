@@ -1,19 +1,20 @@
 <ons-page class="center" ng-controller="EncyclopediaController">
-  <ons-toolbar fixed-style="true">
-      <div class="left"><ons-back-button>{{"BACK" | translate}}</ons-back-button></div>
-    <div class="center">{{"ABOUT" | translate}}</div>
-  </ons-toolbar>
-  <ons-row class="align-center">
-    <ons-col>
-      <h1>Some Information about About</h1>
-    </ons-col>
-  </ons-row>
-  <ons-row class="align-center row-spacing">
-    <ons-col>
-        <ons-button modifier="outline" ng-click="navigatorMain.popPage('navigators/navigatorMain.html')">
-          {{"BACK_TO_MENU" | translate}}
-        </ons-button>
-    </ons-col>
-  </ons-row>
-
+    <ons-toolbar fixed-style="true">
+        <div class="left">
+            <ons-back-button>{{"BACK" | translate}}</ons-back-button>
+        </div>
+        <div class="center">{{"ABOUT" | translate}}</div>
+    </ons-toolbar>
+    <ons-row class="align-center">
+        <ons-col>
+            <h1>Some Information about About</h1>
+        </ons-col>
+    </ons-row>
+    <ons-row class="align-center row-spacing">
+        <ons-col>
+            <ons-button modifier="outline" ng-click="navigatorMain.popPage('navigators/navigatorMain.html')">
+              {{"BACK_TO_MENU" | translate}}
+            </ons-button>
+        </ons-col>
+    </ons-row>
 </ons-page>

@@ -2,40 +2,40 @@
 <!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
 <html lang="en" ng-app="app" ng-csp>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="mobile-web-app-capable" content="yes"/>
+    <meta charset="utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
 
-  <!-- JS dependencies -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular-themer/dist/themer.min.js"></script>
-  <script src="lib/angular-translate/angular-translate.min.js"></script>
-  <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
-  <script src="lib/onsen/js/onsenui.js"></script>
+    <!-- JS dependencies -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-themer/dist/themer.min.js"></script>
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
 
-  <!-- App Scripts -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/appController.js"></script>
-  <script src="scripts/controllers/homeController.js"></script>
-  <script src="scripts/controllers/aboutController.js"></script>
-  <script src="scripts/controllers/simulatorController.js"></script>
-  <script src="scripts/controllers/encyclopedia/encyclopediaController.js"></script>
-  <script src="scripts/controllers/encyclopedia/encyclopediaTopicController.js"></script>
-  <script src="scripts/controllers/farnsworth/farnsworthController.js"></script>
-  <script src="scripts/controllers/farnsworth/farnsworthTestController.js"></script>
-  <script src="scripts/controllers/ishihara/ishiharaController.js"></script>
-  <script src="scripts/controllers/ishihara/ishiharaTestController.js"></script>
-  <script src="scripts/controllers/ishihara/ishiharaResultsController.js"></script>
+    <!-- App Scripts -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/appController.js"></script>
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/controllers/simulatorController.js"></script>
+    <script src="scripts/controllers/encyclopedia/encyclopediaController.js"></script>
+    <script src="scripts/controllers/encyclopedia/encyclopediaTopicController.js"></script>
+    <script src="scripts/controllers/farnsworth/farnsworthController.js"></script>
+    <script src="scripts/controllers/farnsworth/farnsworthTestController.js"></script>
+    <script src="scripts/controllers/ishihara/ishiharaController.js"></script>
+    <script src="scripts/controllers/ishihara/ishiharaTestController.js"></script>
+    <script src="scripts/controllers/ishihara/ishiharaResultsController.js"></script>
 
-  <!-- CSS dependencies -->
-  <link rel="stylesheet" href="lib/onsen/css/onsenui.css"/>
-  <!-- CSP support mode (required for Windows Universal apps) -->
-  <link rel="stylesheet" href="lib/angular/angular-csp.css"/>
-  <link themer-link/>
-  <link rel="stylesheet" href="styles/app.css"/>
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css"/>
+    <!-- CSP support mode (required for Windows Universal apps) -->
+    <link rel="stylesheet" href="lib/angular/angular-csp.css"/>
+    <link themer-link/>
+    <link rel="stylesheet" href="styles/app.css"/>
 
-  <!-- --------------- App init --------------- -->
-  <title>ColorBlind</title>
+    <!-- --------------- App init --------------- -->
+    <title>ColorBlind</title>
 
 </head>
 
@@ -45,62 +45,62 @@
 <!-- -->
 
 <ons-screen>
-  <ons-sliding-menu
-    menu-page="menu.html"
-    direction="left"
-    max-slide-distance="260px"
-    main-page="navigators/navigatorMain.html"
-    swipe-target-width="300px"
-    var="menu" swipable="true">
-  </ons-sliding-menu>
+    <ons-sliding-menu
+            menu-page="menu.html"
+            direction="left"
+            max-slide-distance="260px"
+            main-page="navigators/navigatorMain.html"
+            swipe-target-width="300px"
+            var="menu" swipable="true">
+    </ons-sliding-menu>
 </ons-screen>
 
 
 <ons-template id="menu.html">
-  <ons-page modifier="menu-page">
-    <ons-toolbar modifier="transparent"></ons-toolbar>
+    <ons-page modifier="menu-page">
+        <ons-toolbar modifier="transparent"></ons-toolbar>
 
-    <ons-list class="menu-list">
-      <ons-list-item class="menu-item"
-                     ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
-        <ons-icon icon="fa-home"></ons-icon>
-        {{"HOME" | translate}}
-      </ons-list-item>
+        <ons-list class="menu-list">
+            <ons-list-item class="menu-item"
+                           ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
+                <ons-icon icon="fa-home"></ons-icon>
+              {{"HOME" | translate}}
+            </ons-list-item>
 
-      <ons-list-item class="menu-item"
-                     ng-click="menu.setMainPage('navigators/navigatorEncyclopedia.html', {closeMenu: true})">
-          <ons-icon icon="fa-bookmark"></ons-icon>
-          {{"ENCYCLOPEDIA" | translate}}
-      </ons-list-item>
+            <ons-list-item class="menu-item"
+                           ng-click="menu.setMainPage('navigators/navigatorEncyclopedia.html', {closeMenu: true})">
+                <ons-icon icon="fa-bookmark"></ons-icon>
+              {{"ENCYCLOPEDIA" | translate}}
+            </ons-list-item>
 
-      <ons-list-item class="menu-item"
-                     ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
-        <ons-icon icon="fa-bookmark"></ons-icon>
-        Ishihara Test
-      </ons-list-item>
+            <ons-list-item class="menu-item"
+                           ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
+                <ons-icon icon="fa-bookmark"></ons-icon>
+                Ishihara Test
+            </ons-list-item>
 
-      <!-- Hide
-      <ons-list-item class="menu-item"
-                     ng-click="menu.setMainPage('navigators/navigatorFarnsworth.html', {closeMenu: true})">
-        <ons-icon icon="fa-bookmark"></ons-icon>
-        100 Hue Test
-      </ons-list-item>
-      -->
+            <!-- Hide
+            <ons-list-item class="menu-item"
+                           ng-click="menu.setMainPage('navigators/navigatorFarnsworth.html', {closeMenu: true})">
+              <ons-icon icon="fa-bookmark"></ons-icon>
+              100 Hue Test
+            </ons-list-item>
+            -->
 
-      <ons-list-item class="menu-item" ons-if-platform="android"
-                     ng-click="redirectSimulator()">
-        <ons-icon icon="fa-twitter"></ons-icon>
-        {{"VISION_SIMULATOR" | translate}}
-      </ons-list-item>
+            <ons-list-item class="menu-item" ons-if-platform="android"
+                           ng-click="redirectSimulator()">
+                <ons-icon icon="fa-twitter"></ons-icon>
+              {{"VISION_SIMULATOR" | translate}}
+            </ons-list-item>
 
-      <ons-list-item class="menu-item"
-                     ng-click="redirectAbout()">
-          <ons-icon icon="fa-info"></ons-icon>
-        {{"ABOUT" | translate}}
-      </ons-list-item>
-    </ons-list>
+            <ons-list-item class="menu-item"
+                           ng-click="redirectAbout()">
+                <ons-icon icon="fa-info"></ons-icon>
+              {{"ABOUT" | translate}}
+            </ons-list-item>
+        </ons-list>
 
-  </ons-page>
+    </ons-page>
 </ons-template>
 </body>
 </html>

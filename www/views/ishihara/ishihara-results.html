@@ -1,58 +1,63 @@
 <ons-page class="center" id="ishiharaResults" ng-controller="IshiharaResultsController">
-  <ons-toolbar fixed-style="true">
-      <div class="left">
-          <ons-toolbar-button ng-click="menu.toggle()">
-              <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-          </ons-toolbar-button>
-      </div>
-    <div class="center">Ishihara - {{"RESULTS" | translate}}</div>
-  </ons-toolbar>
-  <ons-row>
-    <h1>{{"RESULTS" | translate}}</h1>
-  </ons-row>
-  <ons-row>
-    <p>{{"YOUR_DIAGNOSTIC" | translate}} : <ons-button modifier="quiet" class="forgot-password">{{diagnostic.title | translate}}</ons-button></p>
-  </ons-row>
-  <ons-scroller style="max-height: 350px">
-    <ons-list>
+    <ons-toolbar fixed-style="true">
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="center">Ishihara - {{"RESULTS" | translate}}</div>
+    </ons-toolbar>
+    <ons-row>
+        <h1>{{"RESULTS" | translate}}</h1>
+    </ons-row>
+    <ons-row>
+        <p>{{"YOUR_DIAGNOSTIC" | translate}} :
+            <ons-button modifier="quiet" class="forgot-password">{{diagnostic.title | translate}}</ons-button>
+        </p>
+    </ons-row>
+    <ons-scroller style="max-height: 350px">
+        <ons-list>
 
-      <ons-list-item ng-repeat="question in questions" class="list-item-container list__item ons-list-item-inner">
-        <ons-row class="row ons-row-inner">
-          <ons-col width="95px" class="col ons-col-inner" style="-webkit-box-flex: 0; flex: 0 0 95px; max-width: 95px;">
-            <img src="{{question.file}}" class="thumbnail">
-          </ons-col>
-          <ons-col class="col ons-col-inner">
-            <ons-row>{{"EXPECTED" | translate}} : {{question.correctAnswer}}</ons-row>
-            <ons-row>{{"YOUR_ANSWER" | translate}} : {{answers[$index]}}</ons-row>
-          </ons-col>
-          <ons-col width="40px" class="col ons-col-inner" style="-webkit-box-flex: 0; flex: 0 0 40px; max-width: 40px;"></ons-col>
-        </ons-row>
-      </ons-list-item>
+            <ons-list-item ng-repeat="question in questions" class="list-item-container list__item ons-list-item-inner">
+                <ons-row class="row ons-row-inner">
+                    <ons-col width="95px" class="col ons-col-inner"
+                             style="-webkit-box-flex: 0; flex: 0 0 95px; max-width: 95px;">
+                        <img src="{{question.file}}" class="thumbnail">
+                    </ons-col>
+                    <ons-col class="col ons-col-inner">
+                        <ons-row>{{"EXPECTED" | translate}} : {{question.correctAnswer}}</ons-row>
+                        <ons-row>{{"YOUR_ANSWER" | translate}} : {{answers[$index]}}</ons-row>
+                    </ons-col>
+                    <ons-col width="40px" class="col ons-col-inner"
+                             style="-webkit-box-flex: 0; flex: 0 0 40px; max-width: 40px;"></ons-col>
+                </ons-row>
+            </ons-list-item>
 
-    </ons-list>
-  </ons-scroller>
-  <ons-row class="align-center">
-    <ons-col>
-      <ons-button ng-click="navigatorIshihara.pushPage('views/ishihara/ishihara-test.html',
+        </ons-list>
+    </ons-scroller>
+    <ons-row class="align-center">
+        <ons-col>
+            <ons-button ng-click="navigatorIshihara.pushPage('views/ishihara/ishihara-test.html',
         {closeMenu: true, short: short})">
         <span class="label ons-button-inner"><span class="ng-scope">
           {{"RESTART" | translate}}
         </span></span>
-      </ons-button>
-      <ons-button ng-show="short && diagnostic.score != 6"
-                  ng-click="navigatorIshihara.pushPage('views/ishihara/ishihara-test.html',
+            </ons-button>
+            <ons-button ng-show="short && diagnostic.score != 6"
+                        ng-click="navigatorIshihara.pushPage('views/ishihara/ishihara-test.html',
                   {closeMenu: true, short: false})">
         <span class="label ons-button-inner"><span class="ng-scope">
           {{"COMPLETE_TEST" | translate}}
         </span></span>
-      </ons-button>
-    </ons-col>
-  </ons-row>
-  <ons-row class="align-center row-spacing">
-      <ons-col>
-          <ons-button modifier="outline" ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
-            {{"BACK_TO_MENU" | translate}}
-          </ons-button>
-      </ons-col>
-  </ons-row>
+            </ons-button>
+        </ons-col>
+    </ons-row>
+    <ons-row class="align-center row-spacing">
+        <ons-col>
+            <ons-button modifier="outline"
+                        ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
+              {{"BACK_TO_MENU" | translate}}
+            </ons-button>
+        </ons-col>
+    </ons-row>
 </ons-page>

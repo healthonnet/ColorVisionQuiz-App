@@ -1,32 +1,34 @@
 <ons-page class="center" ng-controller="simulatorController">
-  <ons-toolbar fixed-style="true">
-    <div class="left"><ons-back-button>{{"BACK" | translate}}</ons-back-button></div>
-    <div class="center">{{"VISION_SIMULATOR" | translate}}</div>
-  </ons-toolbar>
-  <ons-row style="position: relative">
-    <video id="left"  ng-class="{stereo: armode}" autoplay></video>
-    <video id="right" ng-class="{stereo: armode}" ng-show="armode"></video>
-    <div class="overlay">
-      <ons-row id="active-filter">{{ selectedFilter | translate }}</ons-row>
-      <ons-row id="filter-bar">
-        <ons-col>
-        <select class="button--large--cta filter" ng-model="selectedFilter" ng-change="updateFilter()">
-          <option value="NORMAL">{{ "NORMAL" | translate }}</option>
-          <option value="DEUTERANOPIA">{{ "DEUTERANOPIA" | translate }}</option>
-          <option value="PROTANOPIA">{{ "PROTANOPIA" | translate }}</option>
-          <option value="TRITANOPIA">{{ "TRITANOPIA" | translate }}</option>
-          <option value="ACHROMATOPSIA">{{ "ACHROMATOPSIA" | translate }}</option>
-        </select>
-        </ons-col>
-        <ons-col>
-            <ons-button ng-hide="armode" modifier="material" ng-click="toggleAR();" class="button">
-              {{"AR_MODE" | translate}}
-            </ons-button>
-            <ons-button ng-show="armode" modifier="material" ng-click="toggleAR();" class="button">
-              {{"CLASSIC_MODE" | translate}}
-            </ons-button>
-        </ons-col>
-      </ons-row>
-    </div>
-  </ons-row>
+    <ons-toolbar fixed-style="true">
+        <div class="left">
+            <ons-back-button>{{"BACK" | translate}}</ons-back-button>
+        </div>
+        <div class="center">{{"VISION_SIMULATOR" | translate}}</div>
+    </ons-toolbar>
+    <ons-row style="position: relative">
+        <video id="left" ng-class="{stereo: armode}" autoplay></video>
+        <video id="right" ng-class="{stereo: armode}" ng-show="armode"></video>
+        <div class="overlay">
+            <ons-row id="active-filter">{{ selectedFilter | translate }}</ons-row>
+            <ons-row id="filter-bar">
+                <ons-col>
+                    <select class="button--large--cta filter" ng-model="selectedFilter" ng-change="updateFilter()">
+                        <option value="NORMAL">{{ "NORMAL" | translate }}</option>
+                        <option value="DEUTERANOPIA">{{ "DEUTERANOPIA" | translate }}</option>
+                        <option value="PROTANOPIA">{{ "PROTANOPIA" | translate }}</option>
+                        <option value="TRITANOPIA">{{ "TRITANOPIA" | translate }}</option>
+                        <option value="ACHROMATOPSIA">{{ "ACHROMATOPSIA" | translate }}</option>
+                    </select>
+                </ons-col>
+                <ons-col>
+                    <ons-button ng-hide="armode" modifier="material" ng-click="toggleAR();" class="button">
+                      {{"AR_MODE" | translate}}
+                    </ons-button>
+                    <ons-button ng-show="armode" modifier="material" ng-click="toggleAR();" class="button">
+                      {{"CLASSIC_MODE" | translate}}
+                    </ons-button>
+                </ons-col>
+            </ons-row>
+        </div>
+    </ons-row>
 </ons-page>
