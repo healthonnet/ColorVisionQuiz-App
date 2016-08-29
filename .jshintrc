@@ -21,6 +21,7 @@
     "angular": true,
     "app": true,
     "ons": true,
+    "menu": true,
     "alert": true,
     "document": true,
     "MediaStreamTrack": true,

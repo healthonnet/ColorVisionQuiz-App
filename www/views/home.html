@@ -15,7 +15,7 @@
     </ons-row>
     <ons-row class="align-center">
         <ons-button modifier="material" class="button button--large home-btn" id='ishihara'
-               ng-click="menu.setMainPage('navigators/navigatorIshihara.html', {closeMenu: true})">
+               ng-click="menu.setMainPage('navigators/navigatorIshihara.html')">
             Ishihara test
         </ons-button>
     </ons-row>
@@ -29,7 +29,7 @@
     -->
     <ons-row class="align-center" ons-if-platform="android">
         <ons-button modifier="material" class="button button--large home-btn" id="simulator"
-                    ng-click="navigatorMain.pushPage('views/simulator.html', {closeMenu: true})">
+                    ng-click="navigatorMain.pushPage('views/simulator.html')">
           {{"VISION_SIMULATOR" | translate}}
         </ons-button>
     </ons-row>

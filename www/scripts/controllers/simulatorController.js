@@ -48,6 +48,8 @@ app.controller('simulatorController', function($scope) {
 
   if (typeof MediaStreamTrack === 'undefined' ||
     typeof MediaStreamTrack.getSources === 'undefined') {
+
+    // TODO onsenUI clean modal
     alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
     navigatorMain.popPage();
   } else {

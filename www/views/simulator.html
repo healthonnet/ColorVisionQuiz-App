@@ -4,8 +4,8 @@
     <div class="center">{{"VISION_SIMULATOR" | translate}}</div>
   </ons-toolbar>
   <ons-row style="position: relative">
-    <video autoplay id="left" ng-class="{stereo: armode}"></video>
-    <video id="right" ng-show="armode" ng-class="{stereo: armode}"></video>
+    <video id="left"  ng-class="{stereo: armode}" autoplay></video>
+    <video id="right" ng-class="{stereo: armode}" ng-show="armode"></video>
     <div class="overlay">
       <ons-row id="active-filter">{{ selectedFilter | translate }}</ons-row>
       <ons-row id="filter-bar">

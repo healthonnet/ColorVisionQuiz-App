@@ -5,11 +5,13 @@ angular.module('app').controller('AppController', function($scope) {
   }, false);
 
   function pushSimulator() {
-    navigatorMain.pushPage('views/simulator.html', {closeMenu: true});
+    navigatorMain.pushPage('views/simulator.html');
+    menu.closeMenu();
   }
 
   function pushAbout() {
-    navigatorMain.pushPage('views/about.html', {closeMenu: true});
+    navigatorMain.pushPage('views/about.html');
+    menu.closeMenu();
   }
 
   $scope.redirectSimulator = function() {
