@@ -54,8 +54,9 @@ module.exports = function(grunt) {
     },
   });
 
-  grunt.registerTask('default', ['connect', 'lint', 'watch']);
+  grunt.registerTask('default', ['connect', 'test', 'watch']);
   grunt.registerTask('lint',    ['jshint','jscs', 'csslint']);
-  grunt.registerTask('build',   ['lint','cordova:package']);
+  grunt.registerTask('test',    ['lint']);
+  grunt.registerTask('build',   ['test','cordova:package']);
 
 };
