@@ -20,27 +20,38 @@ app.controller('simulatorController', function($scope) {
     $scope.videoRight.className = '';
   }
 
+  function stopVideo() {
+    $scope.video.pause();
+    $scope.videoRight.pause();
+    $scope.video.src = '';
+    $scope.videoRight.src = '';
+
+    if ($scope.stream) {
+      $scope.stream.getVideoTracks()[0].stop();
+    }
+  }
+
   $scope.selectedFilter = 'NORMAL';
   $scope.video = document.querySelector('video#left');
   $scope.videoRight = document.querySelector('video#right');
   window.addEventListener('resize', resizeVideo);
 
+  ons.orientation.on('change', function(){
+    if (ons.orientation.isPortrait()) {
+      $scope.armode = false;
+      switchOffAR();
+      $scope.$apply();
+    }
+  });
+
   function successCallback(stream) {
+    $scope.stream = stream;
     $scope.video.src = window.URL.createObjectURL(stream);
     resizeVideo();
 
-    navigatorMain.on('prepush', function() {
-      $scope.video.pause();
-      $scope.videoRight.pause();
-      $scope.video.src = '';
-      $scope.videoRight.src = '';
-      stream.getVideoTracks()[0].stop();
-    });
-    navigatorMain.on('postpop', function() {
-      $scope.video.remove();
-      $scope.videoRight.remove();
-      stream.getVideoTracks()[0].stop();
-    });
+    navigatorMain.on('prepush', stopVideo);
+    navigatorMain.on('postpop',stopVideo);
+
   }
 
   function errorCallback(error) {
