@@ -130,7 +130,7 @@ video {
 /**
  * Home
  */
-.align-center:first-of-type {
+#home .align-center:first-of-type {
   margin-top: 20px;
 }
 
@@ -214,6 +214,7 @@ video.stereo {
   height: 100%;
   float: right;
 }
+
 #anwserContainer.portrait {
   height: 50%;
   width: 100%;
