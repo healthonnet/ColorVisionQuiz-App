@@ -20,6 +20,14 @@
     </ons-row>
 
     <ons-row class="align-center" ons-if-orientation="portrait" ng-include="'explanations.html'"></ons-row>
+    <ons-row class="align-center row-spacing" ons-if-orientation="portrait">
+        <ons-col>
+            <ons-button modifier="outline"
+                        ng-click="menu.setMainPage('navigators/navigatorMain.html')">
+              {{"BACK_TO_MENU" | translate}}
+            </ons-button>
+        </ons-col>
+    </ons-row>
 
     <ons-template id="explanations.html">
         <ons-row>
