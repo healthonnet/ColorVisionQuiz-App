@@ -37,15 +37,13 @@
     </ons-scroller>
     <ons-row class="align-center">
         <ons-col>
-            <ons-button ng-click="navigatorIshihara.pushPage('views/ishihara/ishihara-test.html',
-        {closeMenu: true, short: short})">
+            <ons-button ng-click="navigatorIshihara.pushPage('views/ishihara/ishihara-test.html',{short: short})">
         <span class="label ons-button-inner"><span class="ng-scope">
           {{"RESTART" | translate}}
         </span></span>
             </ons-button>
             <ons-button ng-show="short && diagnostic.score != 6"
-                        ng-click="navigatorIshihara.pushPage('views/ishihara/ishihara-test.html',
-                  {closeMenu: true, short: false})">
+                        ng-click="navigatorIshihara.pushPage('views/ishihara/ishihara-test.html',{short: false})">
         <span class="label ons-button-inner"><span class="ng-scope">
           {{"COMPLETE_TEST" | translate}}
         </span></span>
@@ -55,7 +53,7 @@
     <ons-row class="align-center row-spacing">
         <ons-col>
             <ons-button modifier="outline"
-                        ng-click="menu.setMainPage('navigators/navigatorMain.html', {closeMenu: true})">
+                        ng-click="menu.setMainPage('navigators/navigatorMain.html')">
               {{"BACK_TO_MENU" | translate}}
             </ons-button>
         </ons-col>
