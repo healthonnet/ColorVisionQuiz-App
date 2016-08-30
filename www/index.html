@@ -18,6 +18,7 @@
     <script src="scripts/controllers/appController.js"></script>
     <script src="scripts/controllers/homeController.js"></script>
     <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/controllers/optionsController.js"></script>
     <script src="scripts/controllers/simulatorController.js"></script>
     <script src="scripts/controllers/encyclopedia/encyclopediaController.js"></script>
     <script src="scripts/controllers/encyclopedia/encyclopediaTopicController.js"></script>
@@ -91,6 +92,12 @@
                            ng-click="redirectSimulator()">
                 <ons-icon icon="fa-twitter"></ons-icon>
               {{"VISION_SIMULATOR" | translate}}
+            </ons-list-item>
+
+            <ons-list-item class="menu-item"
+                           ng-click="redirectOptions()">
+                <ons-icon icon="fa-gear"></ons-icon>
+              {{"OPTIONS" | translate}}
             </ons-list-item>
 
             <ons-list-item class="menu-item"

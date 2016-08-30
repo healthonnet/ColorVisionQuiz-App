@@ -14,9 +14,20 @@ angular.module('app').controller('AppController', function($scope) {
     menu.closeMenu();
   }
 
+  function pushOptions() {
+    navigatorMain.pushPage('views/options.html');
+    menu.closeMenu();
+  }
+
   $scope.redirectSimulator = function() {
     $scope.menu.setMainPage('navigators/navigatorMain.html', {
       callback: pushSimulator,
+    });
+  };
+
+  $scope.redirectOptions = function() {
+    $scope.menu.setMainPage('navigators/navigatorMain.html', {
+      callback: pushOptions,
     });
   };
 

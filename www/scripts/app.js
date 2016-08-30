@@ -11,6 +11,7 @@ app.config(['$translateProvider', 'themerProvider',
   $translateProvider.translations('en', {
     NORMAL: 'normal',
     ABOUT: 'about',
+    OPTIONS: 'options',
     HOME: 'home',
     VISION_SIMULATOR: 'vision simulator',
     AR_MODE: 'A.R. mode',
@@ -44,6 +45,7 @@ app.config(['$translateProvider', 'themerProvider',
   $translateProvider.translations('fr', {
     NORMAL: 'normal',
     ABOUT: 'à propos',
+    OPTIONS: 'options',
     HOME: 'accueil',
     VISION_SIMULATOR: 'simulateur de vision',
     AR_MODE: 'mode R.A',
@@ -86,6 +88,6 @@ app.config(['$translateProvider', 'themerProvider',
   var selected = themerProvider.getStoredTheme() || styles[0].key;
   themerProvider.setSelected(selected);
 
-  $translateProvider.preferredLanguage('fr');
+  $translateProvider.preferredLanguage('en');
 },]);
 
