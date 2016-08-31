@@ -41,6 +41,7 @@ app.config(['$translateProvider', 'themerProvider',
       'average results you should do another test like the farnstorth test',
     SHORT_TEST: 'short Test',
     CHANGE_THEME: 'change color theme',
+    CHANGE_LANGUAGE: 'change language',
   });
   $translateProvider.translations('fr', {
     NORMAL: 'normal',
@@ -74,6 +75,13 @@ app.config(['$translateProvider', 'themerProvider',
     DIAG_ISHIHARA_SHOULD_FARNSWORTH: 'DIAG_ISHIHARA_SHOULD_FARNSWORTH',
     SHORT_TEST: 'test court',
     CHANGE_THEME: 'changer les couleurs',
+    CHANGE_LANGUAGE: 'changer de langue',
+  });
+
+  $translateProvider.registerAvailableLanguageKeys(['en', 'fr'], {
+    en_US: 'en',
+    en_UK: 'en',
+    fr_FR: 'fr',
   });
 
   var styles = [
@@ -88,6 +96,17 @@ app.config(['$translateProvider', 'themerProvider',
   var selected = themerProvider.getStoredTheme() || styles[0].key;
   themerProvider.setSelected(selected);
 
-  $translateProvider.preferredLanguage('en');
+  $translateProvider.determinePreferredLanguage(function() {
+    var locale = 'en';
+    if (navigator.language) {
+      locale = navigator.language;
+    }
+    if (localStorage) {
+      if (localStorage.getItem('locale')) {
+        locale = localStorage.getItem('locale');
+      }
+    }
+    return locale;
+  });
 },]);
 

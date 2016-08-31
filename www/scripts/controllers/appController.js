@@ -1,4 +1,4 @@
-angular.module('app').controller('AppController', function($scope) {
+angular.module('app').controller('AppController', function($scope, $translate) {
   document.addEventListener('deviceready', function() {
     // CordovaPlugin available
     console.log('deviceready');
@@ -35,6 +35,16 @@ angular.module('app').controller('AppController', function($scope) {
     $scope.menu.setMainPage('navigators/navigatorMain.html', {
       callback: pushAbout,
     });
+  };
+
+  $scope.localeName = $translate.proposedLanguage();
+  $scope.locales = $translate.getAvailableLanguageKeys();
+  $scope.changeLanguage = function(locale) {
+    $translate.use(locale);
+
+    if (localStorage) {
+      localStorage.setItem('locale', locale);
+    }
   };
 
 });

@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       options: {
         livereload: LIVERELOAD_PORT,
       },
-      tasks: ['jshint'],
+      tasks: ['lint'],
     },
     jshint: {
       all: ['www/scripts/**/*.js'],

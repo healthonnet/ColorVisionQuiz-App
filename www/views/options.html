@@ -9,6 +9,18 @@
         <ons-col>
             <h1>{{"OPTIONS" | translate}}</h1>
         </ons-col>
+        <ons-row class="align-center">
+            <div class="home-btn">{{"CHANGE_THEME" | translate}} :
+                <button class="button" id="theme-switcher" themer-switcher></button>
+            </div>
+        </ons-row>
+        <ons-row class="align-center">
+            <div class="home-btn">{{"CHANGE_LANGUAGE" | translate}} :
+                    <select ng-model="localeName" class="button"
+                    ng-options="locale for locale in locales"
+                    ng-change="changeLanguage(localeName)">
+            </div>
+        </ons-row>
     </ons-row>
     <ons-row class="align-center row-spacing">
         <ons-col>

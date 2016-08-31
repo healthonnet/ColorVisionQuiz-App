@@ -1,4 +1,5 @@
 {
     "preset": "node-style-guide",
+    "requireCamelCaseOrUpperCaseIdentifiers": false,
     "excludeFiles": ["node_modules/**"]
 }
