@@ -33,6 +33,12 @@
           {{"VISION_SIMULATOR" | translate}}
         </ons-button>
     </ons-row>
+    <ons-row class="align-center" ons-if-platform="android" style="padding-top: 1px;">
+        <ons-button modifier="material" class="button button--large home-btn" id="colorPicker"
+                    ng-click="navigatorMain.pushPage('views/color-picker.html')">
+          {{"COLOR_PICKER" | translate}}
+        </ons-button>
+    </ons-row>
     <ons-row class="align-center">
         <div class="home-btn">
             <ons-icon icon="fa-universal-access"></ons-icon>

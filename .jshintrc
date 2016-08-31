@@ -21,6 +21,7 @@
     "angular": true,
     "app": true,
     "ons": true,
+    "ntc": true,
     "menu": true,
     "alert": true,
     "document": true,

@@ -1,0 +1,16 @@
+<ons-page class="center" ng-controller="colorPickerController">
+    <ons-toolbar fixed-style="true">
+        <div class="left">
+            <ons-back-button>{{"BACK" | translate}}</ons-back-button>
+        </div>
+        <div class="center">{{"COLOR_PICKER" | translate}}</div>
+    </ons-toolbar>
+    <ons-row style="position: relative">
+        <video style="display: none;" autoplay></video>
+        <canvas style="width: 100%; height: 100%"></canvas>
+        <div class="overlay">
+            <ons-row id="active-filter">{{currentShade}}</ons-row>
+            <ons-row id="active-filter">{{currentColor}}</ons-row>
+        </div>
+    </ons-row>
+</ons-page>

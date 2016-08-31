@@ -19,6 +19,11 @@ angular.module('app').controller('AppController', function($scope, $translate) {
     menu.closeMenu();
   }
 
+  function pushColorPicker() {
+    navigatorMain.pushPage('views/color-picker.html');
+    menu.closeMenu();
+  }
+
   $scope.redirectSimulator = function() {
     $scope.menu.setMainPage('navigators/navigatorMain.html', {
       callback: pushSimulator,
@@ -34,6 +39,12 @@ angular.module('app').controller('AppController', function($scope, $translate) {
   $scope.redirectAbout = function() {
     $scope.menu.setMainPage('navigators/navigatorMain.html', {
       callback: pushAbout,
+    });
+  };
+
+  $scope.redirectColorPicker = function() {
+    $scope.menu.setMainPage('navigators/navigatorMain.html', {
+      callback: pushColorPicker,
     });
   };
 
