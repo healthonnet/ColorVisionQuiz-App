@@ -19,7 +19,7 @@
   "BACK_TO_MENU": "back to menu",
   "EXPECTED": "expected",
   "YOUR_ANSWER": "your answer",
-  "COMPLETE_TEST": "complete Test",
+  "COMPLETE_TEST": "complete test",
   "YOUR_DIAGNOSTIC": "your diagnostic",
   "DIAG_ISHIHARA_NORMAL": "normal vision",
   "DIAG_ISHIHARA_PROBLEM": "diagnostic problem",
@@ -28,7 +28,7 @@
   "DIAG_ISHIHARA_COLOR_DEUTERANOMALY": "deuteranomaly suspected",
   "DIAG_ISHIHARA_COLOR_DEFICIENCY": "color deficiency",
   "DIAG_ISHIHARA_SHOULD_FARNSWORTH": "average results you should do another test like the farnstorth test",
-  "SHORT_TEST": "short Test",
+  "SHORT_TEST": "short test",
   "CHANGE_THEME": "change color theme",
   "CHANGE_LANGUAGE": "change language"
 }
