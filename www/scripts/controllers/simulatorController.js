@@ -36,7 +36,7 @@ app.controller('simulatorController', function($scope) {
   $scope.videoRight = document.querySelector('video#right');
   window.addEventListener('resize', resizeVideo);
 
-  ons.orientation.on('change', function(){
+  ons.orientation.on('change', function() {
     if (ons.orientation.isPortrait()) {
       $scope.armode = false;
       switchOffAR();
