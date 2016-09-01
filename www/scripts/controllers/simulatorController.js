@@ -31,19 +31,6 @@ app.controller('simulatorController', function($scope) {
     }
   }
 
-  $scope.selectedFilter = 'NORMAL';
-  $scope.video = document.querySelector('video#left');
-  $scope.videoRight = document.querySelector('video#right');
-  window.addEventListener('resize', resizeVideo);
-
-  ons.orientation.on('change', function() {
-    if (ons.orientation.isPortrait()) {
-      $scope.armode = false;
-      switchOffAR();
-      $scope.$apply();
-    }
-  });
-
   function successCallback(stream) {
     $scope.stream = stream;
     $scope.video.src = window.URL.createObjectURL(stream);
@@ -58,6 +45,42 @@ app.controller('simulatorController', function($scope) {
     console.log('navigator.getUserMedia error: ', error);
   }
 
+  // Export functions
+  $scope.updateFilter = function() {
+    var prefix = '';
+    var filter = $scope.selectedFilter.toLowerCase() + 'Effect';
+    if ($scope.armode) {
+      prefix += 'stereo ';
+      $scope.videoRight.className = prefix + filter;
+    }
+    $scope.video.className = prefix + filter;
+  };
+
+  $scope.toggleAR = function() {
+    $scope.armode = !$scope.armode;
+    if ($scope.armode) {
+      switchOnAR();
+    } else {
+      switchOffAR();
+    }
+  };
+
+  // Init
+  $scope.selectedFilter = 'NORMAL';
+  $scope.video = document.querySelector('video#left');
+  $scope.videoRight = document.querySelector('video#right');
+
+  // Events
+  window.addEventListener('resize', resizeVideo);
+  ons.orientation.on('change', function() {
+    if (ons.orientation.isPortrait()) {
+      $scope.armode = false;
+      switchOffAR();
+      $scope.$apply();
+    }
+  });
+
+  // Load media stream
   if (typeof MediaStreamTrack === 'undefined' ||
     typeof MediaStreamTrack.getSources === 'undefined') {
 
@@ -65,6 +88,7 @@ app.controller('simulatorController', function($scope) {
     alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
     navigatorMain.popPage();
   } else {
+    // Deprecated but supported by android webview
     MediaStreamTrack.getSources(function(sources) {
       var targetSourceId;
       sources.forEach(function(source) {
@@ -97,22 +121,4 @@ app.controller('simulatorController', function($scope) {
     });
   }
 
-  $scope.updateFilter = function() {
-    var prefix = '';
-    var filter = $scope.selectedFilter.toLowerCase() + 'Effect';
-    if ($scope.armode) {
-      prefix += 'stereo ';
-      $scope.videoRight.className = prefix + filter;
-    }
-    $scope.video.className = prefix + filter;
-  };
-
-  $scope.toggleAR = function() {
-    $scope.armode = !$scope.armode;
-    if ($scope.armode) {
-      switchOnAR();
-    } else {
-      switchOffAR();
-    }
-  };
 });

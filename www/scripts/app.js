@@ -23,13 +23,15 @@ app.config(['$translateProvider', 'themerProvider',
   $translateProvider.determinePreferredLanguage(function() {
     var locale = 'en';
     if (navigator.language) {
-      locale = navigator.language;
+      locale = navigator.language.substring(0,2);
     }
     if (localStorage) {
       if (localStorage.getItem('locale')) {
         locale = localStorage.getItem('locale');
       }
     }
+    // TODO prevent unsupported language
+
     return locale;
   });
 

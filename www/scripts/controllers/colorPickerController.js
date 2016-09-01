@@ -25,15 +25,30 @@ app.controller('colorPickerController', function($scope) {
     return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
   }
 
+  function successCallback(stream) {
+    $scope.stream = stream;
+    $scope.video.src = window.URL.createObjectURL(stream);
+    resizeVideo();
+
+    navigatorMain.on('prepush', stopVideo);
+    navigatorMain.on('postpop',stopVideo);
+
+  }
+
+  function errorCallback(error) {
+    console.log('navigator.getUserMedia error: ', error);
+  }
+
+  // Init
   $scope.currentColor = '';
   $scope.currentShade = '';
   $scope.video = document.querySelector('video');
   $scope.canvas = document.querySelector('canvas');
-  window.addEventListener('resize', resizeVideo);
-
   var ctx = $scope.canvas.getContext('2d');
   var i;
 
+  // Events
+  window.addEventListener('resize', resizeVideo);
   $scope.video.addEventListener('play', function() {
     var $this = this;
     resizeVideo();
@@ -86,20 +101,8 @@ app.controller('colorPickerController', function($scope) {
     clearInterval(i);
   },false);
 
-  function successCallback(stream) {
-    $scope.stream = stream;
-    $scope.video.src = window.URL.createObjectURL(stream);
-    resizeVideo();
 
-    navigatorMain.on('prepush', stopVideo);
-    navigatorMain.on('postpop',stopVideo);
-
-  }
-
-  function errorCallback(error) {
-    console.log('navigator.getUserMedia error: ', error);
-  }
-
+  // Load media stream
   if (typeof MediaStreamTrack === 'undefined' ||
     typeof MediaStreamTrack.getSources === 'undefined') {
 
@@ -107,6 +110,7 @@ app.controller('colorPickerController', function($scope) {
     alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
     navigatorMain.popPage();
   } else {
+    // Deprecated but supported by android webview
     MediaStreamTrack.getSources(function(sources) {
       var targetSourceId;
       sources.forEach(function(source) {

@@ -24,6 +24,7 @@ angular.module('app').controller('AppController', function($scope, $translate) {
     menu.closeMenu();
   }
 
+  // Export functions
   $scope.redirectSimulator = function() {
     $scope.menu.setMainPage('navigators/navigatorMain.html', {
       callback: pushSimulator,
@@ -48,14 +49,15 @@ angular.module('app').controller('AppController', function($scope, $translate) {
     });
   };
 
-  $scope.localeName = $translate.proposedLanguage();
-  $scope.locales = $translate.getAvailableLanguageKeys();
   $scope.changeLanguage = function(locale) {
     $translate.use(locale);
-
+    $scope.localeName = locale;
     if (localStorage) {
       localStorage.setItem('locale', locale);
     }
   };
 
+  // Init
+  $scope.localeName = $translate.proposedLanguage();
+  $scope.locales = $translate.getAvailableLanguageKeys();
 });
