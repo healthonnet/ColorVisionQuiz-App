@@ -11,14 +11,12 @@ angular.module('app')
   $scope.getOrientation = function() {
     console.log(ons.orientation.isPortrait());
     $scope.orientation = ons.orientation.isPortrait();
-    return $scope.orientation;
+    $scope.$apply();
   };
   $scope.getOrientation();
 
   window.onresize = function() {
-    console.log(ons.orientation.isPortrait());
-    $scope.orientation = ons.orientation.isPortrait();
-    $scope.$apply();
+    setTimeout($scope.getOrientation, 1);
   };
 
   $http.get('./assets/tests/ishihara/plates.json',{
