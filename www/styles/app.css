@@ -167,6 +167,16 @@ video {
   filter: url("styles/filters.svg#tritanopia") grayscale(0) !important;
 }
 
+.protanomalyEffect {
+  -webkit-filter: url("styles/filters.svg#protanomaly") grayscale(0) !important;
+  filter: url("styles/filters.svg#protanomaly") grayscale(0) !important;
+}
+
+.deuteranomalyEffect {
+  -webkit-filter: url("styles/filters.svg#deuteranomaly") grayscale(0) !important;
+  filter: url("styles/filters.svg#deuteranomaly") grayscale(0) !important;
+}
+
 .achromatopsiaEffect {
   -webkit-filter: url("styles/filters.svg#achromatopsia") grayscale(0) !important;
   filter: url("styles/filters.svg#achromatopsia") grayscale(0) !important;
