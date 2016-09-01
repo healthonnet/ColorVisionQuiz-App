@@ -219,11 +219,16 @@ video.stereo {
   height: 50%;
   width: 100%;
   float: none;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 5px;
 }
 
 #answerInput {
   font-size: 1.2em;
   font-weight: bold;
+  opacity: 0.8;
+  width: 85%;
 }
 
 #ishiharaTest .container {
