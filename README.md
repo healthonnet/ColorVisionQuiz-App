@@ -37,11 +37,6 @@ $ cordova platform add <platform> --save
 $ cordova plugin add <plugin> --save
 ```
 
-TODO's
-------
-
- - [X] Save theme choice in localstorage [DONE] waiting for PR validation (clean bower file)
- - [ ] Better numpad
 
 Developers
 -----------
