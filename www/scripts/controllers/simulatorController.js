@@ -83,10 +83,15 @@ app.controller('simulatorController', function($scope) {
   // Load media stream
   if (typeof MediaStreamTrack === 'undefined' ||
     typeof MediaStreamTrack.getSources === 'undefined') {
-
-    // TODO onsenUI clean modal
-    alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
-    navigatorMain.popPage();
+    ons.notification.alert({
+      message: 'This browser does not support MediaStreamTrack.\n\nTry Chrome.',
+      title: 'Support Error',
+      buttonLabel: 'OK',
+      animation: 'default',
+      callback: function() {
+        navigatorMain.popPage();
+      }
+    });
   } else {
     // Deprecated but supported by android webview
     MediaStreamTrack.getSources(function(sources) {
