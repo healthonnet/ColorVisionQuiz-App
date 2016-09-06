@@ -73,7 +73,7 @@ app.controller('simulatorController', function($scope) {
   // Events
   window.addEventListener('resize', resizeVideo);
   ons.orientation.on('change', function() {
-    if (ons.orientation.isPortrait()) {
+    if (ons.orientation.isPortrait() && $scope.armode) {
       $scope.armode = false;
       switchOffAR();
       $scope.$apply();
