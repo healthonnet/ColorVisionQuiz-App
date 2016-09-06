@@ -90,7 +90,7 @@ app.controller('simulatorController', function($scope) {
       animation: 'default',
       callback: function() {
         navigatorMain.popPage();
-      }
+      },
     });
   } else {
     // Deprecated but supported by android webview

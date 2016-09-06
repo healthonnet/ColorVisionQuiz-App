@@ -40,6 +40,9 @@ app.config(['$translateProvider', 'themerProvider',
       href: 'styles/themes/chambray/onsen-css-components.min.css',},
     { key: 'DARK', label: 'Dark Theme',
       href: 'styles/themes/dark/onsen-css-components.min.css',},
+    { key: 'NUMERIC', label: 'Numeric Theme',
+      href: 'styles/themes/numeric/onsen-css-components.min.css',},
+
   ];
   themerProvider.setStyles(styles);
   themerProvider.storeTheme(true);
