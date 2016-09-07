@@ -65,7 +65,9 @@
 .align-center {
   text-align: center;
 }
-
+.center {
+  margin: 0 auto;
+}
 .row-spacing {
   margin: 10px 0;
 }
@@ -73,6 +75,9 @@
 .full {
   width: 100%;
   height: 100%;
+}
+.todo {
+  color: red;
 }
 
 /*
