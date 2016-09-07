@@ -36,11 +36,11 @@ app.config(['$translateProvider', 'themerProvider',
   });
 
   var styles = [
-    { key: 'CHAMBRAY', label: 'Chambray Theme',
+    { key: 'CHAMBRAY', label: 'Chambray', example: 'chambray',
       href: 'styles/themes/chambray/onsen-css-components.min.css',},
-    { key: 'DARK', label: 'Dark Theme',
+    { key: 'DARK', label: 'Dark', example: 'dark',
       href: 'styles/themes/dark/onsen-css-components.min.css',},
-    { key: 'NUMERIC', label: 'Numeric Theme',
+    { key: 'NUMERIC', label: 'Numeric', example: 'numeric',
       href: 'styles/themes/numeric/onsen-css-components.min.css',},
 
   ];

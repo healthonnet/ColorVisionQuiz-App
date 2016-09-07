@@ -149,6 +149,32 @@ video {
   width: 50%;
 }
 
+.dark {
+  color: #fff;
+  background-color: #242424;
+}
+.dark .button {
+  color: #000;
+  background-color: #fff83b;
+}
+
+.chambray {
+  color: #000;
+  background-color: #fff;
+}
+.chambray .button {
+  color: #fff;
+  background-color: #3A539B;
+}
+.numeric {
+  color: #fff;
+  background-color: #242424;
+}
+.numeric .button {
+  color: #000;
+  background-color: #3f3;
+}
+
 /**
 * Camera filters
 */
