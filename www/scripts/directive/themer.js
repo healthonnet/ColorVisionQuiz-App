@@ -98,7 +98,7 @@ angular.module('angular-themer', [])
       '<ons-button class="button--large home-btn">Abc</ons-button>' +
       '</ons-col>' +
       '</ons-row>',
-      replace: true,
+      replace: false,
       scope: false,
       controller: ['$scope', 'themer', function($scope, themer) {
         $scope.theme = {
