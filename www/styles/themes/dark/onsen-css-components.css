@@ -848,7 +848,7 @@ h6 {
   color: #ff0;
 }
 .button--outline:active {
-  background-color: rgba(255,255,0,0.2);
+  background-color: rgba(255,255,0,1);
   border: 1px solid #ff0;
   color: #ff0;
   opacity: 1;
@@ -1379,7 +1379,7 @@ h6 {
 }
 .button-bar__button:active,
 :active + .button-bar__button {
-  background-color: rgba(255,255,0,0.2);
+  background-color: rgba(255,255,0,1);
   border: 0px solid #ff0;
   border-top: 1px solid #ff0;
   border-bottom: 1px solid #ff0;

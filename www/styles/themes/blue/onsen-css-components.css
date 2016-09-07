@@ -802,7 +802,7 @@ h6 {
   letter-spacing: 0;
   color: #005AFF;
   vertical-align: middle;
-  background-color: rgba(255,228,0,0.81);
+  background-color: rgba(255,228,0,1);
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -818,7 +818,7 @@ h6 {
   transition: none;
 }
 .button:active {
-  background-color: rgba(255,228,0,0.81);
+  background-color: rgba(255,228,0,1);
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -845,16 +845,16 @@ h6 {
 .button--outline {
   background-color: transparent;
   border: 1px solid rgba(255,228,0,0.81);
-  color: rgba(255,228,0,0.81);
+  color: rgba(255,228,0,1);
 }
 .button--outline:active {
-  background-color: rgba(255,228,0,0.2);
+  background-color: rgba(255,228,0,1);
   border: 1px solid rgba(255,228,0,0.81);
-  color: rgba(255,228,0,0.81);
+  color: rgba(255,228,0,1);
   opacity: 1;
 }
 .button--outline:hover {
-  border: 1px solid rgba(255,228,0,0.81);
+  border: 1px solid rgba(255,228,0,1);
   -webkit-transition: 0;
   -moz-transition: 0;
   -o-transition: 0;
@@ -923,7 +923,7 @@ h6 {
   letter-spacing: 0;
   color: #005AFF;
   vertical-align: middle;
-  background-color: rgba(255,228,0,0.81);
+  background-color: rgba(255,228,0,1);
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -936,7 +936,7 @@ h6 {
   -webkit-box-shadow: none;
   box-shadow: none;
   background: transparent;
-  color: rgba(255,228,0,0.81);
+  color: rgba(255,228,0,1);
   border: none;
 }
 .button--quiet:disabled,
@@ -963,7 +963,7 @@ h6 {
   -o-transition: none;
   transition: none;
   opacity: 0.2;
-  color: rgba(255,228,0,0.81);
+  color: rgba(255,228,0,1);
 }
 /* topdoc
   name: Call To Action Button
@@ -1062,7 +1062,7 @@ h6 {
   text-align: center;
 }
 .button--large:active {
-  background-color: rgba(255,228,0,0.81);
+  background-color: rgba(255,228,0,1);
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -1131,7 +1131,7 @@ h6 {
   letter-spacing: 0;
   color: #005AFF;
   vertical-align: middle;
-  background-color: rgba(255,228,0,0.81);
+  background-color: rgba(255,228,0,1);
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -1149,7 +1149,7 @@ h6 {
   border: 1px solid transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: rgba(255,228,0,0.81);
+  color: rgba(255,228,0,1);
   text-align: center;
 }
 .button--large--quiet:active {
@@ -1158,7 +1158,7 @@ h6 {
   -o-transition: none;
   transition: none;
   opacity: 0.2;
-  color: rgba(255,228,0,0.81);
+  color: rgba(255,228,0,1);
   background: transparent;
   border: 1px solid transparent;
   -webkit-box-shadow: none;
@@ -1222,7 +1222,7 @@ h6 {
   letter-spacing: 0;
   color: #005AFF;
   vertical-align: middle;
-  background-color: rgba(255,228,0,0.81);
+  background-color: rgba(255,228,0,1);
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -1335,15 +1335,15 @@ h6 {
   appearance: none;
 }
 .button-bar__item:first-child > .button-bar__button {
-  border-left: 1px solid rgba(255,228,0,0.77);
-  border-right: 1px solid rgba(255,228,0,0.77);
+  border-left: 1px solid rgba(255,228,0,1);
+  border-right: 1px solid rgba(255,228,0,1);
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
   -webkit-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 .button-bar__item:last-child > .button-bar__button {
-  border-right: 1px solid rgba(255,228,0,0.77);
+  border-right: 1px solid rgba(255,228,0,1);
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
   -webkit-border-bottom-right-radius: 4px;
@@ -1358,7 +1358,7 @@ h6 {
   -webkit-border-radius: inherit;
   border-radius: inherit;
   background-color: transparent;
-  color: rgba(255,228,0,0.77);
+  color: rgba(255,228,0,1);
   border: 0px solid rgba(255,228,0,0.77);
   border-top: 1px solid rgba(255,228,0,0.77);
   border-bottom: 1px solid rgba(255,228,0,0.77);
@@ -1379,7 +1379,7 @@ h6 {
 }
 .button-bar__button:active,
 :active + .button-bar__button {
-  background-color: rgba(255,228,0,0.2);
+  background-color: rgba(255,228,0,1);
   border: 0px solid rgba(255,228,0,0.77);
   border-top: 1px solid rgba(255,228,0,0.77);
   border-bottom: 1px solid rgba(255,228,0,0.77);
@@ -1395,7 +1395,7 @@ h6 {
 }
 .button-bar__item.active > .button-bar__button,
 :checked + .button-bar__button {
-  background-color: rgba(255,228,0,0.77);
+  background-color: rgba(255,228,0,1);
   color: #005AFF;
   -webkit-transition: none;
   -moz-transition: none;
@@ -2033,11 +2033,11 @@ h6 {
   width: 0;
 }
 .checkbox > input[type="checkbox"]:checked {
-  background: rgba(255,228,0,0.81);
+  background: rgba(255,228,0,1);
 }
 .checkbox > input[type="checkbox"]:checked + .checkbox__checkmark:before {
-  background: rgba(255,228,0,0.81);
-  border: 1px solid rgba(255,228,0,0.81);
+  background: rgba(255,228,0,1);
+  border: 1px solid rgba(255,228,0,1);
 }
 .checkbox > input[type="checkbox"]:checked + .checkbox__checkmark:after {
   opacity: 1;
@@ -2053,7 +2053,7 @@ h6 {
   width: 24px;
   height: 24px;
   background: transparent;
-  border: 1px solid rgba(255,228,0,0.81);
+  border: 1px solid rgba(255,228,0,1);
   -webkit-border-radius: 16px;
   border-radius: 16px;
   -webkit-box-shadow: none;
@@ -2262,7 +2262,7 @@ h6 {
   width: 12px;
   height: 6px;
   background: transparent;
-  border: 3px solid rgba(255,228,0,0.81);
+  border: 3px solid rgba(255,228,0,1);
   border-width: 2px;
   border-top: none;
   border-right: none;
@@ -2427,7 +2427,7 @@ h6 {
   width: 12px;
   height: 6px;
   background: transparent;
-  border: 3px solid rgba(255,228,0,0.81);
+  border: 3px solid rgba(255,228,0,1);
   border-width: 2px;
   border-top: none;
   border-right: none;
@@ -3333,7 +3333,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: auto auto;
-  background-color: rgba(0,90,255,0.92);
+  background-color: rgba(0,90,255,1);
   -webkit-box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   overflow: hidden;
@@ -3414,7 +3414,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   transform: translate(-50%, -50%);
   width: 270px;
   margin: auto auto;
-  background-color: rgba(0,90,255,0.92);
+  background-color: rgba(0,90,255,1);
   -webkit-box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   -webkit-border-radius: 8px;
