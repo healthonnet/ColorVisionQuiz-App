@@ -154,15 +154,6 @@ video {
   width: 50%;
 }
 
-.dark {
-  color: #fff;
-  background-color: #242424;
-}
-.dark .button {
-  color: #000;
-  background-color: #fff83b;
-}
-
 .chambray {
   color: #000;
   background-color: #fff;
@@ -171,14 +162,6 @@ video {
   color: #fff;
   background-color: #3A539B;
 }
-.numeric {
-  color: #fff;
-  background-color: #242424;
-}
-.numeric .button {
-  color: #000;
-  background-color: #3f3;
-}
 .blue {
   color: #FFE400;
   background-color: #005aff;
@@ -186,6 +169,22 @@ video {
 .blue .button {
   color: #005AFF;
   background-color: #FFE400;
+}
+.light {
+  color: #000;
+  background-color: #d2efe9;
+}
+.light .button {
+  color: #FFF;
+  background-color: #F00;
+}
+.dark {
+  color: #fff;
+  background-color: #242424;
+}
+.dark .button {
+  color: #000;
+  background-color: #FF0;
 }
 
 /**
