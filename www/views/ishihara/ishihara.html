@@ -14,31 +14,14 @@
     </ons-row>
     <ons-row class="align-center">
         <ons-col>
-            <img src="assets/plates/plate1.png" class="ishihara-example" alt="example">
+            <img src="assets/plates/plate-1.jpg" class="ishihara-example" alt="example">
         </ons-col>
         <ons-col width="60%" ons-if-orientation="landscape" ng-include="'explanations.html'"></ons-col>
     </ons-row>
-
     <ons-row class="align-center" ons-if-orientation="portrait" ng-include="'explanations.html'"></ons-row>
-    <ons-row class="align-center row-spacing" ons-if-orientation="portrait">
-        <ons-col>
-            <ons-button modifier="outline"
-                        ng-click="menu.setMainPage('navigators/navigatorMain.html')">
-              {{"BACK_TO_MENU" | translate}}
-            </ons-button>
-        </ons-col>
-    </ons-row>
+
 
     <ons-template id="explanations.html">
-        <ons-row>
-            <p>
-                some information to explain how it works
-                some information to explain how it works
-                some information to explain how it works
-                some information to explain how it works
-                some information to explain how it works
-            </p>
-        </ons-row>
         <ons-row>
             <ons-col>
                 <label class="checkbox">
@@ -55,6 +38,14 @@
                             ng-click="navigatorIshihara.pushPage('views/ishihara/ishihara-test.html', {short: short})">
                     <ons-icon icon="fa-pencil-square-o"></ons-icon>
                   {{"START" | translate}}
+                </ons-button>
+            </ons-col>
+        </ons-row>
+        <ons-row class="align-center row-spacing">
+            <ons-col>
+                <ons-button modifier="outline"
+                            ng-click="menu.setMainPage('navigators/navigatorMain.html')">
+                  {{"BACK_TO_MENU" | translate}}
                 </ons-button>
             </ons-col>
         </ons-row>

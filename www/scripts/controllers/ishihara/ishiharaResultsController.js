@@ -13,7 +13,8 @@ angular.module('app')
 
     $scope.questions.forEach(function(question, index) {
 
-      if (question.correctAnswer === parseInt($scope.answers[index])) {
+      if (question.correctAnswer === parseInt($scope.answers[index]) ||
+        question.correctAnswer === $scope.answers[index]) {
         diagnostic.score++;
       } else if (question.redDeficiency === parseInt($scope.answers[index]) ||
         question.greenDeficiency === parseInt($scope.answers[index])) {
