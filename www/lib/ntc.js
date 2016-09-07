@@ -1329,6 +1329,6 @@ var ntc = {
 ["FFCC00", "Tangerine YELLOW", "YELLOW"],
 ["FFFF00", "YELLOW", "YELLOW"],
   ],
-}
+};
 
 ntc.init();
