@@ -179,6 +179,14 @@ video {
   color: #000;
   background-color: #3f3;
 }
+.blue {
+  color: #FFE400;
+  background-color: #005aff;
+}
+.blue .button {
+  color: #005AFF;
+  background-color: #FFE400;
+}
 
 /**
 * Camera filters

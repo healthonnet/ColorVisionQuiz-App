@@ -37,12 +37,13 @@ app.config(['$translateProvider', 'themerProvider',
 
   var styles = [
     { key: 'CHAMBRAY', label: 'Chambray', example: 'chambray',
-      href: 'styles/themes/chambray/onsen-css-components.min.css',},
+      href: 'styles/themes/chambray/onsen-css-components.css',},
     { key: 'DARK', label: 'Dark', example: 'dark',
-      href: 'styles/themes/dark/onsen-css-components.min.css',},
+      href: 'styles/themes/dark/onsen-css-components.css',},
     { key: 'NUMERIC', label: 'Numeric', example: 'numeric',
-      href: 'styles/themes/numeric/onsen-css-components.min.css',},
-
+      href: 'styles/themes/numeric/onsen-css-components.css',},
+    { key: 'BLUE', label: 'Blue', example: 'blue',
+      href: 'styles/themes/blue/onsen-css-components.css',},
   ];
   themerProvider.setStyles(styles);
   themerProvider.storeTheme(true);
