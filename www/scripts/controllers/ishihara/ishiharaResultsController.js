@@ -29,7 +29,7 @@ angular.module('app')
       }
     });
 
-    diagnostic.title = 'DIAG_ISHIHARA_PROBLEM';
+    diagnostic.title = 'TEST_ISHIHARA_PROBLEM';
 
     // If Short test (6 plates)
     if ($scope.questions.length === 6) {
@@ -37,32 +37,32 @@ angular.module('app')
 
       // If not perfect => should do long diagnostic
       if (diagnostic.score < 6) {
-        diagnostic.title = 'DIAG_ISHIHARA_SHOULD_PRECISE';
+        diagnostic.title = 'TEST_ISHIHARA_SHOULD_PRECISE';
       } else {
-        diagnostic.title = 'DIAG_ISHIHARA_NORMAL';
+        diagnostic.title = 'TEST_ISHIHARA_NORMAL';
       }
     }
     // Complete Test
     else {
       switch (true) {
         case (diagnostic.score >= 17): {
-          diagnostic.title = 'DIAG_ISHIHARA_NORMAL';
+          diagnostic.title = 'TEST_ISHIHARA_NORMAL';
           break;
         }
         case (diagnostic.score >= 14 && diagnostic.score <= 16): {
-          diagnostic.title = 'DIAG_ISHIHARA_SHOULD_FARNSWORTH';
+          diagnostic.title = 'TEST_ISHIHARA_SHOULD_FARNSWORTH';
           break;
         }
         case (diagnostic.score <= 13): {
           if (diagnostic.gdef < diagnostic.cb &&
             diagnostic.gdef < diagnostic.cb) {
-            diagnostic.title = 'DIAG_ISHIHARA_COLOR_BLIND';
+            diagnostic.title = 'TEST_ISHIHARA_COLOR_BLIND';
           } else if (diagnostic.rdef > diagnostic.gdef) {
-            diagnostic.title = 'DIAG_ISHIHARA_DEUTERANOMALY';
+            diagnostic.title = 'TEST_ISHIHARA_DEUTERANOMALY';
           } else if (diagnostic.rdef < diagnostic.gdef) {
-            diagnostic.title = 'DIAG_ISHIHARA_PROTANOMALY';
+            diagnostic.title = 'TEST_ISHIHARA_PROTANOMALY';
           } else {
-            diagnostic.title = 'DIAG_ISHIHARA_COLOR_DEFICIENCY';
+            diagnostic.title = 'TEST_ISHIHARA_COLOR_DEFICIENCY';
           }
           break;
         }
