@@ -188,6 +188,20 @@ video {
 }
 
 /**
+* About Styles
+*/
+#about-page a {
+  display: inline;
+  white-space: inherit;
+  word-break: break-all;
+  line-height: inherit;
+}
+
+#about-page li {
+  margin-bottom: 10px;
+}
+
+/**
 * Camera filters
 */
 .colorBlindEffect {
