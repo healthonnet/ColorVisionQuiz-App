@@ -43,7 +43,6 @@ angular.module('app')
 
     // Build short version
     if ($scope.short) {
-      quiz.push(data.plates[0]);
       quiz.push(data.plates[getRandomInt(1,4)]);
       quiz.push(data.plates[getRandomInt(5,8)]);
       quiz.push(data.plates[getRandomInt(9,12)]);
@@ -52,8 +51,14 @@ angular.module('app')
     }
     // Complete test
     else {
-      quiz = data.plates;
+      quiz = angular.copy(data.plates);
+      quiz.shift();
     }
+    //Randomize plates
+    quiz = shuffle(quiz);
+
+    // First plate
+    quiz.unshift(data.plates[0]);
     return quiz;
   };
 
@@ -71,4 +76,24 @@ angular.module('app')
       $scope.currentQuestion++;
     }
   };
+
+  function shuffle(array) {
+    var counter = array.length;
+
+    // While there are elements in the array
+    while (counter > 0) {
+      // Pick a random index
+      var index = Math.floor(Math.random() * counter);
+
+      // Decrease counter by 1
+      counter--;
+
+      // And swap the last element with it
+      var temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
+    }
+
+    return array;
+  }
 });
