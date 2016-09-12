@@ -923,7 +923,7 @@ h6 {
   letter-spacing: 0;
   color: #005AFF;
   vertical-align: middle;
-  background-color: rgba(255,228,0,1);
+  background-color: rgba(255,255,255,1);
   border: 0px solid currentColor;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -936,7 +936,7 @@ h6 {
   -webkit-box-shadow: none;
   box-shadow: none;
   background: transparent;
-  color: rgba(255,228,0,1);
+  color: rgba(255,255,255,1);
   border: none;
 }
 .button--quiet:disabled,
