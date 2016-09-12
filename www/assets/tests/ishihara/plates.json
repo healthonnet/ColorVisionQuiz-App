@@ -6,199 +6,328 @@
       "greenDeficiency" : 12,
       "redDeficiency" : 12,
       "colorBlind" : 12,
-      "type" : 0
+      "type" : 0,
+      "choices": [
+        "X",
+        "12",
+        "2"
+      ]
     },
     {
       "file" : "assets/plates/plate-2.jpg",
       "correctAnswer" : 8,
       "greenDeficiency" : 3,
       "redDeficiency" : 3,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "8",
+        "3",
+        "X"
+      ]
     },
     {
       "file" : "assets/plates/plate-3.jpg",
       "correctAnswer" : 6,
       "greenDeficiency" : 5,
       "redDeficiency" : 5,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "5",
+        "6",
+        "X"
+      ]
     },
     {
       "file" : "assets/plates/plate-4.jpg",
       "correctAnswer" : 29,
       "greenDeficiency" : 70,
       "redDeficiency" : 70,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "29",
+        "X",
+        "70"
+      ]
     },
     {
       "file" : "assets/plates/plate-5.jpg",
       "correctAnswer" : 57,
       "greenDeficiency" : 35,
       "redDeficiency" : 35,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "35",
+        "X",
+        "57"
+      ]
     },
     {
       "file" : "assets/plates/plate-6.jpg",
       "correctAnswer" : 5,
       "greenDeficiency" : 2,
       "redDeficiency" : 2,
-      "colorBlind" : 2,
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "2",
+        "5",
+        "X"
+      ]
     },
     {
       "file" : "assets/plates/plate-7.jpg",
       "correctAnswer" : 3,
       "greenDeficiency" : 5,
       "redDeficiency" : 5,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "X",
+        "5",
+        "3"
+      ]
     },
     {
       "file" : "assets/plates/plate-8.jpg",
       "correctAnswer" : 15,
       "greenDeficiency" : 17,
       "redDeficiency" : 17,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "X",
+        "15",
+        "17"
+      ]
     },
     {
       "file" : "assets/plates/plate-9.jpg",
       "correctAnswer" : 74,
       "greenDeficiency" : 21,
       "redDeficiency" : 21,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "74",
+        "21",
+        "X"
+      ]
     },
     {
       "file" : "assets/plates/plate-10.jpg",
       "correctAnswer" : 2,
-      "greenDeficiency" : "",
-      "redDeficiency" : "",
-      "colorBlind" : "",
-      "type" : 0
+      "greenDeficiency" : "X",
+      "redDeficiency" : "X",
+      "colorBlind" : "X",
+      "type" : 0,
+      "choices": [
+        "X",
+        "27",
+        "2"
+      ]
     },
     {
       "file" : "assets/plates/plate-11.jpg",
       "correctAnswer" : 6,
-      "greenDeficiency" : "",
-      "redDeficiency" : "",
-      "colorBlind" : "",
-      "type" : 1
+      "greenDeficiency" : "X",
+      "redDeficiency" : "X",
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "3",
+        "6",
+        "X"
+      ]
     },
     {
       "file" : "assets/plates/plate-12.jpg",
       "correctAnswer" : 97,
-      "greenDeficiency" : "",
-      "redDeficiency" : "",
-      "colorBlind" : "",
-      "type" : 1
+      "greenDeficiency" : "X",
+      "redDeficiency" : "X",
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "7",
+        "97",
+        "X"
+      ]
     },
     {
       "file" : "assets/plates/plate-13.jpg",
       "correctAnswer" : 45,
-      "greenDeficiency" : "",
-      "redDeficiency" : "",
-      "colorBlind" : "",
-      "type" : 1
+      "greenDeficiency" : "X",
+      "redDeficiency" : "X",
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "4",
+        "X",
+        "45"
+      ]
     },
     {
       "file" : "assets/plates/plate-14.jpg",
       "correctAnswer" : 5,
-      "greenDeficiency" : "",
-      "redDeficiency" : "",
-      "colorBlind" : "",
-      "type" : 1
+      "greenDeficiency" : "X",
+      "redDeficiency" : "X",
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "X",
+        "5",
+        "3"
+      ]
     },
     {
       "file" : "assets/plates/plate-15.jpg",
       "correctAnswer" : 7,
-      "greenDeficiency" : "",
-      "redDeficiency" : "",
-      "colorBlind" : "",
-      "type" : 1
+      "greenDeficiency" : "X",
+      "redDeficiency" : "X",
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "7",
+        "2",
+        "X"
+      ]
     },
     {
       "file" : "assets/plates/plate-16.jpg",
       "correctAnswer" : 16,
-      "greenDeficiency" : "",
-      "redDeficiency" : "",
-      "colorBlind" : "",
-      "type" : 1
+      "greenDeficiency" : "X",
+      "redDeficiency" : "X",
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "X",
+        "16",
+        "6"
+      ]
     },
     {
       "file" : "assets/plates/plate-17.jpg",
       "correctAnswer" : 73,
-      "greenDeficiency" : "",
-      "redDeficiency" : "",
-      "colorBlind" : "",
-      "type" : 1
+      "greenDeficiency" : "X",
+      "redDeficiency" : "X",
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "73",
+        "X",
+        "3"
+      ]
     },
     {
       "file" : "assets/plates/plate-18.jpg",
-      "correctAnswer" : "",
+      "correctAnswer" : "X",
       "greenDeficiency" : 5,
       "redDeficiency" : 5,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "5",
+        "X",
+        "7"
+      ]
     },
     {
       "file" : "assets/plates/plate-19.jpg",
-      "correctAnswer" : "",
+      "correctAnswer" : "X",
       "greenDeficiency" : 2,
       "redDeficiency" : 2,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "12",
+        "2",
+        "X"
+      ]
     },
     {
       "file" : "assets/plates/plate-20.jpg",
-      "correctAnswer" : "",
+      "correctAnswer" : "X",
       "greenDeficiency" : 45,
       "redDeficiency" : 45,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "X",
+        "45",
+        "5"
+      ]
     },
     {
       "file" : "assets/plates/plate-21.jpg",
-      "correctAnswer" : "",
+      "correctAnswer" : "X",
       "greenDeficiency" : 73,
       "redDeficiency" : 73,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "X",
+        "37",
+        "73"
+      ]
     },
     {
       "file" : "assets/plates/plate-22.jpg",
       "correctAnswer" : 26,
       "greenDeficiency" : 2,
       "redDeficiency" : 6,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "2",
+        "26",
+        "6",
+        "X"
+      ]
     },
     {
       "file" : "assets/plates/plate-23.jpg",
       "correctAnswer" : 42,
       "greenDeficiency" : 4,
       "redDeficiency" : 2,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "4",
+        "2",
+        "X",
+        "42"
+      ]
     },
     {
       "file" : "assets/plates/plate-24.jpg",
       "correctAnswer" : 35,
       "greenDeficiency" : 3,
       "redDeficiency" : 5,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "35",
+        "X",
+        "5",
+        "3"
+      ]
     },
     {
       "file" : "assets/plates/plate-25.jpg",
       "correctAnswer" : 96,
       "greenDeficiency" : 9,
       "redDeficiency" : 6,
-      "colorBlind" : "",
-      "type" : 1
+      "colorBlind" : "X",
+      "type" : 1,
+      "choices": [
+        "X",
+        "96",
+        "6",
+        "9"
+      ]
     }
   ]
 }

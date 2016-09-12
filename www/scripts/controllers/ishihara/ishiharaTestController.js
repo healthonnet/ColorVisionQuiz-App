@@ -9,7 +9,6 @@ angular.module('app')
   $scope.short = navigatorIshihara.getCurrentPage().options.short;
 
   $scope.getOrientation = function() {
-    console.log(ons.orientation.isPortrait());
     $scope.orientation = ons.orientation.isPortrait();
     $scope.$apply();
   };
@@ -58,26 +57,18 @@ angular.module('app')
     return quiz;
   };
 
-  $scope.numpad = {
-    clear: function() {
-      $scope.currentAnswer = '';
-    },
-    addNumber: function(num) {
-      $scope.currentAnswer += num.toString();
-    },
+  $scope.answer = function(answer) {
+    $scope.answers.push(answer);
+    $scope.nextQuestion();
   };
 
   $scope.nextQuestion = function() {
-    $scope.answers.push($scope.currentAnswer);
     if ($scope.currentQuestion + 1 === $scope.totalQuestions) {
       // Push to result page with datas.
       navigatorIshihara.pushPage('views/ishihara/ishihara-results.html',
         { quiz: $scope.quiz, answers: $scope.answers });
     } else {
       $scope.currentQuestion++;
-      $scope.currentAnswer = '';
-
-      window.document.getElementById('answerInput').focus();
     }
   };
 });

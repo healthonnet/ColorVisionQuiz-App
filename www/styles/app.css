@@ -64,6 +64,7 @@
  */
 .align-center {
   text-align: center;
+  text-align: -webkit-center;
 }
 .center {
   margin: 0 auto;
@@ -267,20 +268,38 @@ video.stereo {
 
 #plateContainer {
   height: 100%;
-  width: 45%;
+  width: 40%;
   float: left;
+  display: flex;
+  align-items: center;
 }
 
 #plateContainer.portrait {
   height: 50%;
   width: 100%;
   float: none;
+  position: relative;
+}
+
+#plateContainer.plate {
+  display: block;
+}
+
+#plateContainer.portrait ons-col {
+  display: flex;
+}
+
+#plateContainer.portrait .plate {
+  align-self: center;
+  flex: 0 0 auto;
 }
 
 #anwserContainer{
-  width: 55%;
-  height: 100%;
+  width: 60%;
   float: right;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 #anwserContainer.portrait {
@@ -299,7 +318,7 @@ video.stereo {
   width: 85%;
 }
 
-#ishiharaTest .container {
+#anwserContainer .container {
   width: 100%;
   display: inline-block;
   text-align: center;
@@ -309,27 +328,9 @@ video.stereo {
   margin-left: 1%;
 }
 
-#ishiharaTest .container .block {
-  display: inline-block;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  width: calc(25% - 10px);
-  margin: 5px;
-  padding: 3%;
-  font-size: 1.2em;
-  font-weight: bold;
-  float: right;
-}
-
-#ishiharaTest .container .block.v2 {
-  padding: 3%;
-  padding-top: calc(10% - 10px);
-  padding-bottom: calc(10% - 10px);
-  margin-bottom: 0;
-}
-
-#ishiharaTest .container .block.hidden {
-  visibility: hidden;
+#anwserContainer .container .button {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 #ishiharaTest footer {

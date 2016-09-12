@@ -6,40 +6,25 @@
         <div class="center">Ishihara - Quiz</div>
     </ons-toolbar>
     <ons-row id="plateContainer" ng-class="{true: 'portrait', false: ''}[orientation]">
-        <ons-col width="10%"></ons-col>
-        <ons-col width="80%" style="overflow: hidden">
-            <img src="{{quiz[currentQuestion].file}}" width="100%" alt="plate" class="plate">
+        <ons-col width="90%" class="align-center center" style="overflow: hidden">
+            <img src="{{quiz[currentQuestion].file}}" alt="plate" class="plate center">
         </ons-col>
-        <ons-col width="10%"></ons-col>
     </ons-row>
     <ons-row id="anwserContainer" ng-class="{true: 'portrait', false: ''}[orientation]">
-        <ons-row class="textarea">
-            <ons-col width="30%" align="center" class="align-center">
-                <label>{{"YOUR_ANSWER" | translate}}&nbsp;: </label>
-            </ons-col>
-            <ons-col width="70%" align="center">
-                <input type="text" disabled ng-model="currentAnswer" id="answerInput">
-            </ons-col>
-        </ons-row>
-        <ons-row width="100%">
+        <ons-col width="90%" class="center">
+            <h3 class="align-center">{{"YOUR_ANSWER" | translate}}&nbsp;: </h3>
             <div class="container">
-                <div class="button button--outline block" ng-click="numpad.clear();">C</div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(9);">9</div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(8);">8</div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(7);">7</div>
-                <div class="button button--outline block v2" ng-click="nextQuestion();">OK</div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(6);">6</div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(5);">5</div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(4);">4</div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(3);">3</div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(2);">2</div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(1);">1</div>
-                <div class="button button--outline block hidden"></div>
-                <div class="button button--outline block hidden"></div>
-                <div class="button button--outline block" ng-click="numpad.addNumber(0);">0</div>
-                <div class="button button--outline block hidden"></div>
+                <button class="button button--large" ng-click="answer(quiz[currentQuestion].choices[0])">
+                  {{quiz[currentQuestion].choices[0]}}</button>
+                <button class="button button--large" ng-click="answer(quiz[currentQuestion].choices[1])">
+                  {{quiz[currentQuestion].choices[1]}}</button>
+                <button class="button button--large" ng-click="answer(quiz[currentQuestion].choices[2])">
+                  {{quiz[currentQuestion].choices[2]}}</button>
+                <button class="button button--large" ng-show="quiz[currentQuestion].choices[3]"
+                        ng-click="answer(quiz[currentQuestion].choices[3])">
+                  {{quiz[currentQuestion].choices[3]}}</button>
             </div>
-        </ons-row>
+        </ons-col>
     </ons-row>
     <footer>
         <ons-row>
