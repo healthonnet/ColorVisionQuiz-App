@@ -150,6 +150,10 @@ video {
   width: 50%;
 }
 
+.list--inset {
+  margin-top: 10px;
+}
+
 /**
  * Home
  */
