@@ -28,6 +28,8 @@
     "MediaStreamTrack": true,
     "navigatorMain": true,
     "navigatorIshihara": true,
-    "navigatorEncyclopedia": true
+    "navigatorEncyclopedia": true,
+    "modalColorPicker": true,
+    "modalSimulator": true
   }
 }

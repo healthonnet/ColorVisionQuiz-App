@@ -40,6 +40,9 @@ app.controller('colorPickerController', function($scope) {
   }
 
   // Init
+  $scope.show = function() {
+    modalColorPicker.show();
+  };
   $scope.currentColor = '';
   $scope.currentShade = '';
   $scope.video = document.querySelector('video');

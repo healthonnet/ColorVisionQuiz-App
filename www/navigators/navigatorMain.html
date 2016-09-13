@@ -2,3 +2,13 @@
   var="navigatorMain"
   page="views/home.html">
 </ons-navigator>
+<ons-modal var="modalSimulator">
+    <h1>{{"VISION_SIMULATOR" | translate}}</h1>
+    <div ng-bind-html='"MODAL_SIMULATOR" | translate'></div>
+    <ons-button modifier="outline" ng-click="modalSimulator.hide()">{{"CLOSE" | translate}}</ons-button>
+</ons-modal>
+<ons-modal var="modalColorPicker">
+    <h1>{{"COLOR_PICKER" | translate}}</h1>
+    <div ng-bind-html='"MODAL_COLOR_PICKER" | translate'></div>
+    <ons-button modifier="outline" ng-click="modalColorPicker.hide()">{{"CLOSE" | translate}}</ons-button>
+</ons-modal>

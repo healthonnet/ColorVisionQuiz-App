@@ -4,6 +4,9 @@
             <ons-back-button>{{"BACK" | translate}}</ons-back-button>
         </div>
         <div class="center">{{"VISION_SIMULATOR" | translate}}</div>
+        <div class="right">
+            <i id="top-right" ng-click="show()" class="fa fa-question-circle-o"></i>
+        </div>
     </ons-toolbar>
     <ons-row style="position: relative">
         <video id="left" ng-class="{stereo: armode}" autoplay></video>
@@ -33,4 +36,13 @@
             </ons-row>
         </div>
     </ons-row>
+    <ons-template id="popover.html">
+        <ons-popover direction="up down" cancelable>
+            <div class="justify" style="opacity: 1">
+                <p>This is a popover!</p>
+                <p><small>Click the background to remove the popover.</small></p>
+            </div>
+        </ons-popover>
+    </ons-template>
+
 </ons-page>

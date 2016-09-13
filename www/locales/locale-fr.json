@@ -4,7 +4,7 @@
   "OPTIONS": "options",
   "HOME": "accueil",
   "VISION_SIMULATOR": "simulateur de vision",
-  "COLOR_PICKER": "selecteur de couleur",
+  "COLOR_PICKER": "reconnaissance des couleurs",
   "AR_MODE": "mode R.A",
   "CLASSIC_MODE": "mode classique",
   "DEUTERANOMALY": "deuteranomlie",
@@ -15,6 +15,7 @@
   "ACHROMATOPSIA": "achromatopsie",
   "ENCYCLOPEDIA": "encyclopedie",
   "BACK": "retour",
+  "CLOSE": "fermer",
   "NEXT": "suivant",
   "RESTART": "recommencer",
   "START": "commencer",
@@ -53,5 +54,7 @@
   "BLACK": "noir",
   "GREY": "gris",
   "DARK_GREY": "gris foncé",
-  "WHITE": "blanc"
+  "WHITE": "blanc",
+  "MODAL_SIMULATOR":"<p>Cet outil simule la vision qu’ont les patients atteints de troubles de la vision des couleurs.</p><p>Grâce à la caméra de votre appareil, vous pourrez voir ce que voient ces patients, les simulations de 6 pathologies visuelles sont disponibles.</p>",
+  "MODAL_COLOR_PICKER":"<p>Cet outil vous permet, via la caméra, de sélectionner les couleurs que vous voyez et de les nommer précisément. L’outil reconnaît la couleur sélectionnée via la caméra et vous donne son nom exact, pouvant ainsi aider les personnes atteintes de troubles visuels à choisir leurs vêtements, ou à savoir quelle est la teinte sélectionnée.</p>"
 }

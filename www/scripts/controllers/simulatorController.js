@@ -70,6 +70,10 @@ app.controller('simulatorController', function($scope) {
   $scope.video = document.querySelector('video#left');
   $scope.videoRight = document.querySelector('video#right');
 
+  $scope.show = function() {
+    modalSimulator.show();
+  };
+
   // Events
   window.addEventListener('resize', resizeVideo);
   ons.orientation.on('change', function() {
