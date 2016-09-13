@@ -77,7 +77,7 @@ app.controller('colorPickerController', function($scope) {
       ctx.lineWidth = 2;
       ctx.stroke();
 
-      var colorDatas = ctx.getImageData(centerX, centerY, 10, 10);
+      var colorDatas = ctx.getImageData(centerX, centerY, 5, 5);
       for (var i = 0;i < colorDatas.data.length; i += 4) {
         r += colorDatas.data[i];
         g += colorDatas.data[i + 1];
@@ -89,7 +89,6 @@ app.controller('colorPickerController', function($scope) {
       b = Math.round(b / l);
       var hexColor = rgbToHex(r, g, b);
       var colorNames = ntc.name(hexColor);
-
       $scope.currentShade = colorNames[3];
       $scope.currentColor = colorNames[1];
       $scope.$apply();
