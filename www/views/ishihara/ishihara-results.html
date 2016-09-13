@@ -20,16 +20,13 @@
 
             <ons-list-item ng-repeat="question in questions" class="list-item-container list__item ons-list-item-inner">
                 <ons-row class="row ons-row-inner">
-                    <ons-col width="95px" class="col ons-col-inner"
-                             style="-webkit-box-flex: 0; flex: 0 0 95px; max-width: 95px;">
+                    <ons-col width="95px">
                         <img src="{{question.file}}" class="thumbnail">
                     </ons-col>
                     <ons-col class="col ons-col-inner">
-                        <ons-row>{{"EXPECTED" | translate}} : {{question.correctAnswer}}</ons-row>
-                        <ons-row>{{"YOUR_ANSWER" | translate}} : {{answers[$index]}}</ons-row>
+                        <ons-row>{{"EXPECTED" | translate}} : {{question.correctAnswer | translate}}</ons-row>
+                        <ons-row>{{"YOUR_ANSWER" | translate}} : {{answers[$index] | translate}}</ons-row>
                     </ons-col>
-                    <ons-col width="40px" class="col ons-col-inner"
-                             style="-webkit-box-flex: 0; flex: 0 0 40px; max-width: 40px;"></ons-col>
                 </ons-row>
             </ons-list-item>
 

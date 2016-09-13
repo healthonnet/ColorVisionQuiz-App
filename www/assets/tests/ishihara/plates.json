@@ -8,7 +8,7 @@
       "colorBlind" : 12,
       "type" : 0,
       "choices": [
-        "X",
+        "NO_NUMBER",
         "12",
         "2"
       ]
@@ -18,12 +18,12 @@
       "correctAnswer" : 8,
       "greenDeficiency" : 3,
       "redDeficiency" : 3,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "8",
         "3",
-        "X"
+        "NO_NUMBER"
       ]
     },
     {
@@ -31,12 +31,12 @@
       "correctAnswer" : 6,
       "greenDeficiency" : 5,
       "redDeficiency" : 5,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "5",
         "6",
-        "X"
+        "NO_NUMBER"
       ]
     },
     {
@@ -44,11 +44,11 @@
       "correctAnswer" : 29,
       "greenDeficiency" : 70,
       "redDeficiency" : 70,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "29",
-        "X",
+        "NO_NUMBER",
         "70"
       ]
     },
@@ -57,11 +57,11 @@
       "correctAnswer" : 57,
       "greenDeficiency" : 35,
       "redDeficiency" : 35,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "35",
-        "X",
+        "NO_NUMBER",
         "57"
       ]
     },
@@ -70,12 +70,12 @@
       "correctAnswer" : 5,
       "greenDeficiency" : 2,
       "redDeficiency" : 2,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "2",
         "5",
-        "X"
+        "NO_NUMBER"
       ]
     },
     {
@@ -83,10 +83,10 @@
       "correctAnswer" : 3,
       "greenDeficiency" : 5,
       "redDeficiency" : 5,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
-        "X",
+        "NO_NUMBER",
         "5",
         "3"
       ]
@@ -96,10 +96,10 @@
       "correctAnswer" : 15,
       "greenDeficiency" : 17,
       "redDeficiency" : 17,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
-        "X",
+        "NO_NUMBER",
         "15",
         "17"
       ]
@@ -109,23 +109,23 @@
       "correctAnswer" : 74,
       "greenDeficiency" : 21,
       "redDeficiency" : 21,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "74",
         "21",
-        "X"
+        "NO_NUMBER"
       ]
     },
     {
       "file" : "assets/plates/plate-10.jpg",
       "correctAnswer" : 2,
-      "greenDeficiency" : "X",
-      "redDeficiency" : "X",
-      "colorBlind" : "X",
+      "greenDeficiency" : "NO_NUMBER",
+      "redDeficiency" : "NO_NUMBER",
+      "colorBlind" : "NO_NUMBER",
       "type" : 0,
       "choices": [
-        "X",
+        "NO_NUMBER",
         "27",
         "2"
       ]
@@ -133,51 +133,51 @@
     {
       "file" : "assets/plates/plate-11.jpg",
       "correctAnswer" : 6,
-      "greenDeficiency" : "X",
-      "redDeficiency" : "X",
-      "colorBlind" : "X",
+      "greenDeficiency" : "NO_NUMBER",
+      "redDeficiency" : "NO_NUMBER",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "3",
         "6",
-        "X"
+        "NO_NUMBER"
       ]
     },
     {
       "file" : "assets/plates/plate-12.jpg",
       "correctAnswer" : 97,
-      "greenDeficiency" : "X",
-      "redDeficiency" : "X",
-      "colorBlind" : "X",
+      "greenDeficiency" : "NO_NUMBER",
+      "redDeficiency" : "NO_NUMBER",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "7",
         "97",
-        "X"
+        "NO_NUMBER"
       ]
     },
     {
       "file" : "assets/plates/plate-13.jpg",
       "correctAnswer" : 45,
-      "greenDeficiency" : "X",
-      "redDeficiency" : "X",
-      "colorBlind" : "X",
+      "greenDeficiency" : "NO_NUMBER",
+      "redDeficiency" : "NO_NUMBER",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "4",
-        "X",
+        "NO_NUMBER",
         "45"
       ]
     },
     {
       "file" : "assets/plates/plate-14.jpg",
       "correctAnswer" : 5,
-      "greenDeficiency" : "X",
-      "redDeficiency" : "X",
-      "colorBlind" : "X",
+      "greenDeficiency" : "NO_NUMBER",
+      "redDeficiency" : "NO_NUMBER",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
-        "X",
+        "NO_NUMBER",
         "5",
         "3"
       ]
@@ -185,25 +185,25 @@
     {
       "file" : "assets/plates/plate-15.jpg",
       "correctAnswer" : 7,
-      "greenDeficiency" : "X",
-      "redDeficiency" : "X",
-      "colorBlind" : "X",
+      "greenDeficiency" : "NO_NUMBER",
+      "redDeficiency" : "NO_NUMBER",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "7",
         "2",
-        "X"
+        "NO_NUMBER"
       ]
     },
     {
       "file" : "assets/plates/plate-16.jpg",
       "correctAnswer" : 16,
-      "greenDeficiency" : "X",
-      "redDeficiency" : "X",
-      "colorBlind" : "X",
+      "greenDeficiency" : "NO_NUMBER",
+      "redDeficiency" : "NO_NUMBER",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
-        "X",
+        "NO_NUMBER",
         "16",
         "6"
       ]
@@ -211,64 +211,64 @@
     {
       "file" : "assets/plates/plate-17.jpg",
       "correctAnswer" : 73,
-      "greenDeficiency" : "X",
-      "redDeficiency" : "X",
-      "colorBlind" : "X",
+      "greenDeficiency" : "NO_NUMBER",
+      "redDeficiency" : "NO_NUMBER",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "73",
-        "X",
+        "NO_NUMBER",
         "3"
       ]
     },
     {
       "file" : "assets/plates/plate-18.jpg",
-      "correctAnswer" : "X",
+      "correctAnswer" : "NO_NUMBER",
       "greenDeficiency" : 5,
       "redDeficiency" : 5,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "5",
-        "X",
+        "NO_NUMBER",
         "7"
       ]
     },
     {
       "file" : "assets/plates/plate-19.jpg",
-      "correctAnswer" : "X",
+      "correctAnswer" : "NO_NUMBER",
       "greenDeficiency" : 2,
       "redDeficiency" : 2,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "12",
         "2",
-        "X"
+        "NO_NUMBER"
       ]
     },
     {
       "file" : "assets/plates/plate-20.jpg",
-      "correctAnswer" : "X",
+      "correctAnswer" : "NO_NUMBER",
       "greenDeficiency" : 45,
       "redDeficiency" : 45,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
-        "X",
+        "NO_NUMBER",
         "45",
         "5"
       ]
     },
     {
       "file" : "assets/plates/plate-21.jpg",
-      "correctAnswer" : "X",
+      "correctAnswer" : "NO_NUMBER",
       "greenDeficiency" : 73,
       "redDeficiency" : 73,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
-        "X",
+        "NO_NUMBER",
         "37",
         "73"
       ]
@@ -278,13 +278,13 @@
       "correctAnswer" : 26,
       "greenDeficiency" : 2,
       "redDeficiency" : 6,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "2",
         "26",
         "6",
-        "X"
+        "NO_NUMBER"
       ]
     },
     {
@@ -292,12 +292,12 @@
       "correctAnswer" : 42,
       "greenDeficiency" : 4,
       "redDeficiency" : 2,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "4",
         "2",
-        "X",
+        "NO_NUMBER",
         "42"
       ]
     },
@@ -306,11 +306,11 @@
       "correctAnswer" : 35,
       "greenDeficiency" : 3,
       "redDeficiency" : 5,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
         "35",
-        "X",
+        "NO_NUMBER",
         "5",
         "3"
       ]
@@ -320,10 +320,10 @@
       "correctAnswer" : 96,
       "greenDeficiency" : 9,
       "redDeficiency" : 6,
-      "colorBlind" : "X",
+      "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
-        "X",
+        "NO_NUMBER",
         "96",
         "6",
         "9"

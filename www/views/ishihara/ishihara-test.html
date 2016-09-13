@@ -15,14 +15,14 @@
             <h3 class="align-center">{{"YOUR_ANSWER" | translate}}&nbsp;: </h3>
             <div class="container">
                 <button class="button button--large" ng-click="answer(quiz[currentQuestion].choices[0])">
-                  {{quiz[currentQuestion].choices[0]}}</button>
+                  {{quiz[currentQuestion].choices[0] | translate}}</button>
                 <button class="button button--large" ng-click="answer(quiz[currentQuestion].choices[1])">
-                  {{quiz[currentQuestion].choices[1]}}</button>
+                  {{quiz[currentQuestion].choices[1] | translate}}</button>
                 <button class="button button--large" ng-click="answer(quiz[currentQuestion].choices[2])">
-                  {{quiz[currentQuestion].choices[2]}}</button>
+                  {{quiz[currentQuestion].choices[2] | translate}}</button>
                 <button class="button button--large" ng-show="quiz[currentQuestion].choices[3]"
                         ng-click="answer(quiz[currentQuestion].choices[3])">
-                  {{quiz[currentQuestion].choices[3]}}</button>
+                  {{quiz[currentQuestion].choices[3] | translate}}</button>
             </div>
         </ons-col>
     </ons-row>
