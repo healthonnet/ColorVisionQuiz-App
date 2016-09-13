@@ -1,5 +1,6 @@
 var app = angular.module('app',
-  ['onsen', 'pascalprecht.translate', 'ngCordova', 'angular-themer']);
+  ['onsen', 'pascalprecht.translate',
+    'ngCordova', 'ngSanitize', 'angular-themer',]);
 app.init = function() {
   angular.bootstrap(document, ['app']);
 };
