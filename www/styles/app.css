@@ -284,6 +284,10 @@ video.stereo {
 * Ishihara
 */
 
+#explanation {
+  margin-top: 20px;
+}
+
 #plateContainer {
   height: 100%;
   width: 40%;
