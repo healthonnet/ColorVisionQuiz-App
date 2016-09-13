@@ -362,7 +362,7 @@ video.stereo {
 
 #ishiharaTest footer {
   position: absolute;
-  bottom: 1%;
+  top: 1%;
   right: 1%;
 }
 

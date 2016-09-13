@@ -10,7 +10,8 @@
       "choices": [
         "NO_NUMBER",
         "12",
-        "2"
+        "2",
+        "15"
       ]
     },
     {
@@ -22,6 +23,7 @@
       "type" : 1,
       "choices": [
         "8",
+        "5",
         "3",
         "NO_NUMBER"
       ]
@@ -34,6 +36,7 @@
       "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
+        "8",
         "5",
         "6",
         "NO_NUMBER"
@@ -49,7 +52,8 @@
       "choices": [
         "29",
         "NO_NUMBER",
-        "70"
+        "70",
+        "79"
       ]
     },
     {
@@ -62,6 +66,7 @@
       "choices": [
         "35",
         "NO_NUMBER",
+        "37",
         "57"
       ]
     },
@@ -75,6 +80,7 @@
       "choices": [
         "2",
         "5",
+        "7",
         "NO_NUMBER"
       ]
     },
@@ -87,6 +93,7 @@
       "type" : 1,
       "choices": [
         "NO_NUMBER",
+        "2",
         "5",
         "3"
       ]
@@ -101,7 +108,8 @@
       "choices": [
         "NO_NUMBER",
         "15",
-        "17"
+        "17",
+        "7"
       ]
     },
     {
@@ -112,6 +120,7 @@
       "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
+        "71",
         "74",
         "21",
         "NO_NUMBER"
@@ -126,6 +135,7 @@
       "type" : 0,
       "choices": [
         "NO_NUMBER",
+        "7",
         "27",
         "2"
       ]
@@ -140,6 +150,7 @@
       "choices": [
         "3",
         "6",
+        "8",
         "NO_NUMBER"
       ]
     },
@@ -153,6 +164,7 @@
       "choices": [
         "7",
         "97",
+        "17",
         "NO_NUMBER"
       ]
     },
@@ -165,6 +177,7 @@
       "type" : 1,
       "choices": [
         "4",
+        "25",
         "NO_NUMBER",
         "45"
       ]
@@ -177,6 +190,7 @@
       "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
+        "2",
         "NO_NUMBER",
         "5",
         "3"
@@ -192,7 +206,8 @@
       "choices": [
         "7",
         "2",
-        "NO_NUMBER"
+        "NO_NUMBER",
+        "5"
       ]
     },
     {
@@ -204,6 +219,7 @@
       "type" : 1,
       "choices": [
         "NO_NUMBER",
+        "18",
         "16",
         "6"
       ]
@@ -216,6 +232,7 @@
       "colorBlind" : "NO_NUMBER",
       "type" : 1,
       "choices": [
+        "13",
         "73",
         "NO_NUMBER",
         "3"
@@ -231,6 +248,7 @@
       "choices": [
         "5",
         "NO_NUMBER",
+        "2",
         "7"
       ]
     },
@@ -243,6 +261,7 @@
       "type" : 1,
       "choices": [
         "12",
+        "21",
         "2",
         "NO_NUMBER"
       ]
@@ -257,6 +276,7 @@
       "choices": [
         "NO_NUMBER",
         "45",
+        "53",
         "5"
       ]
     },
@@ -269,6 +289,7 @@
       "type" : 1,
       "choices": [
         "NO_NUMBER",
+        "52",
         "37",
         "73"
       ]
