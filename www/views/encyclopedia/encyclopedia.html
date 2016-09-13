@@ -8,10 +8,14 @@
         <div class="center">{{"ENCYCLOPEDIA" | translate}}</div>
     </ons-toolbar>
     <ons-list modifier="inset">
-        <ons-list-header>Topics</ons-list-header>
-        <ons-list-item ng-repeat="topic in topics" modifier="tappable chevron"
+        <ons-list-header>{{"TOPIC_HEADER_COLORBLINDNESS" | translate}}</ons-list-header>
+        <ons-list-item ng-repeat="topic in topicsColorblindess" modifier="tappable chevron"
                        ng-click="navigatorEncyclopedia.pushPage('views/encyclopedia/encyclopedia-topic.html',
-        { topic: topic })">{{topic.label}}</ons-list-item>
+        { topic: topic })">{{topic.label | translate}}</ons-list-item>
+        <ons-list-header>{{"TOPIC_HEADER_TESTS" | translate}}</ons-list-header>
+        <ons-list-item ng-repeat="topic in topicsTests" modifier="tappable chevron"
+                       ng-click="navigatorEncyclopedia.pushPage('views/encyclopedia/encyclopedia-topic.html',
+        { topic: topic })">{{topic.label | translate}}</ons-list-item>
     </ons-list>
     <ons-row class="align-center row-spacing">
         <ons-col>

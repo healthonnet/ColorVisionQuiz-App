@@ -1,4 +1,5 @@
-angular.module('app').controller('AppController', function($scope, $translate) {
+angular.module('app').controller('AppController',
+  function($scope, $rootScope, $translate) {
   document.addEventListener('deviceready', function() {
     // CordovaPlugin available
     console.log('deviceready');
@@ -60,4 +61,60 @@ angular.module('app').controller('AppController', function($scope, $translate) {
   // Init
   $scope.localeName = $translate.proposedLanguage();
   $scope.locales = $translate.getAvailableLanguageKeys();
+
+  // TODO Load articles json file.
+  $rootScope.topicsColorblindess = [
+    {
+      id: 1,
+      label: 'INTRODUCTION_TITLE',
+      description: 'INTRODUCTION_CONTENT',
+      date: '2016-09',
+    },
+    {
+      id: 2,
+      label: 'DALTONISM_TITLE',
+      description: 'DALTONISM_CONTENT',
+      date: '2016-09',
+    },
+    {
+      id: 3,
+      label: 'DICROMATE_TITLE',
+      description: 'DICROMATE_CONTENT',
+      date: '2016-09',
+    },
+    {
+      id: 4,
+      label: 'TRICHROMATE_TITLE',
+      description: 'TRICHROMATE_CONTENT',
+      date: '2016-09',
+    },
+    {
+      id: 5,
+      label: 'ACHROMATE_TITLE',
+      description: 'ACHROMATE_CONTENT',
+      date: '2016-09',
+    },
+    {
+      id: 6,
+      label: 'ACQUIRED_TITLE',
+      description: 'ACQUIRED_CONTENT',
+      date: '2016-09',
+    },
+  ];
+  $rootScope.topicsTests = [
+    {
+      id: 1,
+      label: 'ISHIHARA_TITLE',
+      description: 'ISHIHARA_CONTENT',
+      image: './assets/plates/plate-1.jpg',
+      more: 'ISHIHARA_MORE',
+      date: '2016-09',
+    },
+    {
+      id: 2,
+      label: 'FARNSWORTH_TITLE',
+      description: 'FARNSWORTH_CONTENT',
+      date: '2016-09',
+    },
+  ];
 });

@@ -6,11 +6,11 @@
         <div class="center">{{"ENCYCLOPEDIA" | translate}}</div>
     </ons-toolbar>
     <ons-row class="align-center">
-        <ons-col>
-            <h1>{{topic.label}}</h1>
+        <ons-col width="90%" class="center">
+            <h1>{{topic.label | translate}}</h1>
+            <div class="justify" ng-bind-html='topic.description | translate'></div>
             <img class="detail-picture" ng-src="{{topic.image}}" alt=""/>
-            <p>{{topic.description}}</p>
-            <p>{{topic.author}}</p>
+            <div class="justify" ng-bind-html='topic.more | translate'></div>
         </ons-col>
     </ons-row>
 </ons-page>
