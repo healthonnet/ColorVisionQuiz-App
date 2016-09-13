@@ -273,6 +273,10 @@ video.stereo {
 /**
 * Ishihara
 */
+#explanations .ons-button-inner, #explanations .checkbox {
+  font-size: 1.5em;
+}
+
 
 #plateContainer {
   height: 100%;
@@ -337,8 +341,9 @@ video.stereo {
 }
 
 #anwserContainer .container .button {
-  font-size: 1.5em;
+  font-size: 3.5em;
   margin-bottom: 10px;
+  padding: 10px 0px;
 }
 
 #ishiharaTest footer {
