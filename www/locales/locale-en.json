@@ -30,6 +30,7 @@
   "TEST_ISHIHARA_PROTANOMALY": "protanomaly suspected",
   "TEST_ISHIHARA_DEUTERANOMALY": "deuteranomaly suspected",
   "TEST_ISHIHARA_COLOR_DEFICIENCY": "color deficiency suspected",
+  "TEST_ISHIHARA_SHOULD_PRECISE": "anomaly suspected, consider pass the full test",
   "SHORT_TEST": "short test",
   "NO_NUMBER": "no number",
   "CHANGE_THEME": "change color theme",
