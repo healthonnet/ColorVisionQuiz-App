@@ -50,7 +50,7 @@ angular.module('app')
           break;
         }
         case (diagnostic.score >= 14 && diagnostic.score <= 16): {
-          diagnostic.title = 'TEST_ISHIHARA_SHOULD_FARNSWORTH';
+          diagnostic.title = 'TEST_ISHIHARA_COLOR_DEFICIENCY';
           break;
         }
         case (diagnostic.score <= 13): {

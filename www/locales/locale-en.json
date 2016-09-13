@@ -29,7 +29,7 @@
   "TEST_ISHIHARA_COLOR_BLIND": "achromatopsia suspected",
   "TEST_ISHIHARA_COLOR_PROTANOMALY": "protanomaly suspected",
   "TEST_ISHIHARA_COLOR_DEUTERANOMALY": "deuteranomaly suspected",
-  "TEST_ISHIHARA_COLOR_DEFICIENCY": "color deficiency",
+  "TEST_ISHIHARA_COLOR_DEFICIENCY": "color deficiency suspected",
   "SHORT_TEST": "short test",
   "CHANGE_THEME": "change color theme",
   "CHANGE_LANGUAGE": "change language",

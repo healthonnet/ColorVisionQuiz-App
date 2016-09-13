@@ -138,6 +138,10 @@ video {
   text-transform: capitalize;
 }
 
+.ons-button-inner, .checkbox {
+  font-size: 1.3em;
+}
+
 /**
  * Encyclopedia
  */
@@ -273,10 +277,6 @@ video.stereo {
 /**
 * Ishihara
 */
-#explanations .ons-button-inner, #explanations .checkbox {
-  font-size: 1.5em;
-}
-
 
 #plateContainer {
   height: 100%;
@@ -312,6 +312,10 @@ video.stereo {
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+#anwserContainer h3 {
+  margin-bottom: 10px;
 }
 
 #anwserContainer.portrait {
