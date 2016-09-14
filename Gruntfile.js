@@ -70,7 +70,7 @@ module.exports = function(grunt) {
         },
 
         src: './locales.zip',
-        dest: '.',
+        dest: './www/',
       },
     },
   });
