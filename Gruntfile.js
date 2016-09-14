@@ -60,13 +60,13 @@ module.exports = function(grunt) {
       './locales.zip': 'https://localise.biz:443/' +
       'api/export/archive/json.zip?' +
       'key=14f36db4b9da62bb55932a533332b491&' +
-      'path=_locales%2Flocale-%7B%25lang%7D.json',
+      'path=locale-%7B%25lang%7D.json',
     },
     unzip: {
       'using-router': {
         router: function(filepath) {
           var filename = path.basename(filepath);
-          return '_locales/' + filename;
+          return 'locales/' + filename;
         },
 
         src: './locales.zip',
