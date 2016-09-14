@@ -8,8 +8,6 @@
         PhoneGap Team
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
-    <plugin name="cordova-plugin-x-socialsharing" spec="~5.0.12" />
-    <plugin name="cordova-plugin-settings-hook" spec="~0.2.3" />
     <engine name="android" spec="~5.1.1" />
     <engine name="ios" spec="~4.0.1" />
     <preference name="permissions" value="none" />
@@ -26,6 +24,7 @@
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-targetSdkVersion" value="22" />
     <preference name="android-installLocation" value="auto" />
     <icon src="icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
@@ -53,14 +52,6 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <preference name="DisallowOverscroll" value="true" />
     <access origin="http://127.0.0.1*" />
-    <platform name="android">
-        <config-file parent="/*" target="AndroidManifest.xml">
-            <uses-permission android:name="android.permission.CAMERA" />
-            <uses-feature android:name="android.hardware.camera" />
-            <uses-feature android:name="android.hardware.camera.autofocus" />
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-            <uses-permission android:name="android.permission.RECORD_VIDEO" />
-        </config-file>
-    </platform>
     <plugin name="cordova-plugin-inappbrowser" spec="~1.4.0" />
+    <plugin name="cordova-opentok-android-permissions" spec="~1.0.0" />
 </widget>
