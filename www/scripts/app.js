@@ -17,21 +17,17 @@ app.config(['$translateProvider', 'themerProvider',
   });
 
   $translateProvider.useStaticFilesLoader({
-    prefix: 'locales/locale-',
+    prefix: '_locales/locale-',
     suffix: '.json',
   });
 
   $translateProvider.determinePreferredLanguage(function() {
     var locale = 'en';
-    if (navigator.language) {
-      locale = navigator.language.substring(0,2);
-    }
     if (localStorage) {
       if (localStorage.getItem('locale')) {
         locale = localStorage.getItem('locale');
       }
     }
-    // TODO prevent unsupported language
 
     return locale;
   });

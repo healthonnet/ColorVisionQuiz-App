@@ -5,12 +5,16 @@ var lrSnippet = require('connect-livereload')({
 var mountFolder = function(connect, dir) {
     return connect.static(require('path').resolve(dir));
   };
+var path = require('path');
 
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('grunt-cordova-ng');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-curl');
+  grunt.loadNpmTasks('grunt-zip');
+
   grunt.initConfig({
     connect: {
       options: {
@@ -52,11 +56,28 @@ module.exports = function(grunt) {
     csslint: {
       src: ['www/css/**/*.css'],
     },
-  });
+    curl: {
+      './locales.zip': 'https://localise.biz:443/' +
+      'api/export/archive/json.zip?' +
+      'key=14f36db4b9da62bb55932a533332b491&' +
+      'path=_locales%2Flocale-%7B%25lang%7D.json',
+    },
+    unzip: {
+      'using-router': {
+        router: function(filepath) {
+          var filename = path.basename(filepath);
+          return '_locales/' + filename;
+        },
 
-  grunt.registerTask('default', ['connect', 'test', 'watch']);
-  grunt.registerTask('lint',    ['jshint','jscs', 'csslint']);
+        src: './locales.zip',
+        dest: '.',
+      },
+    },
+  });
+  grunt.registerTask('default', ['connect', 'lang', 'test', 'watch']);
+  grunt.registerTask('lint',    ['jshint', 'jscs', 'csslint']);
+  grunt.registerTask('lang',    ['curl', 'unzip']);
   grunt.registerTask('test',    ['lint']);
-  grunt.registerTask('build',   ['test','cordova:package']);
+  grunt.registerTask('build',   ['lang', 'test', 'cordova:package']);
 
 };
