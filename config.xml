@@ -4,8 +4,8 @@
     <description>
         Color blind sample application that responds to the deviceready event.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="webmaster@healthonnet.org" href="http://hon.ch">
+        Health On Net Team
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <engine name="android" spec="~5.1.1" />
