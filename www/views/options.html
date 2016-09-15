@@ -12,15 +12,18 @@
             </ons-col>
         </ons-row>
         <ons-row class="align-center">
-            <ons-col width="90%" class="center">{{"CHANGE_THEME" | translate}} :
+            <ons-col width="90%" class="center"><h3>{{"CHANGE_THEME" | translate}}  :</h3>
                 <div id="theme-switcher" themer-switcher></div>
             </ons-col>
         </ons-row>
         <ons-row class="align-center">
-            <div class="home-btn">{{"CHANGE_LANGUAGE" | translate}} :
-                    <select ng-model="localeName" class="button"
-                    ng-options="locale for locale in locales"
-                    ng-change="changeLanguage(localeName)"/>
+            <div class="home-btn"><h3>{{"CHANGE_LANGUAGE" | translate}} : </h3>
+                <div class="button-bar" style="width:280px;margin:0 auto;">
+                    <div ng-repeat="locale in locales" class="button-bar__item">
+                        <input ng-change="changeLanguage(localeName)" type="radio" name="segment-a" ng-model="localeName" ng-value="locale">
+                        <button class="button-bar__button">{{locale}}</button>
+                    </div>
+                </div>
             </div>
         </ons-row>
     </ons-row>

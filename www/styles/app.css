@@ -261,7 +261,7 @@ video {
 #active-filter {
   width: 100%;
   display: block;
-  font-size: 2.5em;
+  font-size: 3em;
   text-align: center;
   text-transform: capitalize;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
