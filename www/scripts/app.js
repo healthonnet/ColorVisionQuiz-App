@@ -17,12 +17,12 @@ app.config(['$translateProvider', 'themerProvider',
   });
 
   $translateProvider.useStaticFilesLoader({
-    prefix: '_locales/locale-',
+    prefix: 'locales/locale-',
     suffix: '.json',
   });
 
   $translateProvider.determinePreferredLanguage(function() {
-    var locale = 'en';
+    var locale = 'fr';
     if (localStorage) {
       if (localStorage.getItem('locale')) {
         locale = localStorage.getItem('locale');

@@ -1,8 +1,10 @@
 angular.module('app').controller('AppController',
-  function($scope, $rootScope, $translate) {
+  function($scope, $rootScope, $translate, $cordovaDevice) {
   document.addEventListener('deviceready', function() {
     // CordovaPlugin available
     console.log('deviceready');
+    $rootScope.osVersion = $cordovaDevice.getVersion();
+    $rootScope.$apply();
   }, false);
 
   function pushSimulator() {
