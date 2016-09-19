@@ -11,13 +11,11 @@
         <h1 class="center">{{"RESULTS" | translate}}</h1>
     </ons-row>
     <ons-row>
-        <p>{{"YOUR_RESULT" | translate}} :
-            {{diagnostic.title | translate}}
-        </p>
+        <p>{{diagnostic.title | translate}}</p>
+        <p>{{"DISCLAIMER" | translate}}</p>
     </ons-row>
     <ons-scroller style="max-height: 350px">
         <ons-list>
-
             <ons-list-item ng-repeat="question in questions" class="list-item-container list__item ons-list-item-inner">
                 <ons-row class="row ons-row-inner">
                     <ons-col width="95px">
@@ -29,7 +27,6 @@
                     </ons-col>
                 </ons-row>
             </ons-list-item>
-
         </ons-list>
     </ons-scroller>
     <ons-row class="align-center">

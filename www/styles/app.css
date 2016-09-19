@@ -129,6 +129,8 @@ video {
 
 #filter-bar .button.filter {
   width: 15%;
+  font-size: 1.3em;
+  text-transform: uppercase;
   margin: 0 2%;
 }
 
@@ -140,7 +142,7 @@ video {
   text-transform: capitalize;
 }
 
-.ons-button-inner, .checkbox {
+.ons-button-inner, .checkbox, .button-bar__item .button-bar__button  {
   font-size: 1.3em;
 }
 
@@ -218,6 +220,15 @@ video {
 
 #about-page li {
   margin-bottom: 10px;
+}
+
+/**
+ * Options
+ */
+
+#optionPage .button-bar__button {
+  height: 40px;
+  text-transform: uppercase;
 }
 
 /**
