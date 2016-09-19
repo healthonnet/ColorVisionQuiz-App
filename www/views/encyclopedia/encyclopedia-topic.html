@@ -11,7 +11,8 @@
             <div class="justify" ng-bind-html='topic.description | translate'></div>
             <img class="detail-picture" ng-src="{{topic.image}}" alt=""/>
             <div class="justify" ng-bind-html='topic.more | translate'></div>
-            <p>Date : {{topic.date}}</p>
+            <p class="date">{{"CREATED_AT" | translate}} : {{topic.createdAt}} <br/>
+              {{"LAST_MODIFIED" | translate}} : {{topic.lastModified}} </p>
         </ons-col>
     </ons-row>
 </ons-page>

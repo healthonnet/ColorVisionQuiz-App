@@ -167,6 +167,10 @@ video {
   margin-top: 10px;
 }
 
+.date {
+  text-align: left;
+}
+
 /**
  * Home
  */
