@@ -146,6 +146,15 @@ video {
   font-size: 1.3em;
 }
 
+.page, .list__item, .list__header {
+  font-size: 20px !important;
+}
+.list__header {
+  min-height: 35px;
+  line-height: 35px;
+}
+
+
 /**
  * Encyclopedia
  */
@@ -168,7 +177,6 @@ video {
 .home-btn {
   width: 80%;
   margin: 10px auto;
-  text-transform: capitalize;
 }
 
 .home-half {
