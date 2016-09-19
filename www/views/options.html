@@ -19,8 +19,8 @@
         <ons-row class="align-center">
             <div class="home-btn"><h3>{{"CHANGE_LANGUAGE" | translate}} : </h3>
                 <div class="button-bar" style="width:280px;margin:0 auto;">
-                    <div ng-repeat="locale in locales" class="button-bar__item">
-                        <input ng-change="changeLanguage(localeName)" type="radio" name="segment-a" ng-model="localeName" ng-value="locale">
+                    <div class="button-bar__item" ng-repeat="locale in locales" >
+                        <input ng-click="changeLanguage(localeName)" type="radio" name="segment-a" ng-model="localeName" ng-value="locale">
                         <button class="button-bar__button">{{locale}}</button>
                     </div>
                 </div>
