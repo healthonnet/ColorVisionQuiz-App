@@ -89,6 +89,10 @@
   text-align: justify;
 }
 
+.avoid-clicks {
+  pointer-events: none;
+}
+
 /*
  * Custom styles
  */
@@ -391,6 +395,10 @@ video.stereo {
   position: absolute;
   top: 1%;
   right: 1%;
+}
+
+#ishiharaResults .list-header .ons-col-inner{
+  padding: 10px;
 }
 
 #ishiharaResults p {

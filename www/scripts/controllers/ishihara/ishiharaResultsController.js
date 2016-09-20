@@ -29,10 +29,10 @@ angular.module('app')
         diagnostic.cb++;
       }
       if ($scope.answers[index] === 'NO_NUMBER') {
-        $scope.answers[index] = 'X';
+        $scope.answers[index] = '∅';
       }
       if (question.correctAnswer === 'NO_NUMBER') {
-        question.correctAnswer = 'X';
+        question.correctAnswer = '∅';
       }
     });
 
