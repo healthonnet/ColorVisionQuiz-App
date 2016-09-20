@@ -12,7 +12,7 @@
         <video id="left" ng-class="{stereo: armode}" autoplay></video>
         <video id="right" ng-class="{stereo: armode}" ng-show="armode"></video>
         <div class="overlay">
-            <ons-row id="active-filter">{{ selectedFilter | translate }}</ons-row>
+            <ons-row id="active-filter" ng-hide="armode">{{ selectedFilter | translate }}</ons-row>
             <ons-row id="filter-bar">
                 <ons-col>
                     <select class="button--large--cta filter" ng-model="selectedFilter" ng-change="updateFilter()">
@@ -25,7 +25,7 @@
                         <option value="ACHROMATOPSIA">{{ "ACHROMATOPSIA" | translate }}</option>
                     </select>
                 </ons-col>
-                <ons-col ons-if-orientation="landscape">
+                <ons-col width="40%" ons-if-orientation="landscape">
                     <ons-button ng-hide="armode" modifier="material" ng-click="toggleAR();" class="button">
                       {{"AR_MODE" | translate}}
                     </ons-button>
