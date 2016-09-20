@@ -74,7 +74,7 @@
       <splash height="1334" src="www/res/screen/ios/screen-iphone-portrait-667h.png" width="750" />
       <splash height="1242" src="www/res/screen/ios/screen-iphone-landscape-736h.png" width="2208" />
       <splash height="2208" src="www/res/screen/ios/screen-iphone-portrait-736h.png" width="1242" />
-      <splash height="2048" src="www/res/screen/ios/screen-ipad-portrait-2x.png" width="1546" />
+      <splash height="2048" src="www/res/screen/ios/screen-ipad-portrait-2x.png" width="1536" />
       <splash height="1536" src="www/res/screen/ios/screen-ipad-landscape-2x.png" width="2048" />
     </platform>
 
