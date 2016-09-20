@@ -393,6 +393,16 @@ video.stereo {
   right: 1%;
 }
 
-#ishiharaResults h1, #ishiharaResults p {
-  margin-left: 10px;
+#ishiharaResults p {
+  margin: 5px 10px;
+}
+
+#ishiharaResults .answer {
+  line-height: 2em;
+  font-size: 2em;
+  color: #00B000;
+  font-weight: bold;
+}
+#ishiharaResults .answer.wrong {
+  color: red;
 }

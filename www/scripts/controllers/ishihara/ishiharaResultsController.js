@@ -24,8 +24,15 @@ angular.module('app')
         if (question.greenDeficiency === parseInt($scope.answers[index])) {
           diagnostic.gdef++;
         }
-      } else if (question.colorBlind === parseInt($scope.answers[index])) {
+      } else if (question.colorBlind === parseInt($scope.answers[index]) ||
+        question.colorBlind === $scope.answers[index]) {
         diagnostic.cb++;
+      }
+      if ($scope.answers[index] === 'NO_NUMBER') {
+        $scope.answers[index] = 'X';
+      }
+      if (question.correctAnswer === 'NO_NUMBER') {
+        question.correctAnswer = 'X';
       }
     });
 
