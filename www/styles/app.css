@@ -404,5 +404,5 @@ video.stereo {
   font-weight: bold;
 }
 #ishiharaResults .answer.wrong {
-  color: red;
+  color: magenta;
 }
