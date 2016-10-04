@@ -1,6 +1,12 @@
 angular.module('app').controller('AppController',
   function($scope, $rootScope, $translate, $cordovaDevice) {
-  $rootScope.osVersion = '5';
+  // Dev $rootScope.osVersion = '5';
+
+  $rootScope.openExternalLink = function(link) {
+    window.open(link,
+      '_system', 'location=yes');
+  };
+
   document.addEventListener('deviceready', function() {
     // CordovaPlugin available
     console.log('deviceready');

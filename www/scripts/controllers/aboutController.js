@@ -1,7 +1,12 @@
-angular.module('app').controller('AboutController', function($scope) {
+angular.module('app').controller('AboutController', function($rootScope) {
   console.log('AboutController');
-  $scope.openExternalLink = function(link) {
-    window.open(link,
-      '_system', 'location=yes');
-  };
+
+  setTimeout(function() {
+    var links = document.querySelectorAll('a.button--quiet');
+    links.forEach(function(link) {
+      link.addEventListener('click', function() {
+        $rootScope.openExternalLink(link.innerHTML);
+      }, false);
+    });
+  },10);
 });
