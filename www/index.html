@@ -92,13 +92,13 @@
             </ons-list-item>
             -->
 
-            <ons-list-item class="menu-item" ons-if-platform="android"
+            <ons-list-item class="menu-item" ons-if-platform="android" ng-show="osVersion >= '4.4.4'"
                            ng-click="redirectSimulator()">
                 <ons-icon icon="fa-eye-slash"></ons-icon>
               {{"VISION_SIMULATOR" | translate}}
             </ons-list-item>
 
-            <ons-list-item class="menu-item" ons-if-platform="android"
+            <ons-list-item class="menu-item" ons-if-platform="android" ng-show="osVersion >= '4.4.4'"
                            ng-click="redirectColorPicker()">
                 <ons-icon icon="fa-eyedropper"></ons-icon>
               {{"COLOR_PICKER" | translate}}
