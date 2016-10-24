@@ -94,8 +94,8 @@ angular.module('angular-themer', [])
       template: '<ons-row class="row inner-row align-center">' +
       '<ons-col ng-repeat="style in theme.styles" ' +
       'ng-click="theme.selected = style.key" ' +
-      'class="col ons-col-inner {{style.example}}">' +
-      '<ons-button class="button--large home-btn">Abc</ons-button>' +
+      'class="col ons-col-inner style-preview {{style.example}}">' +
+      'Abc' +
       '</ons-col>' +
       '</ons-row>',
       replace: false,
