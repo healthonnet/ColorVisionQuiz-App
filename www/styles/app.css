@@ -63,6 +63,10 @@
   margin: 5px;
 }
 
+ons-sliding-menu {
+  bottom: 44px;
+}
+
 /**
  * Helpers
  */
@@ -335,7 +339,7 @@ video.stereo {
 }
 
 #plateContainer.portrait {
-  height: 50%;
+  height: 40%;
   width: 100%;
   float: none;
   position: relative;
@@ -367,7 +371,7 @@ video.stereo {
 }
 
 #anwserContainer.portrait {
-  height: 50%;
+  height: 60%;
   width: 100%;
   float: none;
   position: fixed;
@@ -393,7 +397,7 @@ video.stereo {
 }
 
 #anwserContainer .container .button {
-  font-size: 2.5em;
+  font-size: 2.2em;
   margin-bottom: 10px;
   padding: 10px 0px;
 }
