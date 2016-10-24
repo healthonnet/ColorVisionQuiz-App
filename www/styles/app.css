@@ -97,6 +97,10 @@ ons-sliding-menu {
   pointer-events: none;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 /*
  * Custom styles
  */
