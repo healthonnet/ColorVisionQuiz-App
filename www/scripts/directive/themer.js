@@ -95,7 +95,7 @@ angular.module('angular-themer', [])
       '<ons-col ng-repeat="style in theme.styles" ' +
       'ng-click="theme.selected = style.key" ' +
       'class="col ons-col-inner style-preview {{style.example}}">' +
-      'Abc' +
+      '<ons-icon icon="fa-eye-slash"></ons-icon>' +
       '</ons-col>' +
       '</ons-row>',
       replace: false,
