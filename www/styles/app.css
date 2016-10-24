@@ -96,6 +96,12 @@
 /*
  * Custom styles
  */
+.footer {
+  text-align: center;
+  line-height: 44px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}
+
 footer {
   padding: 2% 5%;
 }
