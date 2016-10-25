@@ -77,6 +77,9 @@ ons-sliding-menu {
 .center {
   margin: 0 auto;
 }
+.over-hidden .page__content.ons-page-inner{
+  overflow: hidden;
+}
 .row-spacing {
   margin: 10px 0;
 }
