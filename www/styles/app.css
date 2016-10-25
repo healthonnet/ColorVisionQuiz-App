@@ -370,6 +370,7 @@ video.stereo {
 }
 
 #plateContainer.portrait .plate {
+  margin-top: 44px;
   align-self: center;
   flex: 0 0 auto;
   width: initial;
