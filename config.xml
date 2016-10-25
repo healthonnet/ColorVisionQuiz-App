@@ -26,8 +26,7 @@
     <preference name="android-minSdkVersion" value="19" />
     <preference name="android-targetSdkVersion" value="22" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="splashscreen" value="splash" />
-    <preference name="splashScreenDelay" value="10000" />
+    <preference name="splashScreenDelay" value="3000" />
     <icon src="icon.png" />
     <platform name="android">
       <icon density="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
@@ -37,13 +36,13 @@
       <icon density="xxhdpi" src="www/res/icon/android/icon-144-xxhdpi.png" />
       <icon density="xxxhdpi" src="www/res/icon/android/icon-192-xxxhdpi.png" />
       <splash density="ldpi" src="www/res/screen/android/screen-ldpi-portrait.png" />
-      <splash density="ldpi" qualifier="land-ldpi" src="www/res/screen/android/screen-ldpi-landscape.png" />
+      <splash density="land-ldpi" src="www/res/screen/android/screen-ldpi-landscape.png" />
       <splash density="mdpi" src="www/res/screen/android/screen-mdpi-portrait.png" />
-      <splash density="mdpi" qualifier="land-mdpi" src="www/res/screen/android/screen-mdpi-landscape.png" />
+      <splash density="land-mdpi" src="www/res/screen/android/screen-mdpi-landscape.png" />
       <splash density="hdpi" src="www/res/screen/android/screen-hdpi-portrait.png" />
-      <splash density="hdpi" qualifier="land-hdpi" src="www/res/screen/android/screen-hdpi-landscape.png" />
+      <splash density="land-hdpi" src="www/res/screen/android/screen-hdpi-landscape.png" />
       <splash density="xhdpi" src="www/res/screen/android/screen-xhdpi-portrait.png" />
-      <splash density="xhdpi" qualifier="land-xhdpi" src="www/res/screen/android/screen-xhdpi-landscape.png" />
+      <splash density="land-xhdpi" src="www/res/screen/android/screen-xhdpi-landscape.png" />
     </platform>
     <platform name="ios">
       <icon height="29" src="www/res/icon/ios/icon-small.png" width="29" />
@@ -77,10 +76,10 @@
       <splash height="2048" src="www/res/screen/ios/screen-ipad-portrait-2x.png" width="1536" />
       <splash height="1536" src="www/res/screen/ios/screen-ipad-landscape-2x.png" width="2048" />
     </platform>
-
     <preference name="DisallowOverscroll" value="true" />
     <access origin="http://127.0.0.1*" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.4.0" />
     <plugin name="cordova-opentok-android-permissions" spec="~1.0.0" />
     <plugin name="cordova-plugin-device" spec="~1.1.2" />
+    <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
 </widget>
