@@ -340,7 +340,7 @@ video.stereo {
 #ishihara-land {
   height: 100%;
 }
-#ishihara-land #ishihara-preview {
+#ishihara-land ons-col {
   margin: auto;
 }
 
