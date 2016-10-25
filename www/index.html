@@ -61,6 +61,16 @@
     <ons-bottom-toolbar>
         <div class="footer">{{"FOOTER" | translate}}</div>
     </ons-bottom-toolbar>
+    <ons-modal var="modalSimulator">
+        <h1>{{"VISION_SIMULATOR" | translate}}</h1>
+        <div ng-bind-html='"MODAL_SIMULATOR" | translate'></div>
+        <button  class="button" ng-click="modalSimulator.hide()">{{"CLOSE" | translate}}</button>
+    </ons-modal>
+    <ons-modal var="modalColorPicker">
+        <h1>{{"COLOR_PICKER" | translate}}</h1>
+        <div ng-bind-html='"MODAL_COLOR_PICKER" | translate'></div>
+        <button  class="button uppercase" ng-click="modalColorPicker.hide()">{{"CLOSE" | translate}}</button>
+    </ons-modal>
 </ons-screen>
 
 <ons-template id="menu.html">
