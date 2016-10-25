@@ -205,37 +205,33 @@ video {
   width: 50%;
 }
 
+.style-preview {
+  padding: 10px;
+  font-weight: bold;
+  font-size: larger;
+}
+
 .chambray {
   color: #000;
   background-color: #fff;
-}
-.chambray .button {
-  color: #fff;
-  background-color: #3A539B;
+  border: 5px solid #3A539B;
 }
 .blue {
   color: #FFE400;
   background-color: #005aff;
-}
-.blue .button {
-  color: #005AFF;
-  background-color: #FFE400;
+  border: 5px solid #FFE400;
+
 }
 .light {
   color: #000;
   background-color: #d2efe9;
-}
-.light .button {
-  color: #FFF;
-  background-color: #F00;
+  border: 5px solid #F00;
 }
 .dark {
   color: #fff;
   background-color: #242424;
-}
-.dark .button {
-  color: #000;
-  background-color: #FF0;
+  border: 5px solid #FFF000;
+
 }
 
 /**
