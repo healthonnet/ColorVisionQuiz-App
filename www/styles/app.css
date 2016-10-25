@@ -337,6 +337,13 @@ video.stereo {
   margin-top: 20px;
 }
 
+#ishihara-land {
+  height: 100%;
+}
+#ishihara-land #ishihara-preview {
+  margin: auto;
+}
+
 #plateContainer {
   height: 100%;
   width: 40%;
@@ -352,8 +359,9 @@ video.stereo {
   position: relative;
 }
 
-#plateContainer.plate {
+#plateContainer .plate {
   display: block;
+  width: 100%;
 }
 
 #plateContainer.portrait ons-col {
@@ -363,6 +371,7 @@ video.stereo {
 #plateContainer.portrait .plate {
   align-self: center;
   flex: 0 0 auto;
+  width: initial;
 }
 
 #anwserContainer{
@@ -404,10 +413,15 @@ video.stereo {
 }
 
 #anwserContainer .container .button {
-  font-size: 2.2em;
+  font-size: 2em;
   margin-bottom: 10px;
-  padding: 10px 0px;
+  padding: 10px 0;
 }
+#anwserContainer .container .button.small {
+  width: 32%;
+  font-size: 2.3em;
+}
+
 
 #ishiharaTest footer {
   position: absolute;
