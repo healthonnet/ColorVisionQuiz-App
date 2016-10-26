@@ -7,21 +7,31 @@
         </div>
         <div class="center">Ishihara</div>
     </ons-toolbar>
-    <ons-row class="align-center">
+    <ons-row class="align-center" ons-if-orientation="portrait">
         <ons-col>
             <h1>Ishihara test</h1>
         </ons-col>
     </ons-row>
-    <ons-row class="align-center">
+    <ons-row class="align-center" ons-if-orientation="portrait">
         <ons-col>
             <img src="assets/plates/plate-1.jpg" class="ishihara-example" alt="example">
         </ons-col>
-        <ons-col width="60%" ons-if-orientation="landscape" ng-include="'explanations.html'"></ons-col>
     </ons-row>
-    <ons-row class="align-center" ons-if-orientation="portrait" ng-include="'explanations.html'"></ons-row>
+    <ons-row class="align-center"  ons-if-orientation="portrait" ng-include="'explanations.html'"></ons-row>
 
+    <ons-row class="align-center" id="ishihara-land" ons-if-orientation="landscape">
+        <ons-col>
+            <img src="assets/plates/plate-1.jpg" class="ishihara-example" alt="example">
+        </ons-col>
+        <ons-col width="60%" ng-include="'explanations.html'"></ons-col>
+    </ons-row>
 
     <ons-template id="explanations.html">
+        <ons-row class="align-center" ons-if-orientation="landscape">
+            <ons-col>
+                <h1>Ishihara test</h1>
+            </ons-col>
+        </ons-row>
         <div id="explanations" class="center">
             <ons-row class="row-spacing">
                 <ons-col>

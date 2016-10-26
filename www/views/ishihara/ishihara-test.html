@@ -6,7 +6,7 @@
         <div class="center">Ishihara - Quiz</div>
     </ons-toolbar>
     <ons-row id="plateContainer" ng-class="{true: 'portrait', false: ''}[orientation]">
-        <ons-col width="90%" class="align-center center" style="overflow: hidden">
+        <ons-col width="90%" class="align-center center" style="overflow: hidden; position: relative;">
             <img src="{{quiz[currentQuestion].file}}" alt="plate" class="plate center">
         </ons-col>
     </ons-row>
@@ -16,11 +16,11 @@
             <div class="container">
                 <button class="button button--large" ng-click="answer(quiz[currentQuestion].choices[0])">
                   {{quiz[currentQuestion].choices[0] | translate}}</button>
-                <button class="button button--large" ng-click="answer(quiz[currentQuestion].choices[1])">
+                <button class="button small" ng-click="answer(quiz[currentQuestion].choices[1])">
                   {{quiz[currentQuestion].choices[1] | translate}}</button>
-                <button class="button button--large" ng-click="answer(quiz[currentQuestion].choices[2])">
+                <button class="button small" ng-click="answer(quiz[currentQuestion].choices[2])">
                   {{quiz[currentQuestion].choices[2] | translate}}</button>
-                <button class="button button--large" ng-show="quiz[currentQuestion].choices[3]"
+                <button class="button small" ng-show="quiz[currentQuestion].choices[3]"
                         ng-click="answer(quiz[currentQuestion].choices[3])">
                   {{quiz[currentQuestion].choices[3] | translate}}</button>
             </div>
