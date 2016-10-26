@@ -186,7 +186,8 @@ video {
 }
 
 #topicPage li{
-  line-height: 35px;
+  margin-bottom: 10px;
+  text-align: initial;
 }
 
 /**
