@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.ColorBlind" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ColorBlind</name>
+<widget id="org.provisu.ColorVisionQuiz" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>ColorVisionQuiz</name>
     <description>
         Color blind sample application that responds to the deviceready event.
     </description>
@@ -50,6 +50,7 @@
       <icon height="50" src="www/res/icon/ios/icon-50.png" width="50" />
       <icon height="57" src="www/res/icon/ios/icon.png" width="57" />
       <icon height="58" src="www/res/icon/ios/icon-small@2x.png" width="58" />
+      <icon height="87" src="www/res/icon/ios/icon-small@3x.png" width="87" />
       <icon height="60" src="www/res/icon/ios/icon-60.png" width="60" />
       <icon height="72" src="www/res/icon/ios/icon-72.png" width="72" />
       <icon height="76" src="www/res/icon/ios/icon-76.png" width="76" />
@@ -59,6 +60,7 @@
       <icon height="120" src="www/res/icon/ios/icon-60@2x.png" width="120" />
       <icon height="144" src="www/res/icon/ios/icon-72@2x.png" width="144" />
       <icon height="152" src="www/res/icon/ios/icon-76@2x.png" width="152" />
+      <icon height="167" src="www/res/icon/ios/icon-835@2x.png" width="167" />
       <icon height="180" src="www/res/icon/ios/icon-60@3x.png" width="180" />
 
       <splash height="480" src="www/res/screen/ios/screen-iphone-portrait.png" width="320" />
