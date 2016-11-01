@@ -1,12 +1,13 @@
 angular.module('app').controller('AppController',
-  function($scope, $rootScope, $translate, $cordovaDevice, $cordovaInAppBrowser) {
+  function($scope, $rootScope, $translate,
+           $cordovaDevice, $cordovaInAppBrowser) {
   // Dev $rootScope.osVersion = '5';
 
   $rootScope.openExternalLink = function(link) {
     var options = {
       location: 'yes',
       clearcache: 'yes',
-      toolbar: 'no'
+      toolbar: 'no',
     };
 
     $cordovaInAppBrowser.open(link, '_system', options);
