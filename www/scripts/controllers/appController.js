@@ -1,5 +1,5 @@
 angular.module('app').controller('AppController',
-  function($scope, $rootScope, $translate, $cordovaDevice) {
+  function($scope, $rootScope, $translate, $cordovaDevice, $cordovaInAppBrowser) {
   // Dev $rootScope.osVersion = '5';
 
   $rootScope.openExternalLink = function(link) {
