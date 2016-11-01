@@ -3,8 +3,14 @@ angular.module('app').controller('AppController',
   // Dev $rootScope.osVersion = '5';
 
   $rootScope.openExternalLink = function(link) {
-    window.open(link,
-      '_system', 'location=yes');
+    var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'no'
+    };
+
+    $cordovaInAppBrowser.open(link, '_system', options);
+    $cordovaInAppBrowser.close();
   };
 
   document.addEventListener('deviceready', function() {
