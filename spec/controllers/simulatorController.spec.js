@@ -97,5 +97,34 @@ describe('simulatorController', function() {
     });
   });
 
+  describe('$scope.updateFilter', function() {
+    it('should update active filter on video in stereo mode', function() {
+      var $scope = {
+        video: that.video,
+        videoRight: that.videoRight,
+        selectedFilter: 'test',
+        armode: true
+      };
+      var controller = $controller('simulatorController', { $scope: $scope });
+
+      $scope.updateFilter();
+
+      expect($scope.video.className).toEqual('stereo testEffect');
+      expect($scope.videoRight.className).toEqual('stereo testEffect');
+    });
+
+    it('should update active filter on video', function() {
+      var $scope = {
+        video: that.video,
+        selectedFilter: 'test',
+        armode: false
+      };
+      var controller = $controller('simulatorController', { $scope: $scope });
+
+      $scope.updateFilter();
+
+      expect($scope.video.className).toEqual('testEffect');
+    });
+  });
 
 });
