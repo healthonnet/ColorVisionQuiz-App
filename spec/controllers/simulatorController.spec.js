@@ -34,17 +34,20 @@ describe('simulatorController', function() {
     });
   });
 
-  describe('resizeVideo', function() {
-    it('should resize videos to window size', function() {
+  describe('switchOffAR', function() {
+    it('should pause videoRight and remove classname', function() {
       var $scope = {
         videoRight: that.videoRight
       };
       var controller = $controller('simulatorController', { $scope: $scope });
       $scope.videoRight.play();
+      $scope.videoRight.className = 'stereo';
       expect($scope.videoRight.paused).toEqual(false);
+      expect($scope.videoRight.className).toEqual('stereo');
 
       controller.switchOffAR();
       expect($scope.videoRight.paused).toEqual(true);
+      expect($scope.videoRight.className).toEqual('');
     });
   });
 
