@@ -10,18 +10,18 @@ app.controller('simulatorController', function($scope) {
     $scope.video.width = window.innerWidth;
   };
 
-  function switchOnAR() {
+  this.switchOnAR = function() {
     $scope.videoRight.src = $scope.video.src;
     $scope.videoRight.play();
     $scope.videoRight.className = $scope.video.className;
-  }
+  };
 
   this.switchOffAR = function() {
     $scope.videoRight.pause();
     $scope.videoRight.className = '';
   };
 
-  function stopVideo() {
+  this.stopVideo = function() {
     $scope.video.pause();
     $scope.videoRight.pause();
     $scope.video.src = '';
@@ -30,15 +30,15 @@ app.controller('simulatorController', function($scope) {
     if ($scope.stream) {
       $scope.stream.getVideoTracks()[0].stop();
     }
-  }
+  };
 
   function successCallback(stream) {
     $scope.stream = stream;
     $scope.video.src = window.URL.createObjectURL(stream);
     that.resizeVideo();
 
-    navigatorMain.on('prepush', stopVideo);
-    navigatorMain.on('postpop',stopVideo);
+    navigatorMain.on('prepush', that.stopVideo);
+    navigatorMain.on('postpop',that.stopVideo);
 
   }
 
@@ -60,7 +60,7 @@ app.controller('simulatorController', function($scope) {
   $scope.toggleAR = function() {
     $scope.armode = !$scope.armode;
     if ($scope.armode) {
-      switchOnAR();
+      that.switchOnAR();
     } else {
       that.switchOffAR();
     }

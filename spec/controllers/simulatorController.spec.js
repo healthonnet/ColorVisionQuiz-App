@@ -34,6 +34,27 @@ describe('simulatorController', function() {
     });
   });
 
+  describe('switchOnAR', function() {
+    it('should copy video attributes and play video', function() {
+      var $scope = {
+        video: that.video,
+        videoRight: that.videoRight
+      };
+      var controller = $controller('simulatorController', { $scope: $scope });
+
+      $scope.video.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
+      $scope.video.play();
+      $scope.video.className = 'stereo';
+      expect($scope.video.paused).toEqual(false);
+
+      controller.switchOnAR();
+
+      expect($scope.videoRight.paused).toEqual(false);
+      expect($scope.videoRight.src).toEqual('http://clips.vorwaerts-gmbh.de/VfE_html5.mp4');
+      expect($scope.videoRight.className).toEqual('stereo');
+    });
+  });
+
   describe('switchOffAR', function() {
     it('should pause videoRight and remove classname', function() {
       var $scope = {
@@ -43,12 +64,38 @@ describe('simulatorController', function() {
       $scope.videoRight.play();
       $scope.videoRight.className = 'stereo';
       expect($scope.videoRight.paused).toEqual(false);
-      expect($scope.videoRight.className).toEqual('stereo');
 
       controller.switchOffAR();
       expect($scope.videoRight.paused).toEqual(true);
       expect($scope.videoRight.className).toEqual('');
     });
   });
+
+  describe('stopVideo', function() {
+    it('should pause videos and remove sources', function() {
+      var $scope = {
+        video: that.video,
+        videoRight: that.videoRight
+      };
+      var controller = $controller('simulatorController', { $scope: $scope });
+      $scope.videoRight.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
+      $scope.video.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
+      $scope.video.play();
+      $scope.videoRight.play();
+
+      expect($scope.video.paused).toEqual(false);
+      expect($scope.videoRight.paused).toEqual(false);
+
+      controller.stopVideo();
+
+      expect($scope.video.paused).toEqual(true);
+      expect($scope.videoRight.paused).toEqual(true);
+
+      // empty src return test page (verified with video tag log)
+      expect($scope.video.src).toEqual('http://localhost:9876/context.html');
+      expect($scope.videoRight.src).toEqual('http://localhost:9876/context.html');
+    });
+  });
+
 
 });
