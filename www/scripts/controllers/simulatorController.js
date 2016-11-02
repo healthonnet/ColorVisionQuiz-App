@@ -1,13 +1,14 @@
 app.controller('simulatorController', function($scope) {
   console.log('SimulatorController');
+  var that = this;
 
-  function resizeVideo() {
+  this.resizeVideo = function() {
     // TODO dynamic toolbar height
     $scope.videoRight.height = window.innerHeight - 44;
     $scope.video.height = window.innerHeight - 44;
     $scope.videoRight.width = window.innerWidth;
     $scope.video.width = window.innerWidth;
-  }
+  };
 
   function switchOnAR() {
     $scope.videoRight.src = $scope.video.src;
@@ -15,10 +16,10 @@ app.controller('simulatorController', function($scope) {
     $scope.videoRight.className = $scope.video.className;
   }
 
-  function switchOffAR() {
+  this.switchOffAR = function() {
     $scope.videoRight.pause();
     $scope.videoRight.className = '';
-  }
+  };
 
   function stopVideo() {
     $scope.video.pause();
@@ -34,7 +35,7 @@ app.controller('simulatorController', function($scope) {
   function successCallback(stream) {
     $scope.stream = stream;
     $scope.video.src = window.URL.createObjectURL(stream);
-    resizeVideo();
+    that.resizeVideo();
 
     navigatorMain.on('prepush', stopVideo);
     navigatorMain.on('postpop',stopVideo);
@@ -61,73 +62,76 @@ app.controller('simulatorController', function($scope) {
     if ($scope.armode) {
       switchOnAR();
     } else {
-      switchOffAR();
+      that.switchOffAR();
     }
   };
-
-  // Init
-  $scope.selectedFilter = 'NORMAL';
-  $scope.video = document.querySelector('video#left');
-  $scope.videoRight = document.querySelector('video#right');
 
   $scope.show = function() {
     modalSimulator.show();
   };
 
-  // Events
-  window.addEventListener('resize', resizeVideo);
-  ons.orientation.on('change', function() {
-    if (ons.orientation.isPortrait() && $scope.armode) {
-      $scope.armode = false;
-      switchOffAR();
-      $scope.$apply();
-    }
-  });
+  // Init
+  $scope.init = function() {
+    $scope.selectedFilter = 'NORMAL';
+    $scope.video = document.querySelector('video#left');
+    $scope.videoRight = document.querySelector('video#right');
 
-  // Load media stream
-  if (typeof MediaStreamTrack === 'undefined' ||
-    typeof MediaStreamTrack.getSources === 'undefined') {
-    ons.notification.alert({
-      message: 'This browser does not support MediaStreamTrack.\n\nTry Chrome.',
-      title: 'Support Error',
-      buttonLabel: 'OK',
-      animation: 'default',
-      callback: function() {
-        navigatorMain.popPage();
-      },
-    });
-  } else {
-    // Deprecated but supported by android webview
-    MediaStreamTrack.getSources(function(sources) {
-      var targetSourceId;
-      sources.forEach(function(source) {
-        if (source.facing === 'environment') {
-          targetSourceId = source.id;
-        }
-      });
-      if (!targetSourceId) {
-        if (sources[0]) {
-          targetSourceId = sources[0].id;
-        }
-        if (sources[1]) {
-          targetSourceId = sources[1].id;
-        }
-        if (sources[2]) {
-          targetSourceId = sources[2].id;
-        }
+    // Events
+    window.addEventListener('resize', that.resizeVideo);
+    ons.orientation.on('change', function() {
+      if (ons.orientation.isPortrait() && $scope.armode) {
+        $scope.armode = false;
+        that.switchOffAR();
+        $scope.$apply();
       }
-
-      console.log(targetSourceId);
-
-      navigator.webkitGetUserMedia({
-        audio: false,
-        video: {
-          optional: [{
-            sourceId: targetSourceId,
-          },],
-        },
-      }, successCallback, errorCallback);
     });
-  }
+
+    // Load media stream
+    if (typeof MediaStreamTrack === 'undefined' ||
+      typeof MediaStreamTrack.getSources === 'undefined') {
+      ons.notification.alert({
+        message: 'This browser does not support MediaStreamTrack.' +
+        '\n\nTry Chrome.',
+        title: 'Support Error',
+        buttonLabel: 'OK',
+        animation: 'default',
+        callback: function() {
+          navigatorMain.popPage();
+        },
+      });
+    } else {
+      // Deprecated but supported by android webview
+      MediaStreamTrack.getSources(function(sources) {
+        var targetSourceId;
+        sources.forEach(function(source) {
+          if (source.facing === 'environment') {
+            targetSourceId = source.id;
+          }
+        });
+        if (!targetSourceId) {
+          if (sources[0]) {
+            targetSourceId = sources[0].id;
+          }
+          if (sources[1]) {
+            targetSourceId = sources[1].id;
+          }
+          if (sources[2]) {
+            targetSourceId = sources[2].id;
+          }
+        }
+
+        console.log(targetSourceId);
+
+        navigator.webkitGetUserMedia({
+          audio: false,
+          video: {
+            optional: [{
+              sourceId: targetSourceId,
+            },],
+          },
+        }, successCallback, errorCallback);
+      });
+    }
+  };
 
 });
