@@ -17,6 +17,8 @@ angular.module('app').controller('AppController',
   document.addEventListener('deviceready', function() {
     // CordovaPlugin available
     console.log('deviceready');
+
+    StatusBar.hide();
     $rootScope.osVersion = $cordovaDevice.getVersion();
     $rootScope.$apply();
   }, false);
