@@ -1,6 +1,6 @@
 angular.module('app').controller('AppController',
   function($scope, $rootScope, $translate,
-           $cordovaDevice, $cordovaInAppBrowser) {
+           $cordovaDevice, $cordovaInAppBrowser, $cordovaStatusbar) {
   // Dev $rootScope.osVersion = '5';
 
   $rootScope.openExternalLink = function(link) {
@@ -18,7 +18,7 @@ angular.module('app').controller('AppController',
     // CordovaPlugin available
     console.log('deviceready');
 
-    StatusBar.hide();
+    $cordovaStatusbar.hide();
     $rootScope.osVersion = $cordovaDevice.getVersion();
     $rootScope.$apply();
   }, false);
