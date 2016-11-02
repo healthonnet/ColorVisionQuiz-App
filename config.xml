@@ -28,7 +28,8 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="splashScreenDelay" value="3000" />
     <preference name="DisallowOverscroll" value="true" />
-
+    <preference name="BackupWebStorage" value="none" />
+  
     <icon src="icon.png" />
     <platform name="android">
       <icon density="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
