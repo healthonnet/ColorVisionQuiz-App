@@ -17,14 +17,15 @@ app.controller('colorPickerController', function($scope) {
     }
   }
 
-  function componentToHex(c) {
+  this.componentToHex = function(c) {
     var hex = c.toString(16);
     return hex.length === 1 ? '0' + hex : hex;
-  }
+  };
 
-  function rgbToHex(r, g, b) {
-    return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
-  }
+  this.rgbToHex = function(r, g, b) {
+    return '#' + this.componentToHex(r) +
+      this.componentToHex(g) + this.componentToHex(b);
+  };
 
   function successCallback(stream) {
     $scope.stream = stream;
@@ -90,7 +91,7 @@ app.controller('colorPickerController', function($scope) {
         r = Math.round(r / l);
         g = Math.round(g / l);
         b = Math.round(b / l);
-        var hexColor = rgbToHex(r, g, b);
+        var hexColor = that.rgbToHex(r, g, b);
         var colorNames = ntc.name(hexColor);
         $scope.currentShade = colorNames[3];
         $scope.currentColor = colorNames[1];

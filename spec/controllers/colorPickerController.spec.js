@@ -32,4 +32,24 @@ describe('colorPickerController', function() {
     });
   });
 
+  describe('componentToHex', function() {
+    it('should convert to hex value', function() {
+      var $scope = {};
+      var controller = $controller('colorPickerController', { $scope: $scope });
+
+      var hexValue = controller.componentToHex(15);
+      expect(hexValue).toEqual('0f');
+    });
+  });
+
+  describe('rgbToHex', function() {
+    it('should convert to hex color format', function() {
+      var $scope = {};
+      var controller = $controller('colorPickerController', { $scope: $scope });
+
+      var hexColor = controller.rgbToHex(15,15,15);
+      expect(hexColor).toEqual('#0f0f0f');
+    });
+  });
+
 });
