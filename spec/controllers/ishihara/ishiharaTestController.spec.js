@@ -26,5 +26,38 @@ describe('ishiharaTestController', function() {
     });
   });
 
+  describe('$scope.nextQuestion', function() {
+    it('should increment currentQuestion', function() {
+      var $scope = {
+        currentQuestion: 1
+      };
+      var $http = {};
+
+      var controller =
+        $controller('ishiharaTestController', { $scope: $scope, $http: $http});
+
+      $scope.nextQuestion();
+
+      expect($scope.currentQuestion).toEqual(2);
+    });
+  });
+
+  describe('$scope.answer', function() {
+    it('should push answer to answers', function() {
+      var $scope = {
+        currentQuestion: 1,
+        answers: ['test']
+      };
+      var $http = {};
+
+      var controller =
+        $controller('ishiharaTestController', { $scope: $scope, $http: $http});
+
+      $scope.answer('test2');
+
+      expect($scope.currentQuestion).toEqual(2);
+      expect($scope.answers).toEqual(['test', 'test2']);
+    });
+  });
 
 });
