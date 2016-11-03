@@ -60,11 +60,11 @@ describe('colorPickerController', function() {
       $scope.video.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
       $scope.video.play();
 
-      expect($scope.video.paused).toEqual(false);
+      expect($scope.video.paused).toBe(false);
 
       controller.stopVideo();
 
-      expect($scope.video.paused).toEqual(true);
+      expect($scope.video.paused).toBe(true);
 
       // Empty src return test page (verified with video tag log)
       expect($scope.video.src).toEqual('http://localhost:9876/context.html');

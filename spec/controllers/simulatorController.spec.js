@@ -44,11 +44,11 @@ describe('simulatorController', function() {
       $scope.video.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
       $scope.video.play();
       $scope.video.className = 'stereo';
-      expect($scope.video.paused).toEqual(false);
+      expect($scope.video.paused).toBe(false);
 
       controller.switchOnAR();
 
-      expect($scope.videoRight.paused).toEqual(false);
+      expect($scope.videoRight.paused).toBe(false);
       expect($scope.videoRight.src)
         .toEqual('http://clips.vorwaerts-gmbh.de/VfE_html5.mp4');
       expect($scope.videoRight.className).toEqual('stereo');
@@ -63,10 +63,10 @@ describe('simulatorController', function() {
       var controller = $controller('simulatorController', { $scope: $scope });
       $scope.videoRight.play();
       $scope.videoRight.className = 'stereo';
-      expect($scope.videoRight.paused).toEqual(false);
+      expect($scope.videoRight.paused).toBe(false);
 
       controller.switchOffAR();
-      expect($scope.videoRight.paused).toEqual(true);
+      expect($scope.videoRight.paused).toBe(true);
       expect($scope.videoRight.className).toEqual('');
     });
   });
@@ -83,13 +83,13 @@ describe('simulatorController', function() {
       $scope.video.play();
       $scope.videoRight.play();
 
-      expect($scope.video.paused).toEqual(false);
-      expect($scope.videoRight.paused).toEqual(false);
+      expect($scope.video.paused).toBe(false);
+      expect($scope.videoRight.paused).toBe(false);
 
       controller.stopVideo();
 
-      expect($scope.video.paused).toEqual(true);
-      expect($scope.videoRight.paused).toEqual(true);
+      expect($scope.video.paused).toBe(true);
+      expect($scope.videoRight.paused).toBe(true);
 
       // Empty src return test page (verified with video tag log)
       expect($scope.video.src)
@@ -141,17 +141,17 @@ describe('simulatorController', function() {
       $scope.video.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
       $scope.video.play();
 
-      expect($scope.video.paused).toEqual(false);
-      expect($scope.videoRight.paused).toEqual(true);
+      expect($scope.video.paused).toBe(false);
+      expect($scope.videoRight.paused).toBe(true);
 
       $scope.toggleAR();
 
-      expect($scope.video.paused).toEqual(false);
-      expect($scope.videoRight.paused).toEqual(false);
+      expect($scope.video.paused).toBe(false);
+      expect($scope.videoRight.paused).toBe(false);
       expect($scope.videoRight.src)
         .toEqual('http://clips.vorwaerts-gmbh.de/VfE_html5.mp4');
       expect($scope.videoRight.className).toEqual('stereo');
-      expect($scope.armode).toEqual(true);
+      expect($scope.armode).toBe(true);
     });
 
     it('should toggle stereo mode Off', function() {
@@ -167,17 +167,17 @@ describe('simulatorController', function() {
       $scope.video.play();
       $scope.videoRight.play();
 
-      expect($scope.video.paused).toEqual(false);
-      expect($scope.videoRight.paused).toEqual(false);
+      expect($scope.video.paused).toBe(false);
+      expect($scope.videoRight.paused).toBe(false);
 
       $scope.toggleAR();
 
-      expect($scope.video.paused).toEqual(false);
-      expect($scope.videoRight.paused).toEqual(true);
+      expect($scope.video.paused).toBe(false);
+      expect($scope.videoRight.paused).toBe(true);
       expect($scope.videoRight.src)
         .toEqual('http://localhost:9876/context.html');
       expect($scope.videoRight.className).toEqual('');
-      expect($scope.armode).toEqual(false);
+      expect($scope.armode).toBe(false);
     });
   });
 });
