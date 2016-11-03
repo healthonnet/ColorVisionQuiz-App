@@ -28,7 +28,7 @@ describe('ishiharaResultsController', function() {
         questions: [q,q,q,q,q,q,],
       };
 
-      $controller('ishiharaResultsController', { $scope: $scope});
+      $controller('ishiharaResultsController', { $scope: $scope });
 
       var diag = $scope.analyseDatas();
       expect(diag.title).toEqual('TEST_ISHIHARA_NORMAL');
@@ -45,7 +45,7 @@ describe('ishiharaResultsController', function() {
         questions: [q,q,q,q,q,q,],
       };
 
-      $controller('ishiharaResultsController', { $scope: $scope});
+      $controller('ishiharaResultsController', { $scope: $scope });
 
       var diag = $scope.analyseDatas();
       expect(diag.title).toEqual('TEST_ISHIHARA_SHOULD_PRECISE');
@@ -65,7 +65,7 @@ describe('ishiharaResultsController', function() {
           q,q,q,q,q,q,q,q,q,q,q,q,q,],
       };
 
-      $controller('ishiharaResultsController', { $scope: $scope});
+      $controller('ishiharaResultsController', { $scope: $scope });
 
       var diag = $scope.analyseDatas();
       expect(diag.title).toEqual('TEST_ISHIHARA_NORMAL');
@@ -85,7 +85,7 @@ describe('ishiharaResultsController', function() {
           q,q,q,q,q,q,q,q,q,q,q,q,q,],
       };
 
-      $controller('ishiharaResultsController', { $scope: $scope});
+      $controller('ishiharaResultsController', { $scope: $scope });
 
       var diag = $scope.analyseDatas();
       expect(diag.title).toEqual('TEST_ISHIHARA_DEUTERANOMALY');
@@ -105,7 +105,7 @@ describe('ishiharaResultsController', function() {
           q,q,q,q,q,q,q,q,q,q,q,q,q,],
       };
 
-      $controller('ishiharaResultsController', { $scope: $scope});
+      $controller('ishiharaResultsController', { $scope: $scope });
 
       var diag = $scope.analyseDatas();
       expect(diag.title).toEqual('TEST_ISHIHARA_PROTANOMALY');
@@ -125,7 +125,7 @@ describe('ishiharaResultsController', function() {
           q,q,q,q,q,q,q,q,q,q,q,q,q,],
       };
 
-      $controller('ishiharaResultsController', { $scope: $scope});
+      $controller('ishiharaResultsController', { $scope: $scope });
 
       var diag = $scope.analyseDatas();
       expect(diag.title).toEqual('TEST_ISHIHARA_COLOR_BLIND');
@@ -145,7 +145,7 @@ describe('ishiharaResultsController', function() {
           q,q,q,q,q,q,q,q,q,q,q,q,q,],
       };
 
-      $controller('ishiharaResultsController', { $scope: $scope});
+      $controller('ishiharaResultsController', { $scope: $scope });
 
       var diag = $scope.analyseDatas();
       expect(diag.title).toEqual('TEST_ISHIHARA_COLOR_DEFICIENCY');
@@ -165,7 +165,7 @@ describe('ishiharaResultsController', function() {
           q,q,q,q,q,q,q,q,q,q,q,q,q,],
       };
 
-      $controller('ishiharaResultsController', { $scope: $scope});
+      $controller('ishiharaResultsController', { $scope: $scope });
 
       var diag = $scope.analyseDatas();
       expect(diag.title).toEqual('TEST_ISHIHARA_COLOR_DEFICIENCY');

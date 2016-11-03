@@ -27,6 +27,7 @@ module.exports = function(config) {
       './www/scripts/directive/themer.js',
       './www/scripts/controllers/colorPickerController.js',
       './www/scripts/controllers/simulatorController.js',
+      './www/scripts/controllers/ishihara/ishiharaController.js',
       './www/scripts/controllers/ishihara/ishiharaTestController.js',
       './www/scripts/controllers/ishihara/ishiharaResultsController.js',
       './spec/**/*[sS]pec.js'
