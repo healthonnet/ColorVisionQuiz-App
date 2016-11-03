@@ -41,6 +41,47 @@ app.controller('colorPickerController', function($scope) {
     console.log('navigator.getUserMedia error: ', error);
   }
 
+  this.getShades = function() {
+    var ctx = $scope.canvas.getContext('2d');
+
+    var ratio = this.videoWidth / this.videoHeight;
+    var height = $scope.canvas.clientHeight;
+    var width = height * ratio;
+    var right = ($scope.canvas.clientWidth - width) / 2;
+
+    var centerX = $scope.canvas.width / 2;
+    var centerY = $scope.canvas.height / 2;
+    var radius = 10;
+    var r = 0;
+    var g = 0;
+    var b = 0;
+    var l = 0;
+
+    ctx.drawImage(this,right, 0, width, height);
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+    ctx.fillStyle = 'rgba(0,0,0,0)';
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    var colorDatas = ctx.getImageData(centerX, centerY, 5, 5);
+    for (var i = 0;i < colorDatas.data.length; i += 4) {
+      r += colorDatas.data[i];
+      g += colorDatas.data[i + 1];
+      b += colorDatas.data[i + 2];
+      l++;
+    }
+    r = Math.round(r / l);
+    g = Math.round(g / l);
+    b = Math.round(b / l);
+    var hexColor = that.rgbToHex(r, g, b);
+    var colorNames = ntc.name(hexColor);
+    $scope.currentShade = colorNames[3];
+    $scope.currentColor = colorNames[1];
+    $scope.$apply();
+  };
+
   // Init
 
   $scope.init = function() {
@@ -51,52 +92,13 @@ app.controller('colorPickerController', function($scope) {
     $scope.currentShade = '';
     $scope.video = document.querySelector('video');
     $scope.canvas = document.querySelector('canvas');
-    var ctx = $scope.canvas.getContext('2d');
     var i;
 
     // Events
     window.addEventListener('resize', that.resizeVideo);
     $scope.video.addEventListener('play', function() {
-      var $this = this;
       that.resizeVideo();
-      i = window.setInterval(function() {
-        var ratio = $this.videoWidth / $this.videoHeight;
-        var height = $scope.canvas.clientHeight;
-        var width = height * ratio;
-        var right = ($scope.canvas.clientWidth - width) / 2;
-
-        var centerX = $scope.canvas.width / 2;
-        var centerY = $scope.canvas.height / 2;
-        var radius = 10;
-        var r = 0;
-        var g = 0;
-        var b = 0;
-        var l = 0;
-
-        ctx.drawImage($this,right, 0, width, height);
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-        ctx.fillStyle = 'rgba(0,0,0,0)';
-        ctx.fill();
-        ctx.lineWidth = 2;
-        ctx.stroke();
-
-        var colorDatas = ctx.getImageData(centerX, centerY, 5, 5);
-        for (var i = 0;i < colorDatas.data.length; i += 4) {
-          r += colorDatas.data[i];
-          g += colorDatas.data[i + 1];
-          b += colorDatas.data[i + 2];
-          l++;
-        }
-        r = Math.round(r / l);
-        g = Math.round(g / l);
-        b = Math.round(b / l);
-        var hexColor = that.rgbToHex(r, g, b);
-        var colorNames = ntc.name(hexColor);
-        $scope.currentShade = colorNames[3];
-        $scope.currentColor = colorNames[1];
-        $scope.$apply();
-      }, 1000 / 60);
+      i = window.setInterval(that.getShades.bind(this), 1000 / 60);
     }, false);
 
     $scope.video.addEventListener('pause',function() {
