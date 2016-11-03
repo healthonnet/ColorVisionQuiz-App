@@ -8,3 +8,8 @@ npm-debug.log
 # Cordova
 /platforms
 /plugins
+
+# Bower libs
+www/lib/angular-translate
+www/lib/angular-translate-loader-static-files
+www/lib/angular-sanitize
