@@ -5,8 +5,7 @@ describe('colorPickerController', function() {
 
   beforeEach(function() {
     spyOn(ons, 'isWebView').and.returnValue(true);
-    inject(function(_$controller_){
-      // The injector unwraps the underscores (_) from around the parameter names when matching
+    inject(function(_$controller_) {
       $controller = _$controller_;
     });
   });
@@ -20,8 +19,8 @@ describe('colorPickerController', function() {
       var $scope = {
         canvas: {
           height: 50,
-          width: 50
-        }
+          width: 50,
+        },
       };
       var controller = $controller('colorPickerController', { $scope: $scope });
 
@@ -55,7 +54,7 @@ describe('colorPickerController', function() {
     it('should pause video and remove source', function() {
       var video = document.createElement('video');
       var $scope = {
-        video: video
+        video: video,
       };
       var controller = $controller('colorPickerController', { $scope: $scope });
       $scope.video.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
@@ -67,7 +66,7 @@ describe('colorPickerController', function() {
 
       expect($scope.video.paused).toEqual(true);
 
-      // empty src return test page (verified with video tag log)
+      // Empty src return test page (verified with video tag log)
       expect($scope.video.src).toEqual('http://localhost:9876/context.html');
     });
   });
@@ -79,11 +78,11 @@ describe('colorPickerController', function() {
       var ctx = canvas.getContext('2d');
       ctx.beginPath();
       ctx.rect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "cyan";
+      ctx.fillStyle = 'cyan';
       ctx.fill();
 
       var $scope = {
-        canvas: canvas
+        canvas: canvas,
       };
       var controller = $controller('colorPickerController', { $scope: $scope });
 

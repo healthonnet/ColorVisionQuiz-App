@@ -41,14 +41,14 @@ module.exports = function(grunt) {
       tasks: ['lint'],
     },
     jshint: {
-      all: ['www/scripts/**/*.js'],
+      all: ['www/scripts/**/*.js', 'spec/**/*.js'],
       options: {
         jshintrc: true,
         reporter: require('jshint-stylish'),
       },
     },
     jscs: {
-      src: ['www/scripts/**/*.js', 'Gruntfile.js'],
+      src: ['www/scripts/**/*.js', 'Gruntfile.js', 'spec/**/*.js'],
       options: {
         config: '.jscrc',
       },

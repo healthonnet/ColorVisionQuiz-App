@@ -19,6 +19,9 @@
   "strict": true,
   "globals": {
     "angular": true,
+    "inject": true,
+    "expect": true,
+    "spyOn": true,
     "app": true,
     "ons": true,
     "ntc": true,
