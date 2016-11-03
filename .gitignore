@@ -13,3 +13,4 @@ npm-debug.log
 www/lib/angular-translate
 www/lib/angular-translate-loader-static-files
 www/lib/angular-sanitize
+locales.zip
