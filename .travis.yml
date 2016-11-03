@@ -7,4 +7,4 @@ before_install:
     - sh -e /etc/init.d/xvfb start
 before_script:
   - npm install -g grunt
-script: node_modules/karma/bin/karma start karma.conf.js --single-run; grunt test
+script: node_modules/karma/bin/karma start karma.conf.js --single-run&&grunt test
