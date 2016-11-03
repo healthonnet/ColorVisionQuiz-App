@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="org.provisu.colorVisionQuiz" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ColorVisionQuiz</name>
+    <name>Color Vision Quiz</name>
     <description>
-        Color blind sample application that responds to the deviceready event.
+        The purpose of this application is to provide reliable tools for information, promotion and prevention related to disorders of color vision.
     </description>
     <author email="webmaster@healthonnet.org" href="http://hon.ch">
         Health On Net Team
@@ -29,7 +29,6 @@
     <preference name="splashScreenDelay" value="3000" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
-  
     <icon src="icon.png" />
     <platform name="android">
       <icon density="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
