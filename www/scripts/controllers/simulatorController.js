@@ -17,6 +17,7 @@ app.controller('simulatorController', function($scope) {
   };
 
   this.switchOffAR = function() {
+    $scope.videoRight.src = '';
     $scope.videoRight.pause();
     $scope.videoRight.className = '';
   };

@@ -127,4 +127,53 @@ describe('simulatorController', function() {
     });
   });
 
+  describe('$scope.toggleAR', function() {
+    it('should toggle stereo mode On', function() {
+      var $scope = {
+        video: that.video,
+        videoRight: that.videoRight,
+        armode: false
+      };
+      var controller = $controller('simulatorController', { $scope: $scope });
+      $scope.video.className = 'stereo';
+      $scope.video.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
+      $scope.video.play();
+
+      expect($scope.video.paused).toEqual(false);
+      expect($scope.videoRight.paused).toEqual(true);
+
+      $scope.toggleAR();
+
+      expect($scope.video.paused).toEqual(false);
+      expect($scope.videoRight.paused).toEqual(false);
+      expect($scope.videoRight.src).toEqual('http://clips.vorwaerts-gmbh.de/VfE_html5.mp4');
+      expect($scope.videoRight.className).toEqual('stereo');
+      expect($scope.armode).toEqual(true);
+    });
+
+    it('should toggle stereo mode Off', function() {
+      var $scope = {
+        video: that.video,
+        videoRight: that.videoRight,
+        armode: true
+      };
+      var controller = $controller('simulatorController', { $scope: $scope });
+      $scope.video.className = 'stereo';
+      $scope.video.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
+      $scope.videoRight.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
+      $scope.video.play();
+      $scope.videoRight.play();
+
+      expect($scope.video.paused).toEqual(false);
+      expect($scope.videoRight.paused).toEqual(false);
+
+      $scope.toggleAR();
+
+      expect($scope.video.paused).toEqual(false);
+      expect($scope.videoRight.paused).toEqual(true);
+      expect($scope.videoRight.src).toEqual('http://localhost:9876/context.html');
+      expect($scope.videoRight.className).toEqual('');
+      expect($scope.armode).toEqual(false);
+    });
+  });
 });
