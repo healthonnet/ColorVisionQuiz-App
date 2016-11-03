@@ -57,7 +57,7 @@ app.controller('colorPickerController', function($scope) {
     var b = 0;
     var l = 0;
 
-    ctx.drawImage(this,right, 0, width, height);
+    ctx.drawImage(this, right, 0, width, height);
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
     ctx.fillStyle = 'rgba(0,0,0,0)';
@@ -79,7 +79,6 @@ app.controller('colorPickerController', function($scope) {
     var colorNames = ntc.name(hexColor);
     $scope.currentShade = colorNames[3];
     $scope.currentColor = colorNames[1];
-    $scope.$apply();
   };
 
   // Init
@@ -97,8 +96,12 @@ app.controller('colorPickerController', function($scope) {
     // Events
     window.addEventListener('resize', that.resizeVideo);
     $scope.video.addEventListener('play', function() {
+      var $this = this;
       that.resizeVideo();
-      i = window.setInterval(that.getShades.bind(this), 1000 / 60);
+      i = window.setInterval(function() {
+          that.getShades.bind($this)();
+          $scope.$apply();
+        }, 1000 / 60);
     }, false);
 
     $scope.video.addEventListener('pause',function() {

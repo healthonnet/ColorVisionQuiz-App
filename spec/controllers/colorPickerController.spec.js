@@ -72,5 +72,26 @@ describe('colorPickerController', function() {
     });
   });
 
+  describe('getShades', function() {
+    it('should pause video and remove source', function() {
+      var canvas = document.createElement('canvas');
+      var video = document.createElement('video');
+      var ctx = canvas.getContext('2d');
+      ctx.beginPath();
+      ctx.rect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "cyan";
+      ctx.fill();
+
+      var $scope = {
+        canvas: canvas
+      };
+      var controller = $controller('colorPickerController', { $scope: $scope });
+
+      controller.getShades.bind(video)();
+
+      expect($scope.currentShade).toEqual('BLUE');
+      expect($scope.currentColor).toEqual('Aqua');
+    });
+  });
 
 });
