@@ -1,4 +1,6 @@
-angular.module('app').controller('IshiharaController', function($scope) {
+angular.module('app').controller('ishiharaController', function($scope) {
   console.log('IshiharaController');
-  $scope.short = true;
+  $scope.init = function() {
+    $scope.short = true;
+  };
 });
