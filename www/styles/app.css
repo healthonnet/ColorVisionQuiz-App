@@ -354,7 +354,7 @@ video.stereo {
 }
 
 #plateContainer.portrait {
-  height: 40%;
+  height: 60%;
   width: 100%;
   float: none;
   position: relative;
@@ -389,7 +389,7 @@ video.stereo {
 }
 
 #anwserContainer.portrait {
-  height: 60%;
+  height: 40%;
   width: 100%;
   float: none;
   position: fixed;
