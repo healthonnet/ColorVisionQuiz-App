@@ -177,7 +177,7 @@ describe('simulatorController', function() {
       expect($scope.videoRight.src)
         .toEqual('http://localhost:9876/context.html');
       expect($scope.videoRight.className).toEqual('');
-      expect($scope.armode).toBe(false);
+      expect($scope.armode).toBe(true);
     });
   });
 });
