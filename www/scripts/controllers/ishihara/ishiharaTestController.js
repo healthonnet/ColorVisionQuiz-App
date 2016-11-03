@@ -1,8 +1,9 @@
 angular.module('app')
-  .controller('IshiharaTestController', function($scope, $http) {
+  .controller('ishiharaTestController', function($scope, $http) {
   console.log('IshiharaTestController');
+  var that = this;
 
-  function shuffle(array) {
+  this.shuffle = function(array) {
     var counter = array.length;
 
     // While there are elements in the array
@@ -20,39 +21,42 @@ angular.module('app')
     }
 
     return array;
-  }
+  };
 
-  $scope.loading = true;
-  $scope.currentAnswer = '';
-  $scope.quiz = [];
-  $scope.answers = [];
-  $scope.short = navigatorIshihara.getCurrentPage().options.short;
+  $scope.init = function() {
+    $scope.loading = true;
+    $scope.currentAnswer = '';
+    $scope.quiz = [];
+    $scope.answers = [];
+    $scope.short = navigatorIshihara.getCurrentPage().options.short;
+
+    $scope.getOrientation();
+
+    window.onresize = function() {
+      setTimeout($scope.getOrientation, 1);
+    };
+
+    $http.get('./assets/tests/ishihara/plates.json',{
+      headers: {
+        'Content-type': 'application/json; charset=utf-8',
+      },
+    })
+      .success(function(data) {
+        $scope.quiz = $scope.generateQuiz(data);
+        $scope.currentQuestion = 0;
+        $scope.totalQuestions = $scope.quiz.length;
+        $scope.loading = false;
+      })
+      .error(function(data) {
+        console.error(data);
+        $scope.loading = false;
+      });
+  };
 
   $scope.getOrientation = function() {
     $scope.orientation = ons.orientation.isPortrait();
     $scope.$apply();
   };
-  $scope.getOrientation();
-
-  window.onresize = function() {
-    setTimeout($scope.getOrientation, 1);
-  };
-
-  $http.get('./assets/tests/ishihara/plates.json',{
-    headers: {
-      'Content-type': 'application/json; charset=utf-8',
-    },
-  })
-    .success(function(data) {
-      $scope.quiz = $scope.generateQuiz(data);
-      $scope.currentQuestion = 0;
-      $scope.totalQuestions = $scope.quiz.length;
-      $scope.loading = false;
-    })
-    .error(function(data) {
-      console.error(data);
-      $scope.loading = false;
-    });
 
   $scope.generateQuiz = function(data) {
     function getRandomInt(min, max) {
@@ -75,7 +79,7 @@ angular.module('app')
       quiz.shift();
     }
     // Randomize plates
-    quiz = shuffle(quiz);
+    quiz = that.shuffle(quiz);
 
     // First plate
     quiz.unshift(data.plates[0]);
