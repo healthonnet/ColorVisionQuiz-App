@@ -28,6 +28,7 @@ module.exports = function(config) {
       './www/scripts/controllers/colorPickerController.js',
       './www/scripts/controllers/simulatorController.js',
       './www/scripts/controllers/ishihara/ishiharaTestController.js',
+      './www/scripts/controllers/ishihara/ishiharaResultsController.js',
       './spec/**/*[sS]pec.js'
     ],
 

@@ -1,6 +1,12 @@
 angular.module('app')
-  .controller('IshiharaResultsController', function($scope) {
-  $scope.short = false;
+  .controller('ishiharaResultsController', function($scope) {
+
+  $scope.init = function() {
+    $scope.short = false;
+    $scope.answers = navigatorIshihara.getCurrentPage().options.answers;
+    $scope.questions = navigatorIshihara.getCurrentPage().options.quiz;
+    $scope.diagnostic = $scope.analyseDatas();
+  };
 
   $scope.analyseDatas = function() {
     var diagnostic = {
@@ -78,9 +84,4 @@ angular.module('app')
 
     return diagnostic;
   };
-
-  $scope.answers = navigatorIshihara.getCurrentPage().options.answers;
-  $scope.questions = navigatorIshihara.getCurrentPage().options.quiz;
-  $scope.diagnostic = $scope.analyseDatas();
-
 });
