@@ -8,14 +8,14 @@ app.controller('colorPickerController', function($scope) {
     $scope.canvas.width = window.innerWidth;
   };
 
-  function stopVideo() {
+  this.stopVideo = function() {
     $scope.video.pause();
     $scope.video.src = '';
 
     if ($scope.stream) {
       $scope.stream.getVideoTracks()[0].stop();
     }
-  }
+  };
 
   this.componentToHex = function(c) {
     var hex = c.toString(16);
@@ -32,8 +32,8 @@ app.controller('colorPickerController', function($scope) {
     $scope.video.src = window.URL.createObjectURL(stream);
     that.resizeVideo();
 
-    navigatorMain.on('prepush', stopVideo);
-    navigatorMain.on('postpop',stopVideo);
+    navigatorMain.on('prepush', that.stopVideo);
+    navigatorMain.on('postpop', that.stopVideo);
 
   }
 

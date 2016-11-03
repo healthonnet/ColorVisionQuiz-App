@@ -8,7 +8,7 @@ describe('colorPickerController', function() {
     inject(function(_$controller_){
       // The injector unwraps the underscores (_) from around the parameter names when matching
       $controller = _$controller_;
-    })
+    });
   });
 
   it('should exist', function() {
@@ -28,7 +28,6 @@ describe('colorPickerController', function() {
       controller.resizeVideo();
       expect($scope.canvas.height).toEqual(window.innerHeight - 44);
       expect($scope.canvas.width).toEqual(window.innerWidth);
-
     });
   });
 
@@ -51,5 +50,27 @@ describe('colorPickerController', function() {
       expect(hexColor).toEqual('#0f0f0f');
     });
   });
+
+  describe('stopVideo', function() {
+    it('should pause video and remove source', function() {
+      var video = document.createElement('video');
+      var $scope = {
+        video: video
+      };
+      var controller = $controller('colorPickerController', { $scope: $scope });
+      $scope.video.src = 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4';
+      $scope.video.play();
+
+      expect($scope.video.paused).toEqual(false);
+
+      controller.stopVideo();
+
+      expect($scope.video.paused).toEqual(true);
+
+      // empty src return test page (verified with video tag log)
+      expect($scope.video.src).toEqual('http://localhost:9876/context.html');
+    });
+  });
+
 
 });
