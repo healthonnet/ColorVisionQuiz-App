@@ -33,6 +33,7 @@
     "navigatorIshihara": true,
     "navigatorEncyclopedia": true,
     "modalColorPicker": true,
-    "modalSimulator": true
+    "modalSimulator": true,
+    "modalIshiharaTest": true
   }
 }
