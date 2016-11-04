@@ -5,6 +5,11 @@ ColorVision Quiz App
 
 Simple Cordova app about color blindness
 
+Requirements :
+--------------
+
+ - cordova-ios `4.1.0+`
+
 Install
 -------
 
