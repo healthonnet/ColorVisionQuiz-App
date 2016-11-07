@@ -24,22 +24,30 @@ angular.module('app').controller('AppController',
   }, false);
 
   function pushSimulator() {
-    navigatorMain.pushPage('views/simulator.html');
+    navigatorMain.pushPage('views/simulator.html', {
+      animation: 'none',
+    });
     menu.closeMenu();
   }
 
   function pushAbout() {
-    navigatorMain.pushPage('views/about.html');
+    navigatorMain.pushPage('views/about.html', {
+      animation: 'none',
+    });
     menu.closeMenu();
   }
 
   function pushOptions() {
-    navigatorMain.pushPage('views/options.html');
+    navigatorMain.pushPage('views/options.html', {
+      animation: 'none',
+    });
     menu.closeMenu();
   }
 
   function pushColorPicker() {
-    navigatorMain.pushPage('views/color-picker.html');
+    navigatorMain.pushPage('views/color-picker.html', {
+      animation: 'none',
+    });
     menu.closeMenu();
   }
 
