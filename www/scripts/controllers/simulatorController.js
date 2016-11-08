@@ -1,4 +1,4 @@
-app.controller('simulatorController', function($scope) {
+app.controller('simulatorController', function($scope, $translate) {
   console.log('SimulatorController');
   var that = this;
 
@@ -69,6 +69,20 @@ app.controller('simulatorController', function($scope) {
 
   $scope.show = function() {
     modalSimulator.show();
+  };
+
+  $scope.readDisease = function(disease) {
+    if (!disease) {
+      return;
+    }
+    var lang = $translate.use() === 'fr' ? 'fr-FR' : 'en-GB';
+    console.log(disease + "_AUDIO");
+    $translate(disease + "_AUDIO").then(function(translation) {
+      $scope.talk({
+        text: translation,
+        locale: lang,
+      });
+    });
   };
 
   // Init
