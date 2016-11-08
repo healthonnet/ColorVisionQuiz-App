@@ -3,7 +3,6 @@ app.controller('colorPickerController', function($scope, $translate) {
   var that = this;
 
   this.resizeVideo = function() {
-    // TODO dynamic toolbar height
     $scope.canvas.height = window.innerHeight - 44;
     $scope.canvas.width = window.innerWidth;
   };

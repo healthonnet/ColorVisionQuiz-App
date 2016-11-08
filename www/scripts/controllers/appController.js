@@ -86,7 +86,6 @@ angular.module('app').controller('AppController',
   };
 
   $scope.talk = function(message) {
-    console.log(message);
     if ($rootScope.TTS) {
       $rootScope.TTS
         .speak({
