@@ -19,6 +19,7 @@ angular.module('app').controller('AppController',
     console.log('deviceready');
 
     $cordovaStatusbar.hide();
+    $rootScope.TTS = TTS;
     $rootScope.osVersion = $cordovaDevice.getVersion();
     $rootScope.$apply();
   }, false);
@@ -84,7 +85,24 @@ angular.module('app').controller('AppController',
     }
   };
 
-  // Init
+  $scope.talk = function(message) {
+    console.log(message);
+    if ($rootScope.TTS) {
+      $rootScope.TTS
+        .speak({
+          text: message.text,
+          locale: message.locale,
+          rate: 0.75,
+        }, function() {
+          console.log("ok");
+        }, function(err) {
+          console.log(err);
+        });
+    }
+  };
+
+
+    // Init
   $scope.localeName = $translate.proposedLanguage();
   $scope.locales = $translate.getAvailableLanguageKeys();
 
