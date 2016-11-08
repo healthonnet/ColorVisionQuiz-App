@@ -94,15 +94,14 @@ angular.module('app').controller('AppController',
           locale: message.locale,
           rate: 0.75,
         }, function() {
-          console.log("ok");
+          console.log('success');
         }, function(err) {
           console.log(err);
         });
     }
   };
 
-
-    // Init
+  // Init
   $scope.localeName = $translate.proposedLanguage();
   $scope.locales = $translate.getAvailableLanguageKeys();
 

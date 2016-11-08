@@ -1,4 +1,4 @@
-app.controller('colorPickerController', function($scope) {
+app.controller('colorPickerController', function($scope, $translate) {
   console.log('ColorPickerController');
   var that = this;
 
@@ -25,6 +25,19 @@ app.controller('colorPickerController', function($scope) {
   this.rgbToHex = function(r, g, b) {
     return '#' + this.componentToHex(r) +
       this.componentToHex(g) + this.componentToHex(b);
+  };
+
+  $scope.readColor = function(color) {
+    if (!color) {
+      return;
+    }
+    var lang = $translate.use() === 'fr' ? 'fr-FR' : 'en-GB';
+    $translate(color).then(function(translation) {
+      $scope.talk({
+        text: translation,
+        locale: lang,
+      });
+    });
   };
 
   function successCallback(stream) {
@@ -82,7 +95,6 @@ app.controller('colorPickerController', function($scope) {
   };
 
   // Init
-
   $scope.init = function() {
     $scope.show = function() {
       modalColorPicker.show();

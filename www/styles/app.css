@@ -331,6 +331,31 @@ video.stereo {
 }
 
 /**
+* Color Picker
+*/
+
+#selected-color {
+  width: 100%;
+  display: block;
+  font-size: 3em;
+  text-align: center;
+  text-transform: capitalize;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  position: absolute;
+  top: 44px;
+}
+
+#tts-btn {
+  font-size: 200%;
+  border-radius: 50%;
+  padding: 15px;
+  position: absolute;
+  right: 20px;
+  bottom: 70px;
+}
+
+/**
 * Ishihara
 */
 
