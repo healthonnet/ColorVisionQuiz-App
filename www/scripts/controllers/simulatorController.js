@@ -75,7 +75,7 @@ app.controller('simulatorController', function($scope, $translate) {
       return;
     }
     var lang = $translate.use() === 'fr' ? 'fr-FR' : 'en-GB';
-    $translate(disease + "_AUDIO").then(function(translation) {
+    $translate(disease + '_AUDIO').then(function(translation) {
       $scope.talk({
         text: translation,
         locale: lang,
