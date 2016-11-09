@@ -3,7 +3,6 @@ app.controller('simulatorController', function($scope, $translate) {
   var that = this;
 
   this.resizeVideo = function() {
-    // TODO dynamic toolbar height
     $scope.videoRight.height = window.innerHeight - 44;
     $scope.video.height = window.innerHeight - 44;
     $scope.videoRight.width = window.innerWidth;
@@ -76,7 +75,6 @@ app.controller('simulatorController', function($scope, $translate) {
       return;
     }
     var lang = $translate.use() === 'fr' ? 'fr-FR' : 'en-GB';
-    console.log(disease + "_AUDIO");
     $translate(disease + "_AUDIO").then(function(translation) {
       $scope.talk({
         text: translation,

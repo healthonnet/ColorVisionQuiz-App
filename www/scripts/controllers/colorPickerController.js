@@ -164,7 +164,6 @@ app.controller('colorPickerController', function($scope, $translate) {
               errorCallback(error)
             });
           },10);
-
       });
     }
   };
