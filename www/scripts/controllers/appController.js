@@ -91,7 +91,7 @@ angular.module('app').controller('AppController',
         .speak({
           text: message.text,
           locale: message.locale,
-          rate: 0.75,
+          rate: 0.80,
         }, function() {
           console.log('success');
         }, function(err) {
