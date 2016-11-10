@@ -98,6 +98,9 @@ app.controller('simulatorController', function($scope, $translate) {
         $scope.$apply();
       }
     });
+    navigatorMain.on('prepush', $scope.stopTalking);
+    navigatorMain.on('prepop', $scope.stopTalking);
+
 
     // Load media stream
     if (typeof MediaStreamTrack === 'undefined' ||

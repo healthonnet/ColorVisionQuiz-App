@@ -100,6 +100,17 @@ angular.module('app').controller('AppController',
     }
   };
 
+  $scope.stopTalking = function() {
+    if ($rootScope.TTS) {
+      $rootScope.TTS
+        .speak('', function() {
+          console.log('success');
+        }, function(err) {
+          console.log(err);
+        });
+    }
+  };
+
   // Init
   $scope.localeName = $translate.proposedLanguage();
   $scope.locales = $translate.getAvailableLanguageKeys();

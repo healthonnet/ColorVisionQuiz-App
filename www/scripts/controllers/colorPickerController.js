@@ -123,6 +123,8 @@ app.controller('colorPickerController', function($scope, $translate) {
       clearInterval(i);
     },false);
 
+    navigatorMain.on('prepush', $scope.stopTalking);
+    navigatorMain.on('prepop', $scope.stopTalking);
 
     // Load media stream
     if (typeof navigator.mediaDevices === 'undefined' ||
