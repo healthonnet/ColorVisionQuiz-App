@@ -48,7 +48,9 @@ app.controller('simulatorController', function($scope, $translate) {
 
   // Export functions
   $scope.updateFilter = function() {
-    $scope.stopTalking();
+    if($scope.stopTalking) {
+      $scope.stopTalking();
+    }
     var prefix = '';
     var filter = $scope.selectedFilter.toLowerCase() + 'Effect';
     if ($scope.armode) {
