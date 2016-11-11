@@ -48,7 +48,7 @@ app.controller('simulatorController', function($scope, $translate) {
 
   // Export functions
   $scope.updateFilter = function() {
-    if($scope.stopTalking) {
+    if ($scope.stopTalking) {
       $scope.stopTalking();
     }
     var prefix = '';
