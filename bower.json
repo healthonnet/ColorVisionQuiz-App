@@ -2,8 +2,8 @@
   "name": "ColorVisionQuiz",
   "version": "1.0.4",
   "dependencies": {
-    "angular-translate": "^2.11.0",
-    "angular-translate-loader-static-files": "^2.11.1",
-    "angular-sanitize": "^1.5.8"
+    "angular-translate": "2.11.0",
+    "angular-translate-loader-static-files": "2.11.1",
+    "angular-sanitize": "1.5.8"
   }
 }
