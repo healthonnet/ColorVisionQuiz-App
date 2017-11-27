@@ -29,7 +29,7 @@ app.controller('colorPickerController', function($scope) {
 
   function successCallback(stream) {
     $scope.stream = stream;
-    $scope.video.src = window.URL.createObjectURL(stream);
+    $scope.video.srcObject = stream;
     that.resizeVideo();
 
     navigatorMain.on('prepush', that.stopVideo);
@@ -114,43 +114,46 @@ app.controller('colorPickerController', function($scope) {
 
 
     // Load media stream
-    if (typeof MediaStreamTrack === 'undefined' ||
-      typeof MediaStreamTrack.getSources === 'undefined') {
+    if (typeof navigator.mediaDevices === 'undefined' ||
+      typeof navigator.mediaDevices.enumerateDevices === 'undefined') {
 
       // TODO onsenUI clean modal
-      alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
+      alert('This browser does not support mediaDevices.\n\nTry Chrome.');
       navigatorMain.popPage();
     } else {
       // Deprecated but supported by android webview
-      MediaStreamTrack.getSources(function(sources) {
-        var targetSourceId;
-        sources.forEach(function(source) {
-          if (source.facing === 'environment') {
-            targetSourceId = source.id;
-          }
-        });
-        if (!targetSourceId) {
-          if (sources[0]) {
-            targetSourceId = sources[0].id;
-          }
-          if (sources[1]) {
-            targetSourceId = sources[1].id;
-          }
-          if (sources[2]) {
-            targetSourceId = sources[2].id;
-          }
-        }
+      navigator.mediaDevices.enumerateDevices()
+        .then(function(devices) {
+          var camera = [];
+          var currCameraIndex = 0;
+          var videoContraint = false;
 
-        console.log(targetSourceId);
+          devices.forEach(function(info) {
+            if (info.kind == "videoinput") {
+              camera.push(info.deviceId);
+            }
+          });
+          currCameraIndex = camera.length - 1;
+          if(camera){
+            videoContraint = {
+              optional: [{
+                sourceId: camera[currCameraIndex]
+              }]
+            };
+          }
+          setTimeout(function() {
+            navigator.getUserMedia({
+              audio: false,
+              video: videoContraint
+            }, function(stream) {
+              console.log('ok');
+              successCallback(stream)
+            },function(error){
+              console.log(error);
+              errorCallback(error)
+            });
+          },10);
 
-        navigator.webkitGetUserMedia({
-          audio: false,
-          video: {
-            optional: [{
-              sourceId: targetSourceId,
-            },],
-          },
-        }, successCallback, errorCallback);
       });
     }
   };
