@@ -12,7 +12,6 @@
         <video id="left" ng-class="{stereo: armode}" autoplay></video>
         <video id="right" ng-class="{stereo: armode}" ng-show="armode"></video>
         <div class="overlay">
-            <ons-row id="active-filter" ng-hide="armode">{{ selectedFilter | translate }}</ons-row>
             <ons-row id="filter-bar">
                 <ons-col>
                     <select class="button--large--cta filter" ng-model="selectedFilter" ng-change="updateFilter()">
@@ -34,6 +33,9 @@
                     </ons-button>
                 </ons-col>
             </ons-row>
+            <ons-button modifier="material" id="tts-btn"
+                        ng-show="TTS" ng-hide="armode"
+                        ng-click="readDisease(selectedFilter)"><i class="fa fa-audio-description"></i></ons-button>
         </div>
     </ons-row>
 </ons-page>

@@ -1,9 +1,8 @@
-app.controller('colorPickerController', function($scope) {
+app.controller('colorPickerController', function($scope, $translate) {
   console.log('ColorPickerController');
   var that = this;
 
   this.resizeVideo = function() {
-    // TODO dynamic toolbar height
     $scope.canvas.height = window.innerHeight - 44;
     $scope.canvas.width = window.innerWidth;
   };
@@ -27,9 +26,28 @@ app.controller('colorPickerController', function($scope) {
       this.componentToHex(g) + this.componentToHex(b);
   };
 
+  $scope.readColor = function(color) {
+    if (!color) {
+      return;
+    }
+    var lang = $translate.use() === 'fr' ? 'fr-FR' : 'en-GB';
+    $translate(color).then(function(translation) {
+      $scope.talk({
+        text: translation,
+        locale: lang,
+      });
+    });
+  };
+
   function successCallback(stream) {
     $scope.stream = stream;
-    $scope.video.src = window.URL.createObjectURL(stream);
+
+    try {
+      $scope.video.srcObject = stream;
+    } catch (error) {
+      $scope.video.src = window.URL.createObjectURL(stream);
+    }
+
     that.resizeVideo();
 
     navigatorMain.on('prepush', that.stopVideo);
@@ -82,7 +100,6 @@ app.controller('colorPickerController', function($scope) {
   };
 
   // Init
-
   $scope.init = function() {
     $scope.show = function() {
       modalColorPicker.show();
@@ -112,46 +129,24 @@ app.controller('colorPickerController', function($scope) {
       clearInterval(i);
     },false);
 
+    navigatorMain.on('prepush', $scope.stopTalking);
+    navigatorMain.on('prepop', $scope.stopTalking);
 
     // Load media stream
-    if (typeof MediaStreamTrack === 'undefined' ||
-      typeof MediaStreamTrack.getSources === 'undefined') {
-
-      // TODO onsenUI clean modal
-      alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
-      navigatorMain.popPage();
-    } else {
-      // Deprecated but supported by android webview
-      MediaStreamTrack.getSources(function(sources) {
-        var targetSourceId;
-        sources.forEach(function(source) {
-          if (source.facing === 'environment') {
-            targetSourceId = source.id;
-          }
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({
+        video: { facingMode: { exact: 'environment' }},
+      })
+        .then(function(stream) {
+          successCallback(stream);
+        })
+        .catch(function(error) {
+          errorCallback(error);
         });
-        if (!targetSourceId) {
-          if (sources[0]) {
-            targetSourceId = sources[0].id;
-          }
-          if (sources[1]) {
-            targetSourceId = sources[1].id;
-          }
-          if (sources[2]) {
-            targetSourceId = sources[2].id;
-          }
-        }
-
-        console.log(targetSourceId);
-
-        navigator.webkitGetUserMedia({
-          audio: false,
-          video: {
-            optional: [{
-              sourceId: targetSourceId,
-            },],
-          },
-        }, successCallback, errorCallback);
-      });
+    } else {
+      // TODO onsenUI clean modal
+      alert('This browser does not support mediaDevices.\n\nTry Chrome.');
+      navigatorMain.popPage();
     }
   };
 });

@@ -49,8 +49,6 @@ describe('simulatorController', function() {
       controller.switchOnAR();
 
       expect($scope.videoRight.paused).toBe(false);
-      expect($scope.videoRight.src)
-        .toEqual('http://clips.vorwaerts-gmbh.de/VfE_html5.mp4');
       expect($scope.videoRight.className).toEqual('stereo');
     });
   });
@@ -148,8 +146,6 @@ describe('simulatorController', function() {
 
       expect($scope.video.paused).toBe(false);
       expect($scope.videoRight.paused).toBe(false);
-      expect($scope.videoRight.src)
-        .toEqual('http://clips.vorwaerts-gmbh.de/VfE_html5.mp4');
       expect($scope.videoRight.className).toEqual('stereo');
       expect($scope.armode).toBe(true);
     });

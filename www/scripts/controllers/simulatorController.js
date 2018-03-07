@@ -1,9 +1,8 @@
-app.controller('simulatorController', function($scope) {
+app.controller('simulatorController', function($scope, $translate) {
   console.log('SimulatorController');
   var that = this;
 
   this.resizeVideo = function() {
-    // TODO dynamic toolbar height
     $scope.videoRight.height = window.innerHeight - 44;
     $scope.video.height = window.innerHeight - 44;
     $scope.videoRight.width = window.innerWidth;
@@ -11,7 +10,11 @@ app.controller('simulatorController', function($scope) {
   };
 
   this.switchOnAR = function() {
-    $scope.videoRight.src = $scope.video.src;
+    try {
+      $scope.videoRight.srcObject = $scope.stream;
+    } catch (error) {
+      $scope.videoRight.src = $scope.video.src;
+    }
     $scope.videoRight.play();
     $scope.videoRight.className = $scope.video.className;
   };
@@ -35,7 +38,12 @@ app.controller('simulatorController', function($scope) {
 
   function successCallback(stream) {
     $scope.stream = stream;
-    $scope.video.src = window.URL.createObjectURL(stream);
+
+    try {
+      $scope.video.srcObject = stream;
+    } catch (error) {
+      $scope.video.src = window.URL.createObjectURL(stream);
+    }
     that.resizeVideo();
 
     navigatorMain.on('prepush', that.stopVideo);
@@ -49,6 +57,9 @@ app.controller('simulatorController', function($scope) {
 
   // Export functions
   $scope.updateFilter = function() {
+    if ($scope.stopTalking) {
+      $scope.stopTalking();
+    }
     var prefix = '';
     var filter = $scope.selectedFilter.toLowerCase() + 'Effect';
     if ($scope.armode) {
@@ -71,6 +82,19 @@ app.controller('simulatorController', function($scope) {
     modalSimulator.show();
   };
 
+  $scope.readDisease = function(disease) {
+    if (!disease) {
+      return;
+    }
+    var lang = $translate.use() === 'fr' ? 'fr-FR' : 'en-GB';
+    $translate(disease + '_AUDIO').then(function(translation) {
+      $scope.talk({
+        text: translation,
+        locale: lang,
+      });
+    });
+  };
+
   // Init
   $scope.init = function() {
     $scope.selectedFilter = 'NORMAL';
@@ -86,52 +110,24 @@ app.controller('simulatorController', function($scope) {
         $scope.$apply();
       }
     });
+    navigatorMain.on('prepush', $scope.stopTalking);
+    navigatorMain.on('prepop', $scope.stopTalking);
 
     // Load media stream
-    if (typeof MediaStreamTrack === 'undefined' ||
-      typeof MediaStreamTrack.getSources === 'undefined') {
-      ons.notification.alert({
-        message: 'This browser does not support MediaStreamTrack.' +
-        '\n\nTry Chrome.',
-        title: 'Support Error',
-        buttonLabel: 'OK',
-        animation: 'default',
-        callback: function() {
-          navigatorMain.popPage();
-        },
-      });
-    } else {
-      // Deprecated but supported by android webview
-      MediaStreamTrack.getSources(function(sources) {
-        var targetSourceId;
-        sources.forEach(function(source) {
-          if (source.facing === 'environment') {
-            targetSourceId = source.id;
-          }
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({
+        video: { facingMode: { exact: 'environment'}},
+      })
+        .then(function(stream) {
+          successCallback(stream);
+        })
+        .catch(function(error) {
+          errorCallback(error);
         });
-        if (!targetSourceId) {
-          if (sources[0]) {
-            targetSourceId = sources[0].id;
-          }
-          if (sources[1]) {
-            targetSourceId = sources[1].id;
-          }
-          if (sources[2]) {
-            targetSourceId = sources[2].id;
-          }
-        }
-
-        console.log(targetSourceId);
-
-        navigator.webkitGetUserMedia({
-          audio: false,
-          video: {
-            optional: [{
-              sourceId: targetSourceId,
-            },],
-          },
-        }, successCallback, errorCallback);
-      });
+    } else {
+      // TODO onsenUI clean modal
+      alert('This browser does not support mediaDevices.\n\nTry Chrome.');
+      navigatorMain.popPage();
     }
   };
 

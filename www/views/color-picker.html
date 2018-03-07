@@ -12,7 +12,10 @@
         <video style="display: none;" autoplay></video>
         <canvas class="full"></canvas>
         <div class="overlay">
-            <ons-row id="active-filter">{{currentShade | translate}}</ons-row>
+            <ons-row id="selected-color">{{currentShade | translate}}</ons-row>
+            <ons-button modifier="material" id="tts-btn"
+                        ng-show="TTS"
+                        ng-click="readColor(currentShade)"><i class="fa fa-audio-description"></i></ons-button>
         </div>
     </ons-row>
 </ons-page>

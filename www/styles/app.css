@@ -268,33 +268,33 @@ video {
 }
 
 .protanopiaEffect {
-  -webkit-filter: url("styles/filters.svg#protanopia") grayscale(0) !important;
-  filter: url("styles/filters.svg#protanopia") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#protanopia") grayscale(0) !important;
+  filter: url("filters.svg#protanopia") grayscale(0) !important;
 }
 
 .deuteranopiaEffect {
-  -webkit-filter: url("styles/filters.svg#deuteranopia") grayscale(0) !important;
-  filter: url("styles/filters.svg#deuteranopia") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#deuteranopia") grayscale(0) !important;
+  filter: url("filters.svg#deuteranopia") grayscale(0) !important;
 }
 
 .tritanopiaEffect {
-  -webkit-filter: url("styles/filters.svg#tritanopia") grayscale(0) !important;
-  filter: url("styles/filters.svg#tritanopia") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#tritanopia") grayscale(0) !important;
+  filter: url("filters.svg#tritanopia") grayscale(0) !important;
 }
 
 .protanomalyEffect {
-  -webkit-filter: url("styles/filters.svg#protanomaly") grayscale(0) !important;
-  filter: url("styles/filters.svg#protanomaly") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#protanomaly") grayscale(0) !important;
+  filter: url("filters.svg#protanomaly") grayscale(0) !important;
 }
 
 .deuteranomalyEffect {
-  -webkit-filter: url("styles/filters.svg#deuteranomaly") grayscale(0) !important;
-  filter: url("styles/filters.svg#deuteranomaly") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#deuteranomaly") grayscale(0) !important;
+  filter: url("filters.svg#deuteranomaly") grayscale(0) !important;
 }
 
 .achromatopsiaEffect {
-  -webkit-filter: url("styles/filters.svg#achromatopsia") grayscale(0) !important;
-  filter: url("styles/filters.svg#achromatopsia") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#achromatopsia") grayscale(0) !important;
+  filter: url("filters.svg#achromatopsia") grayscale(0) !important;
 }
 
 #active-filter {
@@ -328,6 +328,31 @@ video.stereo {
 #filter-bar select {
   font-size: 1.3em;
   text-transform: Capitalize;
+}
+
+/**
+* Color Picker
+*/
+
+#selected-color {
+  width: 100%;
+  display: block;
+  font-size: 3em;
+  text-align: center;
+  text-transform: capitalize;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  position: absolute;
+  top: 44px;
+}
+
+#tts-btn {
+  font-size: 200%;
+  border-radius: 50%;
+  padding: 15px;
+  position: absolute;
+  right: 20px;
+  bottom: 70px;
 }
 
 /**
