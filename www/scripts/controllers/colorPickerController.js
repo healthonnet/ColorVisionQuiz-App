@@ -138,11 +138,9 @@ app.controller('colorPickerController', function($scope, $translate) {
         video: { facingMode: { exact: 'environment' }}
       })
         .then(function(stream) {
-          /* use the stream */
           successCallback(stream);
         })
         .catch(function(error) {
-          /* handle the error */
           errorCallback(error);
         });
     } else {
