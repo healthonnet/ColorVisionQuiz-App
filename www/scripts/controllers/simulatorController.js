@@ -116,15 +116,15 @@ app.controller('simulatorController', function($scope, $translate) {
     // Load media stream
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({
-        video: { facingMode: { exact: "environment" }}
+        video: { facingMode: { exact: 'environment' }}
       })
         .then(function(stream) {
           /* use the stream */
-          successCallback(stream)
+          successCallback(stream);
         })
-        .catch(function(err) {
+        .catch(function(error) {
           /* handle the error */
-          errorCallback(error)
+          errorCallback(error);
         });
     } else {
       // TODO onsenUI clean modal
