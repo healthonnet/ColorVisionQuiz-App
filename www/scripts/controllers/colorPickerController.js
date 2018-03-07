@@ -41,7 +41,13 @@ app.controller('colorPickerController', function($scope, $translate) {
 
   function successCallback(stream) {
     $scope.stream = stream;
-    $scope.video.srcObject = stream;
+
+    try {
+      $scope.video.srcObject = stream;
+    } catch (error) {
+      $scope.video.src = window.URL.createObjectURL(stream);
+    }
+
     that.resizeVideo();
 
     navigatorMain.on('prepush', that.stopVideo);
@@ -127,46 +133,22 @@ app.controller('colorPickerController', function($scope, $translate) {
     navigatorMain.on('prepop', $scope.stopTalking);
 
     // Load media stream
-    if (typeof navigator.mediaDevices === 'undefined' ||
-      typeof navigator.mediaDevices.enumerateDevices === 'undefined') {
-
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({
+        video: { facingMode: { exact: "environment" }}
+      })
+        .then(function(stream) {
+          /* use the stream */
+          successCallback(stream)
+        })
+        .catch(function(err) {
+          /* handle the error */
+          errorCallback(error)
+        });
+    } else {
       // TODO onsenUI clean modal
       alert('This browser does not support mediaDevices.\n\nTry Chrome.');
       navigatorMain.popPage();
-    } else {
-      // Deprecated but supported by android webview
-      navigator.mediaDevices.enumerateDevices()
-        .then(function(devices) {
-          var camera = [];
-          var currCameraIndex = 0;
-          var videoContraint = false;
-
-          devices.forEach(function(info) {
-            if (info.kind == "videoinput") {
-              camera.push(info.deviceId);
-            }
-          });
-          currCameraIndex = camera.length - 1;
-          if(camera){
-            videoContraint = {
-              optional: [{
-                sourceId: camera[currCameraIndex]
-              }]
-            };
-          }
-          setTimeout(function() {
-            navigator.getUserMedia({
-              audio: false,
-              video: videoContraint
-            }, function(stream) {
-              console.log('ok');
-              successCallback(stream)
-            },function(error){
-              console.log(error);
-              errorCallback(error)
-            });
-          },10);
-      });
     }
   };
 });
