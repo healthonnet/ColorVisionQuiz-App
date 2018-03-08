@@ -47,7 +47,8 @@ Developers
 -----------
 
  - Cedric FROSSARD
-
+ - William Belle
+ 
 Licence
 -------
 Apache Licence 2.0
