@@ -27,13 +27,13 @@
         </ons-button>
     </ons-row>
     -->
-    <ons-row class="align-center" ons-if-platform="android" ng-show="osVersion >= '4.4.4'">
+    <ons-row class="align-center" ons-if-platform="android" ng-show="osVersion >= '5.0.0'">
         <ons-button modifier="material" class="button button--large home-btn" id="simulator"
                     ng-click="navigatorMain.pushPage('views/simulator.html')">
           {{"VISION_SIMULATOR" | translate}}
         </ons-button>
     </ons-row>
-    <ons-row class="align-center" ons-if-platform="android" ng-show="osVersion >= '4.4.4'" style="padding-top: 1px;">
+    <ons-row class="align-center" ons-if-platform="android" ng-show="osVersion >= '5.0.0'" style="padding-top: 1px;">
         <ons-button modifier="material" class="button button--large home-btn" id="colorPicker"
                     ng-click="navigatorMain.pushPage('views/color-picker.html')">
           {{"COLOR_PICKER" | translate}}
