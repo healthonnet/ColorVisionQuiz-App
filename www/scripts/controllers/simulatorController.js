@@ -52,11 +52,11 @@ app.controller('simulatorController', function($scope, $translate) {
   }
 
   $scope.staticVideoFallback = function() {
-    $scope.video.src = 'assets/video/small.mp4';
+    $scope.video.src = 'assets/video/paint.mp4';
     $scope.video.loop = true;
     $scope.static = true;
 
-  }
+  };
 
   function errorCallback(error) {
     console.log('navigator.getUserMedia error: ', error);
@@ -130,6 +130,7 @@ app.controller('simulatorController', function($scope, $translate) {
         .then(function(stream) {
           $scope.static = false;
           successCallback(stream);
+          $scope.$apply();
         })
         .catch(function(error) {
           errorCallback(error);
@@ -137,8 +138,6 @@ app.controller('simulatorController', function($scope, $translate) {
     } else {
       // TODO Load static video instead
       $scope.staticVideoFallback();
-      //alert('This browser does not support mediaDevices.\n\nTry Chrome.');
-      //navigatorMain.popPage();
     }
   };
 
