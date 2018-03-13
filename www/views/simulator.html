@@ -25,7 +25,7 @@
                     </select>
                 </ons-col>
                 <ons-col width="40%" ons-if-orientation="landscape">
-                    <ons-button ng-hide="static" modifier="material" ng-click="toggleAR();" class="button">
+                    <ons-button ng-hide="armode || static" modifier="material" ng-click="toggleAR();" class="button">
                       {{"AR_MODE" | translate}}
                     </ons-button>
                     <ons-button ng-show="armode" modifier="material" ng-click="toggleAR();" class="button">
