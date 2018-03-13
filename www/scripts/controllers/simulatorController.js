@@ -51,8 +51,16 @@ app.controller('simulatorController', function($scope, $translate) {
 
   }
 
+  $scope.staticVideoFallback = function() {
+    $scope.video.src = 'assets/video/small.mp4';
+    $scope.video.loop = true;
+    $scope.static = true;
+
+  }
+
   function errorCallback(error) {
     console.log('navigator.getUserMedia error: ', error);
+    $scope.staticVideoFallback();
   }
 
   // Export functions
@@ -100,6 +108,7 @@ app.controller('simulatorController', function($scope, $translate) {
     $scope.selectedFilter = 'NORMAL';
     $scope.video = document.querySelector('video#left');
     $scope.videoRight = document.querySelector('video#right');
+    $scope.static = true;
 
     // Events
     window.addEventListener('resize', that.resizeVideo);
@@ -119,15 +128,17 @@ app.controller('simulatorController', function($scope, $translate) {
         video: { facingMode: { exact: 'environment'}},
       })
         .then(function(stream) {
+          $scope.static = false;
           successCallback(stream);
         })
         .catch(function(error) {
           errorCallback(error);
         });
     } else {
-      // TODO onsenUI clean modal
-      alert('This browser does not support mediaDevices.\n\nTry Chrome.');
-      navigatorMain.popPage();
+      // TODO Load static video instead
+      $scope.staticVideoFallback();
+      //alert('This browser does not support mediaDevices.\n\nTry Chrome.');
+      //navigatorMain.popPage();
     }
   };
 
