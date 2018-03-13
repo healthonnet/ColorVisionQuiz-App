@@ -136,7 +136,7 @@ app.controller('simulatorController', function($scope, $translate) {
           errorCallback(error);
         });
     } else {
-      // TODO Load static video instead
+      // Load static video instead
       $scope.staticVideoFallback();
     }
   };
