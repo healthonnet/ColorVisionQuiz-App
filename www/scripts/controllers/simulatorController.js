@@ -54,8 +54,8 @@ app.controller('simulatorController', function($scope, $translate) {
   $scope.staticVideoFallback = function() {
     $scope.video.src = 'assets/video/paint.mp4';
     $scope.video.loop = true;
-    $scope.static = true;
-
+    navigatorMain.on('prepush', that.stopVideo);
+    navigatorMain.on('postpop',that.stopVideo);
   };
 
   function errorCallback(error) {
