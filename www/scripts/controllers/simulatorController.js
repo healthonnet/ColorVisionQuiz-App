@@ -130,7 +130,6 @@ app.controller('simulatorController', function($scope, $translate) {
         .then(function(stream) {
           $scope.static = false;
           successCallback(stream);
-          $scope.$apply();
         })
         .catch(function(error) {
           errorCallback(error);

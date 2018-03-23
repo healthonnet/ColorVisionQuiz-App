@@ -268,33 +268,33 @@ video {
 }
 
 .protanopiaEffect {
-  -webkit-filter: url("filters.svg#protanopia") grayscale(0) !important;
-  filter: url("filters.svg#protanopia") grayscale(0) !important;
+  -webkit-filter: url("#protanopia") grayscale(0) !important;
+  filter: url("#protanopia") grayscale(0) !important;
 }
 
 .deuteranopiaEffect {
-  -webkit-filter: url("filters.svg#deuteranopia") grayscale(0) !important;
-  filter: url("filters.svg#deuteranopia") grayscale(0) !important;
+  -webkit-filter: url("#deuteranopia") grayscale(0) !important;
+  filter: url("#deuteranopia") grayscale(0) !important;
 }
 
 .tritanopiaEffect {
-  -webkit-filter: url("filters.svg#tritanopia") grayscale(0) !important;
-  filter: url("filters.svg#tritanopia") grayscale(0) !important;
+  -webkit-filter: url("#tritanopia") grayscale(0) !important;
+  filter: url("#tritanopia") grayscale(0) !important;
 }
 
 .protanomalyEffect {
-  -webkit-filter: url("filters.svg#protanomaly") grayscale(0) !important;
-  filter: url("filters.svg#protanomaly") grayscale(0) !important;
+  -webkit-filter: url("#protanomaly") grayscale(0) !important;
+  filter: url("#protanomaly") grayscale(0) !important;
 }
 
 .deuteranomalyEffect {
-  -webkit-filter: url("filters.svg#deuteranomaly") grayscale(0) !important;
-  filter: url("filters.svg#deuteranomaly") grayscale(0) !important;
+  -webkit-filter: url("#deuteranomaly") grayscale(0) !important;
+  filter: url("#deuteranomaly") grayscale(0) !important;
 }
 
 .achromatopsiaEffect {
-  -webkit-filter: url("filters.svg#achromatopsia") grayscale(0) !important;
-  filter: url("filters.svg#achromatopsia") grayscale(0) !important;
+  -webkit-filter: url("#achromatopsia") grayscale(0) !important;
+  filter: url("#achromatopsia") grayscale(0) !important;
 }
 
 #active-filter {
