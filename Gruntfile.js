@@ -59,7 +59,7 @@ module.exports = function(grunt) {
     curl: {
       './locales.zip': 'https://localise.biz:443/' +
       'api/export/archive/json.zip?' +
-      'key=14f36db4b9da62bb55932a533332b491&' +
+      'key=-5lbhfMgX0nnYZNpRjudqSvj4sD1bBaq&' +
       'path=locale-%7B%25lang%7D.json',
     },
     unzip: {
