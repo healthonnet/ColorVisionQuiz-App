@@ -8,7 +8,7 @@
             <i id="top-right" ng-click="show()" class="fa fa-question-circle-o"></i>
         </div>
     </ons-toolbar>
-    <ons-row style="position: relative; display: block; background-image: url('{{imgLibrary[fakeslider]}}') !important;" id="slider">
+    <ons-row style="position: relative">
         <svg height="0">
             <defs>
                 <filter id="protanopia">
@@ -85,26 +85,34 @@
                 </filter>
             </defs>
         </svg>
-    </ons-row>
 
-    <div class="overlay">
-        <ons-row id="filter-bar">
-            <ons-col>
-                <select class="button--large--cta filter" ng-model="selectedFilter" ng-change="updateFilter()">
-                    <option value="NORMAL">{{ "NORMAL" | translate }}</option>
-                    <option value="DEUTERANOPIA">{{ "DEUTERANOPIA" | translate }}</option>
-                    <option value="DEUTERANOMALY">{{ "DEUTERANOMALY" | translate }}</option>
-                    <option value="PROTANOMALY">{{ "PROTANOMALY" | translate }}</option>
-                    <option value="PROTANOPIA">{{ "PROTANOPIA" | translate }}</option>
-                    <option value="TRITANOPIA">{{ "TRITANOPIA" | translate }}</option>
-                    <option value="ACHROMATOPSIA">{{ "ACHROMATOPSIA" | translate }}</option>
-                </select>
-            </ons-col>
-            <ons-button id="nextImg" ng-click="nextImg()"><i class="fa fa-angle-right"></i></ons-button>
-            <ons-button id="prevImg" ng-click="prevImg()"><i class="fa fa-angle-left"></i></ons-button>
-        </ons-row>
-        <ons-button modifier="material" id="tts-btn"
-            ng-show="TTS"
-            ng-click="readDisease(selectedFilter)"><i class="fa fa-audio-description"></i></ons-button>
-    </div>
+        <video id="left" ng-class="{stereo: armode}" autoplay></video>
+        <video id="right" ng-class="{stereo: armode}" ng-show="armode"></video>
+        <div class="overlay">
+            <ons-row id="filter-bar">
+                <ons-col>
+                    <select class="button--large--cta filter" ng-model="selectedFilter" ng-change="updateFilter()">
+                        <option value="NORMAL">{{ "NORMAL" | translate }}</option>
+                        <option value="DEUTERANOPIA">{{ "DEUTERANOPIA" | translate }}</option>
+                        <option value="DEUTERANOMALY">{{ "DEUTERANOMALY" | translate }}</option>
+                        <option value="PROTANOMALY">{{ "PROTANOMALY" | translate }}</option>
+                        <option value="PROTANOPIA">{{ "PROTANOPIA" | translate }}</option>
+                        <option value="TRITANOPIA">{{ "TRITANOPIA" | translate }}</option>
+                        <option value="ACHROMATOPSIA">{{ "ACHROMATOPSIA" | translate }}</option>
+                    </select>
+                </ons-col>
+                <ons-col width="40%" ons-if-orientation="landscape">
+                    <ons-button ng-hide="armode || static" modifier="material" ng-click="toggleAR();" class="button">
+                      {{"AR_MODE" | translate}}
+                    </ons-button>
+                    <ons-button ng-show="armode" modifier="material" ng-click="toggleAR();" class="button">
+                      {{"CLASSIC_MODE" | translate}}
+                    </ons-button>
+                </ons-col>
+            </ons-row>
+            <ons-button modifier="material" id="tts-btn"
+                        ng-show="TTS" ng-hide="armode"
+                        ng-click="readDisease(selectedFilter)"><i class="fa fa-audio-description"></i></ons-button>
+        </div>
+    </ons-row>
 </ons-page>
