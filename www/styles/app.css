@@ -143,6 +143,9 @@ video {
   right: 0;
   bottom: 0;
 }
+.overlay select{
+  -webkit-appearance: unset;
+}
 
 .modal {
   background-color: rgba(0,0,0,0.8);
@@ -346,13 +349,38 @@ video.stereo {
   top: 44px;
 }
 
-#tts-btn {
+#tts-btn, #nextImg, #prevImg {
   font-size: 200%;
   border-radius: 50%;
-  padding: 15px;
   position: absolute;
-  right: 20px;
-  bottom: 70px;
+}
+
+#slider {
+  width: 100%;
+  height: 100%;
+  background-size: contain !important;
+  background-position-x: center !important;
+  background-repeat: no-repeat !important;
+  background-position-y: center !important;
+}
+
+#tts-btn {
+  padding: 15px;
+  right: 2%;
+  bottom: 2%;
+}
+
+#nextImg, #prevImg {
+  bottom: 50%;
+  padding: 10px 25px;
+}
+#nextImg {
+  right: 5%;
+  padding: 5px 20px 8px 25px
+}
+#prevImg {
+  left: 5%;
+  padding: 5px 25px 8px 20px;
 }
 
 /**
