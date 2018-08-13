@@ -2,7 +2,9 @@ app.controller('colorPickerController', function($scope, $translate) {
   console.log('ColorPickerController');
   var that = this;
 
-  var permissions = cordova.plugins.permissions;
+  if (typeof cordova !== 'undefined') {
+    var permissions = cordova.plugins.permissions;
+  }
 
   this.resizeVideo = function() {
     $scope.canvas.height = window.innerHeight - 44;
@@ -153,22 +155,24 @@ app.controller('colorPickerController', function($scope, $translate) {
     navigatorMain.on('prepop', $scope.stopTalking);
 
     // Load media stream
-    permissions.checkPermission(permissions.CAMERA, function(status) {
-      if (status.hasPermission) {
-        $scope.requestVideo();
-      } else {
-        permissions.requestPermission(permissions.CAMERA, function(status) {
-          if (status.hasPermission) {
-            $scope.requestVideo();
-          } else {
+    if (permissions) {
+      permissions.checkPermission(permissions.CAMERA, function(status) {
+        if (status.hasPermission) {
+          $scope.requestVideo();
+        } else {
+          permissions.requestPermission(permissions.CAMERA, function(status) {
+            if (status.hasPermission) {
+              $scope.requestVideo();
+            } else {
+              navigatorMain.popPage();
+            }
+          }, function() {
             navigatorMain.popPage();
-          }
-        }, function() {
-          navigatorMain.popPage();
-        });
-      }
-    }, function() {
-      navigatorMain.popPage();
-    });
+          });
+        }
+      }, function() {
+        navigatorMain.popPage();
+      });
+    }
   };
 });
