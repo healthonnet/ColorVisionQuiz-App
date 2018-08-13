@@ -369,6 +369,9 @@ video.stereo {
   right: 2%;
   bottom: 2%;
 }
+ #tts-btn.tts-bottom {
+  bottom: 50px;
+ }
 
 #nextImg, #prevImg {
   bottom: 50%;

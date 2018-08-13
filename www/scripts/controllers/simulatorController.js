@@ -34,10 +34,10 @@ app.controller('simulatorController', function($scope, $translate) {
   };
 
   $scope.imgLibrary = [
-    './plates/plate-1.jpg',
-    './plates/plate-2.jpg',
-    './plates/plate-3.jpg',
-    './plates/plate-4.jpg',
+    './assets/images/1.jpg',
+    './assets/images/2.jpg',
+    './assets/images/3.jpg',
+    './assets/images/4.jpg',
   ];
 
   $scope.nextImg = function() {

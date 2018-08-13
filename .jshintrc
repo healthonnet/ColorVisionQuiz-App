@@ -22,6 +22,7 @@
     "angular": true,
     "inject": true,
     "expect": true,
+    "cordova": true,
     "spyOn": true,
     "app": true,
     "ons": true,

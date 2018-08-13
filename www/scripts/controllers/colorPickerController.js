@@ -2,6 +2,10 @@ app.controller('colorPickerController', function($scope, $translate) {
   console.log('ColorPickerController');
   var that = this;
 
+  if (typeof cordova !== 'undefined') {
+    var permissions = cordova.plugins.permissions;
+  }
+
   this.resizeVideo = function() {
     $scope.canvas.height = window.innerHeight - 44;
     $scope.canvas.width = window.innerWidth;
@@ -99,6 +103,24 @@ app.controller('colorPickerController', function($scope, $translate) {
     $scope.currentColor = colorNames[1];
   };
 
+  $scope.requestVideo = function() {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({
+        video: {facingMode: {exact: 'environment'}},
+      })
+        .then(function(stream) {
+          successCallback(stream);
+        })
+        .catch(function(error) {
+          errorCallback(error);
+        });
+    } else {
+      // TODO onsenUI clean modal
+      alert('This browser does not support mediaDevices.\n\nTry Chrome.');
+      navigatorMain.popPage();
+    }
+  };
+
   // Init
   $scope.init = function() {
     $scope.show = function() {
@@ -133,20 +155,24 @@ app.controller('colorPickerController', function($scope, $translate) {
     navigatorMain.on('prepop', $scope.stopTalking);
 
     // Load media stream
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({
-        video: { facingMode: { exact: 'environment' }},
-      })
-        .then(function(stream) {
-          successCallback(stream);
-        })
-        .catch(function(error) {
-          errorCallback(error);
-        });
-    } else {
-      // TODO onsenUI clean modal
-      alert('This browser does not support mediaDevices.\n\nTry Chrome.');
-      navigatorMain.popPage();
+    if (permissions) {
+      permissions.checkPermission(permissions.CAMERA, function(status) {
+        if (status.hasPermission) {
+          $scope.requestVideo();
+        } else {
+          permissions.requestPermission(permissions.CAMERA, function(status) {
+            if (status.hasPermission) {
+              $scope.requestVideo();
+            } else {
+              navigatorMain.popPage();
+            }
+          }, function() {
+            navigatorMain.popPage();
+          });
+        }
+      }, function() {
+        navigatorMain.popPage();
+      });
     }
   };
 });
