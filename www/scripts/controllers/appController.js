@@ -91,7 +91,7 @@ angular.module('app').controller('AppController',
         .speak({
           text: message.text,
           locale: message.locale,
-          rate: 0.80,
+          rate: $scope.ttsSpeed,
         }, function() {
           console.log('success');
         }, function(err) {
@@ -114,6 +114,11 @@ angular.module('app').controller('AppController',
   // Init
   $scope.localeName = $translate.proposedLanguage();
   $scope.locales = $translate.getAvailableLanguageKeys();
+
+  $scope.ttsSpeed = 0.8;
+  if (ons.platform.isIOS()) {
+    $scope.ttsSpeed = 1.5;
+  }
 
   // TODO Load articles json file.
   $rootScope.topicsColorblindess = [
